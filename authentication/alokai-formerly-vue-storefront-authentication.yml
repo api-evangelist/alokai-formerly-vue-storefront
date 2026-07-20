@@ -1,0 +1,25 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.alokai.com/cloud/api/access
+docs: https://docs.alokai.com/cloud/api/access
+note: >-
+  The Alokai Cloud (farmer) OpenAPI does not declare securitySchemes in-spec.
+  The auth model is documented: access is granted by a paired X-Api-Key and
+  X-User-Id request header. Captured from the docs (searched), not derived.
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+- name: ApiKey
+  type: apiKey
+  in: header
+  parameter: X-Api-Key
+  description: API key identifying the caller, paired with X-User-Id.
+  sources: [https://docs.alokai.com/cloud/api/access]
+- name: UserId
+  type: apiKey
+  in: header
+  parameter: X-User-Id
+  description: User identifier paired with X-Api-Key to authorize Cloud API access.
+  sources: [https://docs.alokai.com/cloud/api/access]
