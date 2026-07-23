@@ -1,0 +1,4232 @@
+{
+  "info": {
+    "title": "farmer",
+    "version": "v1"
+  },
+  "openapi": "3.0.0",
+  "components": {
+    "schemas": {
+      "AdditionalApps": {
+        "properties": {
+          "apps": {
+            "items": {
+              "$ref": "#/components/schemas/App"
+            },
+            "type": "array"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "ha": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "monitoring": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "AdditionalAppsV22": {
+        "properties": {
+          "apps": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AppV22"
+            },
+            "type": "object"
+          },
+          "apps_health_check": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/HealthCheckV22"
+            },
+            "type": "object"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "ha": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "monitoring": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "AdminAdditionalAppsV22": {
+        "properties": {
+          "apps": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AppV22"
+            },
+            "type": "object"
+          },
+          "apps_health_check": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AdminHealthCheckV22"
+            },
+            "type": "object"
+          },
+          "apps_hpa": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AdminAppHpaV22"
+            },
+            "type": "object"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "ha": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "monitoring": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "AdminAppHpaV22": {
+        "properties": {
+          "max_replicas": {
+            "type": "integer"
+          },
+          "min_replicas": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "AdminHealthCheckV22": {
+        "properties": {
+          "liveness_probe": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "readiness_probe": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "AdminHealthCheckVsfWrap": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "liveness_probe": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "path": {
+            "type": "string"
+          },
+          "readiness_probe": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "timeout_seconds": {
+            "description": "number of seconds representing probe timeout,min: 1, max 30",
+            "maximum": 30,
+            "minimum": 1,
+            "nullable": true,
+            "type": "integer"
+          },
+          "url": {
+            "description": "Relative path to use in HTTP request",
+            "example": "/some/path",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AdminIngress": {
+        "properties": {
+          "cors": {
+            "$ref": "#/components/schemas/Cors"
+          },
+          "custom_domain": {
+            "$ref": "#/components/schemas/CustomDomain"
+          },
+          "default_backend": {
+            "$ref": "#/components/schemas/DefaultBackendEnabled"
+          },
+          "default_domain": {
+            "$ref": "#/components/schemas/DefaultDomain"
+          },
+          "enabled": {
+            "description": "whether ingress is enabled or not",
+            "type": "boolean"
+          },
+          "gcp_cloud_cdn": {
+            "$ref": "#/components/schemas/GcpCloudCdn"
+          },
+          "legacy": {
+            "description": "whether ingress is legacy (nginx ingress) or not (gce ingress) - read/write",
+            "type": "boolean"
+          },
+          "whitelist": {
+            "$ref": "#/components/schemas/Whitelist"
+          }
+        },
+        "type": "object"
+      },
+      "AdminNamespaceEnvelopeV22": {
+        "properties": {
+          "code": {
+            "description": "HTTP response code",
+            "example": "204",
+            "type": "integer"
+          },
+          "error": {
+            "description": "error flag, possible values true|false",
+            "example": false,
+            "type": "boolean"
+          },
+          "instance": {
+            "$ref": "#/components/schemas/AdminNamespaceResponseV22"
+          },
+          "message": {
+            "description": "Error message",
+            "example": "Instance doesn't exits",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AdminNamespaceResponseV22": {
+        "properties": {
+          "additional_apps": {
+            "$ref": "#/components/schemas/AdminAdditionalAppsV22"
+          },
+          "api_disabled": {
+            "type": "boolean"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "azure_log_analytics": {
+            "$ref": "#/components/schemas/AzureLogAnalytics"
+          },
+          "backend_cache": {
+            "$ref": "#/components/schemas/BackendCache"
+          },
+          "basic_auth": {
+            "$ref": "#/components/schemas/BasicAuth"
+          },
+          "created_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "datadog": {
+            "$ref": "#/components/schemas/DatadogV22"
+          },
+          "docker_image_namespace": {
+            "type": "string"
+          },
+          "environment_type": {
+            "type": "string"
+          },
+          "fastly": {
+            "$ref": "#/components/schemas/Fastly"
+          },
+          "filebeat": {
+            "$ref": "#/components/schemas/Filebeat"
+          },
+          "front_version": {
+            "description": "Docker image id",
+            "type": "string"
+          },
+          "gcp_project": {
+            "type": "string"
+          },
+          "ingress": {
+            "$ref": "#/components/schemas/AdminIngress"
+          },
+          "instance_domain": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "instance_namespace": {
+            "maxLength": 63,
+            "minLength": 2,
+            "type": "string"
+          },
+          "isolated_workloads": {
+            "$ref": "#/components/schemas/IsolatedWorkloads"
+          },
+          "labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "logs": {
+            "$ref": "#/components/schemas/Logs"
+          },
+          "loki": {
+            "$ref": "#/components/schemas/Loki"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/Metrics"
+          },
+          "monitoring": {
+            "$ref": "#/components/schemas/Monitoring"
+          },
+          "new_cert_manager": {
+            "type": "boolean"
+          },
+          "newrelic": {
+            "$ref": "#/components/schemas/Newrelic"
+          },
+          "nginx": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "open_telemetry": {
+            "$ref": "#/components/schemas/OpenTelemetry"
+          },
+          "org_id": {
+            "type": "integer"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "redirects": {
+            "$ref": "#/components/schemas/Redirects"
+          },
+          "redis": {
+            "$ref": "#/components/schemas/Redis"
+          },
+          "region": {
+            "type": "string"
+          },
+          "toleration_and_node_selector_on_env_type": {
+            "$ref": "#/components/schemas/TolerationAndNodeSelectorOnEnvType"
+          },
+          "updated_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "use_lets_encrypt": {
+            "type": "boolean"
+          },
+          "vsf": {
+            "$ref": "#/components/schemas/AdminVsfV22"
+          },
+          "vsf_api": {
+            "$ref": "#/components/schemas/VsfApiV22"
+          },
+          "vsf_api_version": {
+            "type": "string"
+          },
+          "vsf_version": {
+            "type": "string"
+          },
+          "vue_api": {
+            "$ref": "#/components/schemas/VueApi"
+          },
+          "www_redirect": {
+            "description": "Enable or disable WWW redirect",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_content_type_options_tag": {
+            "enum": [
+              "nosniff"
+            ],
+            "nullable": true,
+            "type": "string"
+          },
+          "x_frame_options": {
+            "description": "Enable or disable X-Frame-Options header",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_robots_tag": {
+            "description": "Change X-Robots-Tag header value",
+            "example": "none",
+            "type": "string"
+          }
+        },
+        "required": [
+          "docker_image_namespace"
+        ],
+        "type": "object"
+      },
+      "AdminNamespaceSchemaV22": {
+        "properties": {
+          "additional_apps": {
+            "$ref": "#/components/schemas/AdminAdditionalAppsV22"
+          },
+          "api_disabled": {
+            "type": "boolean"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "azure_log_analytics": {
+            "$ref": "#/components/schemas/AzureLogAnalytics"
+          },
+          "backend_cache": {
+            "$ref": "#/components/schemas/BackendCache"
+          },
+          "basic_auth": {
+            "$ref": "#/components/schemas/BasicAuth"
+          },
+          "created_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "datadog": {
+            "$ref": "#/components/schemas/DatadogV22"
+          },
+          "environment_type": {
+            "type": "string"
+          },
+          "fastly": {
+            "$ref": "#/components/schemas/Fastly"
+          },
+          "filebeat": {
+            "$ref": "#/components/schemas/Filebeat"
+          },
+          "front_version": {
+            "description": "Docker image id",
+            "type": "string"
+          },
+          "gcp_project": {
+            "type": "string"
+          },
+          "ingress": {
+            "$ref": "#/components/schemas/AdminIngress"
+          },
+          "instance_domain": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "instance_namespace": {
+            "maxLength": 63,
+            "minLength": 2,
+            "type": "string"
+          },
+          "isolated_workloads": {
+            "$ref": "#/components/schemas/IsolatedWorkloads"
+          },
+          "labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "logs": {
+            "$ref": "#/components/schemas/Logs"
+          },
+          "loki": {
+            "$ref": "#/components/schemas/Loki"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/Metrics"
+          },
+          "monitoring": {
+            "$ref": "#/components/schemas/Monitoring"
+          },
+          "new_cert_manager": {
+            "type": "boolean"
+          },
+          "newrelic": {
+            "$ref": "#/components/schemas/Newrelic"
+          },
+          "nginx": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "open_telemetry": {
+            "$ref": "#/components/schemas/OpenTelemetry"
+          },
+          "org_id": {
+            "type": "integer"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "redirects": {
+            "$ref": "#/components/schemas/Redirects"
+          },
+          "redis": {
+            "$ref": "#/components/schemas/Redis"
+          },
+          "region": {
+            "type": "string"
+          },
+          "toleration_and_node_selector_on_env_type": {
+            "$ref": "#/components/schemas/TolerationAndNodeSelectorOnEnvType"
+          },
+          "updated_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "use_lets_encrypt": {
+            "type": "boolean"
+          },
+          "vsf": {
+            "$ref": "#/components/schemas/AdminVsfV22"
+          },
+          "vsf_api": {
+            "$ref": "#/components/schemas/VsfApiV22"
+          },
+          "vsf_api_version": {
+            "type": "string"
+          },
+          "vsf_version": {
+            "type": "string"
+          },
+          "vue_api": {
+            "$ref": "#/components/schemas/VueApi"
+          },
+          "www_redirect": {
+            "description": "Enable or disable WWW redirect",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_content_type_options_tag": {
+            "enum": [
+              "nosniff"
+            ],
+            "nullable": true,
+            "type": "string"
+          },
+          "x_frame_options": {
+            "description": "Enable or disable X-Frame-Options header",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_robots_tag": {
+            "description": "Change X-Robots-Tag header value",
+            "example": "none",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AdminVsfV22": {
+        "properties": {
+          "env_var": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EnvVar"
+            },
+            "description": "Extra variables injected into the deployment",
+            "type": "object"
+          },
+          "health_check": {
+            "$ref": "#/components/schemas/AdminHealthCheckVsfWrap"
+          },
+          "hpa": {
+            "$ref": "#/components/schemas/Hpa"
+          },
+          "local_cloud_json": {
+            "$ref": "#/components/schemas/LocalCloudJson"
+          }
+        },
+        "type": "object"
+      },
+      "App": {
+        "properties": {
+          "env_var": {
+            "items": {
+              "$ref": "#/components/schemas/EnvVar"
+            },
+            "type": "array"
+          },
+          "has_base_path": {
+            "type": "boolean"
+          },
+          "health_check": {
+            "$ref": "#/components/schemas/HealthCheckAdditionalAppsWrap"
+          },
+          "image": {
+            "description": "Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io",
+            "example": "registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "port": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AppV22": {
+        "properties": {
+          "env_var": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EnvVar"
+            },
+            "description": "Extra variables injected into the deployment",
+            "type": "object"
+          },
+          "has_base_path": {
+            "type": "boolean"
+          },
+          "health_check": {
+            "$ref": "#/components/schemas/HealthCheckAdditionalAppsWrap"
+          },
+          "image": {
+            "description": "Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io",
+            "example": "registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "port": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AzureLogAnalytics": {
+        "properties": {
+          "add_tag_field": {
+            "description": "Whether to add tag field to record",
+            "type": "boolean"
+          },
+          "add_time_field": {
+            "description": "Whether to add field with current time to records",
+            "type": "boolean"
+          },
+          "customer_id": {
+            "description": "Azure Operations Management Suite workspace ID",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "whether to enable Azure Log Analytics logging",
+            "type": "boolean"
+          },
+          "endpoint": {
+            "description": "custom service endpoint for clients that use private azure cloud",
+            "type": "string"
+          },
+          "local_time": {
+            "description": "Whether to use local time in inserted time record",
+            "type": "boolean"
+          },
+          "log_type": {
+            "description": "Name of event type that is being submitted to Azure Log Analytics e.g. AccessLogs",
+            "enum": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e",
+              "f",
+              "g",
+              "h",
+              "i",
+              "j",
+              "k",
+              "l",
+              "m",
+              "n",
+              "o",
+              "p",
+              "q",
+              "r",
+              "s",
+              "t",
+              "u",
+              "v",
+              "w",
+              "x",
+              "y",
+              "z",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O",
+              "P",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "U",
+              "V",
+              "W",
+              "X",
+              "Y",
+              "Z",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "minLength": 1,
+            "type": "string"
+          },
+          "shared_key": {
+            "description": "primary or secondary Connected Sources client auth key",
+            "type": "string"
+          },
+          "tag_field_name": {
+            "description": "Name of field with custom tag",
+            "type": "string"
+          },
+          "time_field_name": {
+            "description": "Name of field with inserted time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "BackendCache": {
+        "properties": {
+          "enabled": {
+            "description": "whether to enable Backend Cache feature",
+            "type": "boolean"
+          },
+          "maxmemory_policy": {
+            "description": "noevictioneviction policies for the redis instance, allowed values: ,allkeys-lrueviction policies for the redis instance, allowed values: ,allkeys-lfueviction policies for the redis instance, allowed values: ,volatile-lrueviction policies for the redis instance, allowed values: ,volatile-lfueviction policies for the redis instance, allowed values: ,allkeys-randomeviction policies for the redis instance, allowed values: ,volatile-randomeviction policies for the redis instance, allowed values: ,volatile-ttl",
+            "enum": [
+              "noeviction",
+              "allkeys-lru",
+              "allkeys-lfu",
+              "volatile-lru",
+              "volatile-lfu",
+              "allkeys-random",
+              "volatile-random",
+              "volatile-ttl"
+            ],
+            "type": "string"
+          },
+          "memory_size_gb": {
+            "description": "size of the instance in gigabytes",
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "override_service_name": {
+            "description": "whether to override the default service name (redis) with the backend-cache-redis",
+            "type": "boolean"
+          },
+          "tier": {
+            "description": "tier to user, either BASIC or STANDARD_HA",
+            "enum": [
+              "BASIC",
+              "STANDARD_HA"
+            ],
+            "type": "string"
+          },
+          "version": {
+            "description": "version of the instance, either REDIS_4_0, REDIS_5_0 or REDIS_6_X",
+            "enum": [
+              "REDIS_4_0",
+              "REDIS_5_0",
+              "REDIS_6_X"
+            ],
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Base": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "maxReturnedMetrics": {
+            "type": "integer"
+          },
+          "metrics": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "BasicAuth": {
+        "properties": {
+          "allowed_ips": {
+            "description": "List containing IP addresses",
+            "items": {
+              "description": "IP addresses as interface (eg. '1.2.3.4/24')"
+            },
+            "type": "array"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "login": {
+            "description": "Basic Auth login data",
+            "type": "string",
+            "writeOnly": true
+          },
+          "pass_hash": {
+            "description": "Basic Auth base64 encoded hash of login/pass (`htpasswd -nb user pass | base64`)",
+            "type": "string"
+          },
+          "password": {
+            "description": "Basic Auth password data",
+            "type": "string",
+            "writeOnly": true
+          }
+        },
+        "type": "object"
+      },
+      "ContainerStatus": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "restarts": {
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "Waiting",
+              "Running",
+              "Terminated"
+            ],
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "ContainerStatusV22": {
+        "properties": {
+          "image": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "restarts": {
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "Waiting",
+              "Running",
+              "Terminated"
+            ],
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Cors": {
+        "properties": {
+          "allow_credentials": {
+            "description": "Enable or disable Access-Control-Allow-Credentails in cross-origin requests",
+            "type": "boolean"
+          },
+          "allow_headers": {
+            "description": "List containing headers allowed to be sent in cross-origin request",
+            "items": {
+              "example": "X-My-Header",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "allow_methods": {
+            "description": "List containing methods allowed to be used in CORS requests",
+            "items": {
+              "example": "GET",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "allow_origin": {
+            "description": "List containing headers allowed to be sent in cross-origin request",
+            "items": {
+              "example": "http://some.origin",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "cors_max_age": {
+            "description": "how long responses to pre-flight requests are allowed to be cached by browsers",
+            "example": "600",
+            "type": "integer"
+          },
+          "enabled": {
+            "description": "Enable or disable CORS settings",
+            "type": "boolean"
+          },
+          "expose_headers": {
+            "description": "List containing headers allowed to be allowed in cross-origin response",
+            "items": {
+              "example": "X-My-Header",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "CustomDomain": {
+        "properties": {
+          "domains": {
+            "description": "Array containing list of domains to add or domain objects",
+            "items": {
+              "example": "mydomain.com or {\"name\":\"mydomain.com\", \"secret_name\": \"custom-tls\"}"
+            },
+            "type": "array"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "CustomErrorPage": {
+        "properties": {
+          "body": {
+            "description": "Base64 encoded HTML of custom error page",
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "Datadog": {
+        "properties": {
+          "api_key": {
+            "type": "string"
+          },
+          "apm": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "env_var": {
+            "items": {
+              "$ref": "#/components/schemas/EnvVar"
+            },
+            "type": "array"
+          },
+          "logs": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "DatadogV22": {
+        "properties": {
+          "api_key": {
+            "type": "string"
+          },
+          "apm": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "env_var": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EnvVar"
+            },
+            "description": "Extra variables injected into the deployment",
+            "type": "object"
+          },
+          "logs": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "DefaultBackendEnabled": {
+        "properties": {
+          "enabled": {
+            "description": "whether to enable default backend on the GCE Ingress",
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "DefaultDomain": {
+        "properties": {
+          "disabled": {
+            "description": "Enable or disable default project's domain",
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "DeployCheck": {
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "deployed": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Enabled": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "EnvVar": {
+        "properties": {
+          "is_secret": {
+            "description": "Flag to mark environment variable as a secret",
+            "type": "boolean"
+          },
+          "name": {
+            "description": "Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "EnvVarWithFilter": {
+        "properties": {
+          "is_secret": {
+            "description": "Flag to mark environment variable as a secret",
+            "type": "boolean"
+          },
+          "name": {
+            "description": "Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+            "type": "string"
+          },
+          "only_for": {
+            "description": "split API deployment to exclusively set variable for (without leading slash)",
+            "example": "api",
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Error": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Events": {
+        "properties": {
+          "count": {
+            "type": "string"
+          },
+          "last_seen": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Fastly": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "hostname": {
+            "type": "string"
+          },
+          "nucleus_instance_uuid": {
+            "format": "uuid",
+            "readOnly": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Filebeat": {
+        "properties": {
+          "enabled": {
+            "description": "Enable or disable Filebeat for logs",
+            "example": true,
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "FlushCache": {
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "result": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GcpCloudCdn": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "query_string_allowlist": {
+            "description": "List containing names of query string parameters to include in cache keysAll other parameters are excluded. You can specify `query_string_denylist` or `query_string_allowlist`, but not both.",
+            "items": {
+              "example": "someQueryString",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "query_string_denylist": {
+            "description": "List containing names of query string parameters to exclude from cache keysAll other parameters are included. You can specify `query_string_denylist` or `query_string_allowlist`, but not both.",
+            "items": {
+              "example": "someQueryString",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "HealthCheckAdditionalAppsWrap": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "path": {
+            "description": "relative path to use in HTTP request",
+            "example": "/some/path",
+            "type": "string"
+          },
+          "timeout_seconds": {
+            "description": "number of seconds representing probe timeout,min: 1, max 30",
+            "maximum": 30,
+            "minimum": 1,
+            "nullable": true,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "HealthCheckV22": {
+        "properties": {
+          "liveness_probe": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Enabled"
+              }
+            ],
+            "readOnly": true
+          },
+          "readiness_probe": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Enabled"
+              }
+            ],
+            "readOnly": true
+          }
+        },
+        "type": "object"
+      },
+      "HealthCheckVsfWrap": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "path": {
+            "type": "string"
+          },
+          "timeout_seconds": {
+            "description": "number of seconds representing probe timeout,min: 1, max 30",
+            "maximum": 30,
+            "minimum": 1,
+            "nullable": true,
+            "type": "integer"
+          },
+          "url": {
+            "description": "Relative path to use in HTTP request",
+            "example": "/some/path",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "HostAliases": {
+        "properties": {
+          "hostname": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Hpa": {
+        "properties": {
+          "max_replicas": {
+            "type": "integer"
+          },
+          "min_replicas": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "Ingress": {
+        "properties": {
+          "cors": {
+            "$ref": "#/components/schemas/Cors"
+          },
+          "custom_domain": {
+            "$ref": "#/components/schemas/CustomDomain"
+          },
+          "default_domain": {
+            "$ref": "#/components/schemas/DefaultDomain"
+          },
+          "gcp_cloud_cdn": {
+            "$ref": "#/components/schemas/GcpCloudCdn"
+          },
+          "legacy": {
+            "description": "whether ingress is legacy (nginx ingress) or not (gce ingress) - read only",
+            "readOnly": true,
+            "type": "boolean"
+          },
+          "whitelist": {
+            "$ref": "#/components/schemas/Whitelist"
+          }
+        },
+        "type": "object"
+      },
+      "IngressEnvelope": {
+        "properties": {
+          "code": {
+            "description": "response code",
+            "type": "integer"
+          },
+          "ingresses": {
+            "items": {
+              "$ref": "#/components/schemas/K8sIngress"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "InstanceErrorEnvelope": {
+        "properties": {
+          "code": {
+            "description": "HTTP response code",
+            "example": 500,
+            "type": "integer"
+          },
+          "error": {
+            "description": "Error occurs",
+            "example": true,
+            "type": "boolean"
+          },
+          "instance": {
+            "type": "object"
+          },
+          "message": {
+            "description": "Error message",
+            "example": "Instance doesn't exists",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "IsolatedWorkloads": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "selector": {
+            "$ref": "#/components/schemas/IsolatedWorkloadsSelector"
+          }
+        },
+        "required": [
+          "enabled",
+          "selector"
+        ],
+        "type": "object"
+      },
+      "IsolatedWorkloadsSelector": {
+        "properties": {
+          "match_labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "K8sIngress": {
+        "properties": {
+          "domains": {
+            "readOnly": true
+          },
+          "ip": {
+            "readOnly": true
+          },
+          "type": {
+            "readOnly": true
+          },
+          "url_map": {
+            "description": "url map name (for GCE ingresses)",
+            "readOnly": true
+          }
+        },
+        "type": "object"
+      },
+      "LocalCloudJson": {
+        "properties": {
+          "disabled": {
+            "description": "Disable default local-cloud.json injecting",
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "Logs": {
+        "properties": {
+          "backend": {
+            "$ref": "#/components/schemas/LogsBackend"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "LogsBackend": {
+        "properties": {
+          "elasticsearch": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "gcp": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "Loki": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "extra_labels": {
+            "description": "Grafana loki extra labels in json format",
+            "type": "object"
+          },
+          "password": {
+            "description": "Grafana loki user password",
+            "type": "string"
+          },
+          "url": {
+            "description": "Grafana loki endpoint for example 'https://logs-prod-us-central1.grafana.net'",
+            "type": "string"
+          },
+          "username": {
+            "description": "Grafana loki username",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Metrics": {
+        "properties": {
+          "middleware": {
+            "$ref": "#/components/schemas/Base"
+          },
+          "ssr": {
+            "$ref": "#/components/schemas/Base"
+          }
+        },
+        "type": "object"
+      },
+      "Monitoring": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "oncall": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "pagerduty": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "stakater": {
+            "$ref": "#/components/schemas/Stakater"
+          }
+        },
+        "type": "object"
+      },
+      "Namespace": {
+        "properties": {
+          "additional_apps": {
+            "$ref": "#/components/schemas/AdditionalApps"
+          },
+          "api_disabled": {
+            "type": "boolean"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "azure_log_analytics": {
+            "$ref": "#/components/schemas/AzureLogAnalytics"
+          },
+          "basic_auth": {
+            "$ref": "#/components/schemas/BasicAuth"
+          },
+          "created_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "datadog": {
+            "$ref": "#/components/schemas/Datadog"
+          },
+          "environment_type": {
+            "type": "string"
+          },
+          "filebeat": {
+            "$ref": "#/components/schemas/Filebeat"
+          },
+          "front_version": {
+            "description": "Docker image id",
+            "type": "string"
+          },
+          "ingress": {
+            "$ref": "#/components/schemas/Ingress"
+          },
+          "instance_domain": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "instance_namespace": {
+            "maxLength": 63,
+            "minLength": 2,
+            "type": "string"
+          },
+          "loki": {
+            "$ref": "#/components/schemas/Loki"
+          },
+          "new_cert_manager": {
+            "type": "boolean"
+          },
+          "newrelic": {
+            "$ref": "#/components/schemas/Newrelic"
+          },
+          "nginx": {
+            "$ref": "#/components/schemas/Nginx"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "redis": {
+            "$ref": "#/components/schemas/Redis"
+          },
+          "region": {
+            "type": "string"
+          },
+          "updated_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "use_lets_encrypt": {
+            "type": "boolean"
+          },
+          "vsf": {
+            "$ref": "#/components/schemas/Vsf"
+          },
+          "vsf_api": {
+            "$ref": "#/components/schemas/VsfApi"
+          },
+          "vsf_api_version": {
+            "type": "string"
+          },
+          "vsf_version": {
+            "type": "string"
+          },
+          "vue_api": {
+            "$ref": "#/components/schemas/VueApi"
+          },
+          "www_redirect": {
+            "description": "Enable or disable WWW redirect",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_content_type_options_tag": {
+            "enum": [
+              "nosniff"
+            ],
+            "nullable": true,
+            "type": "string"
+          },
+          "x_frame_options": {
+            "description": "Enable or disable X-Frame-Options header",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_robots_tag": {
+            "description": "Change X-Robots-Tag header value",
+            "example": "none",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "NamespaceEnvelope": {
+        "properties": {
+          "code": {
+            "description": "HTTP response code",
+            "example": "204",
+            "type": "integer"
+          },
+          "error": {
+            "description": "error flag, possible values true|false",
+            "example": false,
+            "type": "boolean"
+          },
+          "instance": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NamespaceResponse"
+              }
+            ],
+            "description": "instance object"
+          },
+          "message": {
+            "description": "Error message",
+            "example": "Instance doesn't exits",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "NamespaceEnvelopeV22": {
+        "properties": {
+          "code": {
+            "description": "HTTP response code",
+            "example": "204",
+            "type": "integer"
+          },
+          "error": {
+            "description": "error flag, possible values true|false",
+            "example": false,
+            "type": "boolean"
+          },
+          "instance": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NamespaceResponseV22"
+              }
+            ],
+            "description": "instance object"
+          },
+          "message": {
+            "description": "Error message",
+            "example": "Instance doesn't exits",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "NamespaceResponse": {
+        "properties": {
+          "additional_apps": {
+            "$ref": "#/components/schemas/AdditionalApps"
+          },
+          "api_disabled": {
+            "type": "boolean"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "azure_log_analytics": {
+            "$ref": "#/components/schemas/AzureLogAnalytics"
+          },
+          "basic_auth": {
+            "$ref": "#/components/schemas/BasicAuth"
+          },
+          "created_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "datadog": {
+            "$ref": "#/components/schemas/Datadog"
+          },
+          "docker_image_namespace": {
+            "type": "string"
+          },
+          "environment_type": {
+            "type": "string"
+          },
+          "filebeat": {
+            "$ref": "#/components/schemas/Filebeat"
+          },
+          "front_version": {
+            "type": "string"
+          },
+          "gcp_project": {
+            "type": "string"
+          },
+          "ingress": {
+            "$ref": "#/components/schemas/Ingress"
+          },
+          "instance_domain": {
+            "type": "string"
+          },
+          "instance_namespace": {
+            "type": "string"
+          },
+          "loki": {
+            "$ref": "#/components/schemas/Loki"
+          },
+          "new_cert_manager": {
+            "type": "boolean"
+          },
+          "newrelic": {
+            "$ref": "#/components/schemas/Newrelic"
+          },
+          "nginx": {
+            "$ref": "#/components/schemas/Nginx"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "redis": {
+            "$ref": "#/components/schemas/Redis"
+          },
+          "region": {
+            "type": "string"
+          },
+          "updated_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "use_lets_encrypt": {
+            "type": "boolean"
+          },
+          "vsf": {
+            "$ref": "#/components/schemas/Vsf"
+          },
+          "vsf_api": {
+            "$ref": "#/components/schemas/VsfApi"
+          },
+          "vsf_api_version": {
+            "type": "string"
+          },
+          "vsf_version": {
+            "type": "string"
+          },
+          "vue_api": {
+            "$ref": "#/components/schemas/VueApi"
+          },
+          "www_redirect": {
+            "description": "Enable or disable WWW redirect",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_content_type_options_tag": {
+            "enum": [
+              "nosniff"
+            ],
+            "nullable": true,
+            "type": "string"
+          },
+          "x_frame_options": {
+            "description": "Enable or disable X-Frame-Options header",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_robots_tag": {
+            "description": "Change X-Robots-Tag header value",
+            "example": "none",
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at",
+          "docker_image_namespace",
+          "environment_type",
+          "front_version",
+          "gcp_project",
+          "instance_domain",
+          "instance_namespace",
+          "new_cert_manager",
+          "provider",
+          "region",
+          "updated_at",
+          "use_lets_encrypt",
+          "vsf_version"
+        ],
+        "type": "object"
+      },
+      "NamespaceResponseV22": {
+        "properties": {
+          "additional_apps": {
+            "$ref": "#/components/schemas/AdditionalAppsV22"
+          },
+          "api_disabled": {
+            "type": "boolean"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "azure_log_analytics": {
+            "$ref": "#/components/schemas/AzureLogAnalytics"
+          },
+          "backend_cache": {
+            "$ref": "#/components/schemas/BackendCache"
+          },
+          "basic_auth": {
+            "$ref": "#/components/schemas/BasicAuth"
+          },
+          "created_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "datadog": {
+            "$ref": "#/components/schemas/DatadogV22"
+          },
+          "docker_image_namespace": {
+            "type": "string"
+          },
+          "environment_type": {
+            "type": "string"
+          },
+          "fastly": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Fastly"
+              }
+            ],
+            "readOnly": true
+          },
+          "filebeat": {
+            "$ref": "#/components/schemas/Filebeat"
+          },
+          "front_version": {
+            "type": "string"
+          },
+          "gcp_project": {
+            "type": "string"
+          },
+          "ingress": {
+            "$ref": "#/components/schemas/Ingress"
+          },
+          "instance_domain": {
+            "type": "string"
+          },
+          "instance_namespace": {
+            "type": "string"
+          },
+          "labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "readOnly": true,
+            "type": "object"
+          },
+          "loki": {
+            "$ref": "#/components/schemas/Loki"
+          },
+          "new_cert_manager": {
+            "type": "boolean"
+          },
+          "newrelic": {
+            "$ref": "#/components/schemas/Newrelic"
+          },
+          "nginx": {
+            "$ref": "#/components/schemas/Nginx"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "redis": {
+            "$ref": "#/components/schemas/Redis"
+          },
+          "region": {
+            "type": "string"
+          },
+          "updated_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "use_lets_encrypt": {
+            "type": "boolean"
+          },
+          "vsf": {
+            "$ref": "#/components/schemas/VsfV22"
+          },
+          "vsf_api": {
+            "$ref": "#/components/schemas/VsfApiV22"
+          },
+          "vsf_api_version": {
+            "type": "string"
+          },
+          "vsf_version": {
+            "type": "string"
+          },
+          "vue_api": {
+            "$ref": "#/components/schemas/VueApi"
+          },
+          "www_redirect": {
+            "description": "Enable or disable WWW redirect",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_content_type_options_tag": {
+            "enum": [
+              "nosniff"
+            ],
+            "nullable": true,
+            "type": "string"
+          },
+          "x_frame_options": {
+            "description": "Enable or disable X-Frame-Options header",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_robots_tag": {
+            "description": "Change X-Robots-Tag header value",
+            "example": "none",
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at",
+          "docker_image_namespace",
+          "environment_type",
+          "front_version",
+          "gcp_project",
+          "instance_domain",
+          "instance_namespace",
+          "new_cert_manager",
+          "provider",
+          "region",
+          "updated_at",
+          "use_lets_encrypt",
+          "vsf_version"
+        ],
+        "type": "object"
+      },
+      "NamespaceStatus": {
+        "properties": {
+          "code": {
+            "description": "response code",
+            "type": "integer"
+          },
+          "error": {
+            "description": "only for error, should be bool",
+            "type": "string"
+          },
+          "is_exists": {
+            "description": "True or False, if instance exists or not",
+            "type": "boolean"
+          },
+          "message": {
+            "description": "additional message, displays error message as well",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "NamespaceV22": {
+        "properties": {
+          "additional_apps": {
+            "$ref": "#/components/schemas/AdditionalAppsV22"
+          },
+          "api_disabled": {
+            "type": "boolean"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "azure_log_analytics": {
+            "$ref": "#/components/schemas/AzureLogAnalytics"
+          },
+          "basic_auth": {
+            "$ref": "#/components/schemas/BasicAuth"
+          },
+          "created_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "datadog": {
+            "$ref": "#/components/schemas/DatadogV22"
+          },
+          "environment_type": {
+            "type": "string"
+          },
+          "fastly": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Fastly"
+              }
+            ],
+            "readOnly": true
+          },
+          "filebeat": {
+            "$ref": "#/components/schemas/Filebeat"
+          },
+          "front_version": {
+            "description": "Docker image id",
+            "type": "string"
+          },
+          "ingress": {
+            "$ref": "#/components/schemas/Ingress"
+          },
+          "instance_domain": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "instance_namespace": {
+            "maxLength": 63,
+            "minLength": 2,
+            "type": "string"
+          },
+          "labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "readOnly": true,
+            "type": "object"
+          },
+          "loki": {
+            "$ref": "#/components/schemas/Loki"
+          },
+          "new_cert_manager": {
+            "type": "boolean"
+          },
+          "newrelic": {
+            "$ref": "#/components/schemas/Newrelic"
+          },
+          "nginx": {
+            "$ref": "#/components/schemas/Nginx"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "redis": {
+            "$ref": "#/components/schemas/Redis"
+          },
+          "region": {
+            "type": "string"
+          },
+          "updated_at": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "use_lets_encrypt": {
+            "type": "boolean"
+          },
+          "vsf": {
+            "$ref": "#/components/schemas/VsfV22"
+          },
+          "vsf_api": {
+            "$ref": "#/components/schemas/VsfApiV22"
+          },
+          "vsf_api_version": {
+            "type": "string"
+          },
+          "vsf_version": {
+            "type": "string"
+          },
+          "vue_api": {
+            "$ref": "#/components/schemas/VueApi"
+          },
+          "www_redirect": {
+            "description": "Enable or disable WWW redirect",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_content_type_options_tag": {
+            "enum": [
+              "nosniff"
+            ],
+            "nullable": true,
+            "type": "string"
+          },
+          "x_frame_options": {
+            "description": "Enable or disable X-Frame-Options header",
+            "example": true,
+            "type": "boolean"
+          },
+          "x_robots_tag": {
+            "description": "Change X-Robots-Tag header value",
+            "example": "none",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "NewRelicInfra": {
+        "properties": {
+          "license_key": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Newrelic": {
+        "properties": {
+          "api_insert_key": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "newrelic_infra": {
+            "$ref": "#/components/schemas/NewRelicInfra"
+          }
+        },
+        "type": "object"
+      },
+      "Nginx": {
+        "properties": {
+          "custom_error_page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CustomErrorPage"
+              }
+            ],
+            "description": "Custom error page configuration"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetry": {
+        "properties": {
+          "attributes": {
+            "$ref": "#/components/schemas/OpenTelemetryAttributes"
+          },
+          "integrations": {
+            "$ref": "#/components/schemas/OpenTelemetryIntegrations"
+          },
+          "logLevel": {
+            "type": "string"
+          },
+          "replicaCount": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryAttributes": {
+        "properties": {
+          "environment": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryDatadogExporters": {
+        "properties": {
+          "apm": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "logs": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "traces": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryDynatraceExporters": {
+        "properties": {
+          "logs": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "traces": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryIntegrations": {
+        "properties": {
+          "datadog": {
+            "$ref": "#/components/schemas/OpenTelemetryIntegrationsDatadog"
+          },
+          "dynatrace": {
+            "$ref": "#/components/schemas/OpenTelemetryIntegrationsDynatrace"
+          },
+          "jaeger": {
+            "$ref": "#/components/schemas/OpenTelemetryIntegrationsJaeger"
+          },
+          "newrelic": {
+            "$ref": "#/components/schemas/OpenTelemetryIntegrationsNewrelic"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryIntegrationsDatadog": {
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "exporters": {
+            "$ref": "#/components/schemas/OpenTelemetryDatadogExporters"
+          },
+          "logsIntakeEndpoint": {
+            "type": "string"
+          },
+          "site": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryIntegrationsDynatrace": {
+        "properties": {
+          "apiToken": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "exporters": {
+            "$ref": "#/components/schemas/OpenTelemetryDynatraceExporters"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryIntegrationsJaeger": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "exporters": {
+            "$ref": "#/components/schemas/OpenTelemetryJaegerExporters"
+          },
+          "tlsInsecure": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryIntegrationsNewrelic": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "exporters": {
+            "$ref": "#/components/schemas/OpenTelemetryNewrelicExporters"
+          },
+          "licenseKey": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryJaegerExporters": {
+        "properties": {
+          "traces": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "OpenTelemetryNewrelicExporters": {
+        "properties": {
+          "logs": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "traces": {
+            "$ref": "#/components/schemas/Enabled"
+          }
+        },
+        "type": "object"
+      },
+      "Pod": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PodDetails": {
+        "properties": {
+          "error": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "pod": {
+            "$ref": "#/components/schemas/PodStatusV22"
+          }
+        },
+        "type": "object"
+      },
+      "PodEnvVar": {
+        "properties": {
+          "container_name": {
+            "type": "string"
+          },
+          "is_secret": {
+            "description": "Flag to mark environment variable as a secret",
+            "type": "boolean"
+          },
+          "name": {
+            "description": "Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PodEnvVars": {
+        "properties": {
+          "containers": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "$ref": "#/components/schemas/PodEnvVar"
+              },
+              "description": "Extra variables injected into the deployment",
+              "type": "object"
+            },
+            "description": "Extra variables injected into the deployment",
+            "type": "object"
+          },
+          "errors": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Errors getting env vars from containers",
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "PodEnvelope": {
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "pods": {
+            "items": {
+              "$ref": "#/components/schemas/Pod"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PodItem": {
+        "properties": {
+          "containers": {
+            "type": "integer"
+          },
+          "isReady": {
+            "type": "boolean"
+          },
+          "isRolloutActive": {
+            "nullable": true,
+            "type": "boolean"
+          },
+          "isTerminating": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "readyContainers": {
+            "type": "integer"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "restarts": {
+            "type": "integer"
+          },
+          "startTime": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PodLogs": {
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "logs": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PodStatus": {
+        "properties": {
+          "containers": {
+            "items": {
+              "$ref": "#/components/schemas/ContainerStatus"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start_time": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "Running",
+              "Pending",
+              "Failed",
+              "Unknown",
+              "Succeeded"
+            ],
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PodStatusEnvelope": {
+        "properties": {
+          "error": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "pod": {
+            "$ref": "#/components/schemas/PodStatus"
+          }
+        },
+        "type": "object"
+      },
+      "PodStatusV22": {
+        "properties": {
+          "containers": {
+            "items": {
+              "$ref": "#/components/schemas/ContainerStatusV22"
+            },
+            "type": "array"
+          },
+          "env_vars": {
+            "$ref": "#/components/schemas/PodEnvVars"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/Events"
+            },
+            "type": "array"
+          },
+          "is_ready": {
+            "type": "boolean"
+          },
+          "is_rollout_active": {
+            "nullable": true,
+            "type": "boolean"
+          },
+          "is_terminating": {
+            "type": "boolean"
+          },
+          "labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start_time": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "Running",
+              "Pending",
+              "Failed",
+              "Unknown",
+              "Succeeded"
+            ],
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PodsList": {
+        "properties": {
+          "error": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "pods": {
+            "items": {
+              "$ref": "#/components/schemas/PodItem"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "Redirects": {
+        "properties": {
+          "fetch_uri_map_from_file": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "to_lower_case": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "to_no_trailing_slash": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "to_www": {
+            "$ref": "#/components/schemas/Enabled"
+          },
+          "uri_map": {
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "Redis": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "resources": {
+            "$ref": "#/components/schemas/Resources"
+          },
+          "service": {
+            "$ref": "#/components/schemas/Service"
+          }
+        },
+        "type": "object"
+      },
+      "Resources": {
+        "properties": {
+          "limits": {
+            "$ref": "#/components/schemas/ResourcesRequestsLimits"
+          },
+          "requests": {
+            "$ref": "#/components/schemas/ResourcesRequestsLimits"
+          }
+        },
+        "type": "object"
+      },
+      "ResourcesRequestsLimits": {
+        "properties": {
+          "cpu": {
+            "type": "string"
+          },
+          "memory": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Rule": {
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "from",
+          "to"
+        ],
+        "type": "object"
+      },
+      "Service": {
+        "properties": {
+          "create": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "Stakater": {
+        "properties": {
+          "uptime_robot": {
+            "$ref": "#/components/schemas/UptimeRobot"
+          }
+        },
+        "type": "object"
+      },
+      "TolerationAndNodeSelectorOnEnvType": {
+        "properties": {
+          "enabled": {
+            "description": "whether to enable dedicated node pool support for instance",
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "UptimeRobot": {
+        "properties": {
+          "additional_contact_emails": {
+            "items": {
+              "format": "email",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "Vsf": {
+        "properties": {
+          "env_var": {
+            "description": "Extra variables injected into the deployment",
+            "items": {
+              "$ref": "#/components/schemas/EnvVar"
+            },
+            "type": "array"
+          },
+          "health_check": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HealthCheckVsfWrap"
+              }
+            ],
+            "description": "Healtcheck for frontend application"
+          },
+          "hpa": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Hpa"
+              }
+            ],
+            "readOnly": true
+          },
+          "local_cloud_json": {
+            "$ref": "#/components/schemas/LocalCloudJson"
+          }
+        },
+        "type": "object"
+      },
+      "VsfApi": {
+        "properties": {
+          "env_var": {
+            "items": {
+              "$ref": "#/components/schemas/EnvVarWithFilter"
+            },
+            "type": "array"
+          },
+          "host_aliases": {
+            "items": {
+              "$ref": "#/components/schemas/HostAliases"
+            },
+            "type": "array"
+          },
+          "hpa": {
+            "$ref": "#/components/schemas/Hpa"
+          },
+          "split_to": {
+            "items": {
+              "description": "List of relative urls to server split VSF1 API deployment",
+              "example": "[\"/api\",\"/img\"]",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "VsfApiV22": {
+        "properties": {
+          "env_var": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EnvVarWithFilter"
+            },
+            "description": "Extra variables injected into the deployment",
+            "type": "object"
+          },
+          "host_aliases": {
+            "items": {
+              "$ref": "#/components/schemas/HostAliases"
+            },
+            "type": "array"
+          },
+          "hpa": {
+            "$ref": "#/components/schemas/Hpa"
+          },
+          "split_to": {
+            "items": {
+              "description": "List of relative urls to server split VSF1 API deployment",
+              "example": "[\"/api\",\"/img\"]",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "VsfV22": {
+        "properties": {
+          "env_var": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EnvVar"
+            },
+            "description": "Extra variables injected into the deployment",
+            "type": "object"
+          },
+          "health_check": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HealthCheckVsfWrap"
+              }
+            ],
+            "description": "Healtcheck for frontend application"
+          },
+          "hpa": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Hpa"
+              }
+            ],
+            "readOnly": true
+          },
+          "local_cloud_json": {
+            "$ref": "#/components/schemas/LocalCloudJson"
+          }
+        },
+        "type": "object"
+      },
+      "VueApi": {
+        "properties": {
+          "api_ecosystem": {
+            "type": "boolean"
+          },
+          "health_check_url": {
+            "description": "Set endpoint for API healthchecks",
+            "example": true,
+            "type": "string"
+          },
+          "resources": {
+            "$ref": "#/components/schemas/VueApiResources"
+          }
+        },
+        "type": "object"
+      },
+      "VueApiResources": {
+        "properties": {
+          "limits": {
+            "$ref": "#/components/schemas/VueApiResourcesConfig"
+          },
+          "requests": {
+            "$ref": "#/components/schemas/VueApiResourcesConfig"
+          }
+        },
+        "type": "object"
+      },
+      "VueApiResourcesConfig": {
+        "properties": {
+          "ephemeral_storage": {
+            "type": "string"
+          },
+          "memory": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Whitelist": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "ips": {
+            "description": "List containing IP addresses",
+            "items": {
+              "description": "IP addresses as interface (eg. '1.2.3.4/24')"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      }
+    },
+    "securitySchemas": {
+      "FarmerApiKey": {
+        "description": "API key (authentication token for farmer app in FusionAuth SSO)",
+        "in": "header",
+        "name": "X-Api-Key",
+        "type": "apiKey"
+      },
+      "FarmerUserId": {
+        "description": "User ID (e.g. from FusionAuth SSO)",
+        "in": "header",
+        "name": "X-User-Id",
+        "type": "apiKey"
+      }
+    }
+  },
+  "paths": {
+    "/healthz": {
+      "get": {
+        "tags": [],
+        "security": [],
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/cdn_cache/{instance}/host/{host}/path/{path}": {
+      "delete": {
+        "tags": [
+          "cdn"
+        ],
+        "security": [],
+        "parameters": [
+          {
+            "name": "host",
+            "schema": {
+              "type": "string"
+            },
+            "description": "domain invalidate for example: example.com",
+            "required": true,
+            "in": "host"
+          },
+          {
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "description": "base64 path to invalidate for example: cHJvZHVjdC9saXN0LzE=",
+            "required": true,
+            "in": "path"
+          },
+          {
+            "name": "instance",
+            "schema": {
+              "type": "string"
+            },
+            "description": "instance name for example: project-europe-west1-gcp-storefrontcloud-io",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "status": 200,
+            "description": "error occurred during invalidation attempt"
+          },
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "status": 200,
+            "description": "Invalidation in progress"
+          }
+        },
+        "description": "Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.",
+        "summary": "Endpoint to invalidate uri on specific instance for specific domain"
+      }
+    },
+    "/cdn_cache/{instance}/path/{path}": {
+      "delete": {
+        "tags": [
+          "cdn"
+        ],
+        "security": [],
+        "parameters": [
+          {
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "description": "base64 path to invalidate for example: cHJvZHVjdC9saXN0LzE=",
+            "required": true,
+            "in": "path"
+          },
+          {
+            "name": "instance",
+            "schema": {
+              "type": "string"
+            },
+            "description": "instance name for example: project-europe-west1-gcp-storefrontcloud-io",
+            "required": true,
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "status": 200,
+            "description": "error occurred during invalidation attempt"
+          },
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "status": 200,
+            "description": "Invalidation in progress"
+          }
+        },
+        "description": "Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.",
+        "summary": "Endpoint to invalidate uri on specific instance"
+      }
+    },
+    "/deploy_check/{project}/{tag}": {
+      "get": {
+        "description": "Using this endpoint you can check if sepecifed tag is deployed and ready",
+        "parameters": [
+          {
+            "description": "Docker tag",
+            "in": "path",
+            "name": "tag",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          },
+          {
+            "description": "Project name",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeployCheck"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Check if tag is deployed",
+        "tags": [
+          "deploy_check"
+        ]
+      }
+    },
+    "/flush_cache/{project}": {
+      "delete": {
+        "description": "Using this endpoint you can flush backend cache for your instance. To flush CDN cache please use `/cdn_cache` endpoint.",
+        "parameters": [
+          {
+            "description": "Project name",
+            "in": "path",
+            "name": "project",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlushCache"
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Flush cache for instance",
+        "tags": [
+          "flush_cache"
+        ]
+      }
+    },
+    "/instance/{namespace}": {
+      "delete": {
+        "description": "It deletes instance object from Firestore DB",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {}
+            },
+            "description": "Successfully deleted instance"
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/InstanceErrorEnvelope"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/InstanceErrorEnvelope"
+            }
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "It deletes instance object from Firestore DB",
+        "tags": [
+          "instance/{namespace}"
+        ]
+      },
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "patch": {
+        "description": "Updates instance, merge update data with current configuration",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Namespace"
+            }
+          },
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Namespace"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/InstanceErrorEnvelope"
+            }
+          },
+          "500": {
+            "description": "Exception when patching instance"
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Update instance configuration",
+        "tags": [
+          "instance/{namespace}"
+        ]
+      }
+    },
+    "/instance/{namespace}/exists": {
+      "get": {
+        "description": "Checks if instance exists",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NamespaceStatus"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NamespaceStatus"
+                }
+              }
+            },
+            "description": "Error"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/NamespaceStatus"
+            }
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Checks if instance exists",
+        "tags": [
+          "instance/{namespace}/exists"
+        ]
+      }
+    },
+    "/instance/{namespace}/ingresses": {
+      "get": {
+        "description": "Get a list of ingresses and information about them",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngressEnvelope"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/IngressEnvelope"
+            }
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Provides a list of ingresses and their types, domains and ips",
+        "tags": [
+          "instance/{namespace}/ingresses"
+        ]
+      }
+    },
+    "/instance/{namespace}/kube_config": {
+      "get": {
+        "description": "Get kube config file",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Kubeconfig file"
+          },
+          "500": {
+            "description": "Exception while generating Kubeconfig"
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Get kube config file",
+        "tags": [
+          "instance/{namespace}/kube_config"
+        ]
+      }
+    },
+    "/instance/{namespace}/pod": {
+      "get": {
+        "description": "Using this endpoint you can list all pods for selected instance on Storefront Cloud",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodEnvelope"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/PodEnvelope"
+            }
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Get list of pods of your instance",
+        "tags": [
+          "instance/{namespace}/pod"
+        ]
+      }
+    },
+    "/instance/{namespace}/pod/{pod}": {
+      "get": {
+        "description": "Using this endpoint you can get pods status of your instance",
+        "parameters": [
+          {
+            "description": "Pod name",
+            "example": "nginx-77dd45c46d-k82ll",
+            "in": "path",
+            "name": "pod",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          },
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodStatusEnvelope"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/PodStatusEnvelope"
+            }
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Get status of pods of your instance",
+        "tags": [
+          "instance/{namespace}/pod/{pod}"
+        ]
+      }
+    },
+    "/instance/{namespace}/pod/{pod}/log": {
+      "get": {
+        "description": "Fetch pod logs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "container",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Logs age in seconds",
+            "in": "query",
+            "name": "since_sec",
+            "required": false,
+            "schema": {
+              "example": 60,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Parameter to determine how many logs should be returned",
+            "in": "query",
+            "name": "tail",
+            "required": false,
+            "schema": {
+              "example": 10,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Pod name",
+            "example": "nginx-77dd45c46d-k82ll",
+            "in": "path",
+            "name": "pod",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          },
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodLogs"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Error"
+          },
+          "404": {
+            "description": "Pod not found"
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Fetch pod logs",
+        "tags": [
+          "instance/{namespace}/pod/{pod}/log"
+        ]
+      }
+    },
+    "/v2.2/admin/instance": {
+      "post": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceSchemaV22"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceEnvelopeV22"
+            }
+          }
+        },
+        "tags": [
+          "v2.2/admin/instance"
+        ]
+      }
+    },
+    "/v2.2/admin/instance/{namespace}": {
+      "delete": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceSchemaV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceEnvelopeV22"
+            }
+          }
+        },
+        "tags": [
+          "v2.2/admin/instance"
+        ]
+      },
+      "get": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceSchemaV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceEnvelopeV22"
+            }
+          }
+        },
+        "tags": [
+          "v2.2/admin/instance"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceSchemaV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/AdminNamespaceEnvelopeV22"
+            }
+          }
+        },
+        "tags": [
+          "v2.2/admin/instance"
+        ]
+      }
+    },
+    "/v2.2/instance": {},
+    "/v2.2/instance/{instance}/additional_application": {
+      "post": {
+        "description": "Manage instance's additional applications",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/AppV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "404": {
+            "description": "Additional application doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/AppV22"
+            }
+          }
+        },
+        "summary": "Manage instance's additional applications",
+        "tags": [
+          "v2.2/instance/additional_application"
+        ]
+      }
+    },
+    "/v2.2/instance/{instance}/additional_application/{additional_application_name}": {
+      "delete": {
+        "description": "Manage instance's additional applications",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "additional_application_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "404": {
+            "description": "Additional application doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          }
+        },
+        "summary": "Manage instance's additional applications",
+        "tags": [
+          "v2.2/instance/additional_application"
+        ]
+      },
+      "get": {
+        "description": "Manage instance's additional applications",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "additional_application_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "404": {
+            "description": "Additional application doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/AppV22"
+            }
+          }
+        },
+        "summary": "Manage instance's additional applications",
+        "tags": [
+          "v2.2/instance/additional_application"
+        ]
+      },
+      "put": {
+        "description": "Manage instance's additional applications",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/AppV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "additional_application_name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppV22"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "404": {
+            "description": "Additional application doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/AppV22"
+            }
+          }
+        },
+        "summary": "Manage instance's additional applications",
+        "tags": [
+          "v2.2/instance/additional_application"
+        ]
+      }
+    },
+    "/v2.2/instance/{instance}/env_vars/additional_apps/{app_id}/{env_var}/": {
+      "delete": {
+        "description": "Manage Additional App instance's environmental variables",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "app_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "env_var",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {},
+            "description": "Success"
+          },
+          "404": {
+            "description": "Environment variable variable doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          }
+        },
+        "summary": "Manage Additional App instance's environmental variables",
+        "tags": [
+          "v2.2/instance/{namespace}/env_vars"
+        ]
+      }
+    },
+    "/v2.2/instance/{instance}/env_vars/datadog/{env_var}": {
+      "delete": {
+        "description": "Manage Datadog instance's environmental variables",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "env_var",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {},
+            "description": "Success"
+          },
+          "404": {
+            "description": "Environment variable variable doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          }
+        },
+        "summary": "Manage Datadog instance's environmental variables",
+        "tags": [
+          "v2.2/instance/{namespace}/env_vars"
+        ]
+      }
+    },
+    "/v2.2/instance/{instance}/env_vars/vsf/{env_var}": {
+      "delete": {
+        "description": "Manage vsf instance's environmental variables",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "env_var",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {},
+            "description": "Success"
+          },
+          "404": {
+            "description": "Environment variable variable doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          }
+        },
+        "summary": "Manage vsf instance's environmental variables",
+        "tags": [
+          "v2.2/instance/{namespace}/env_vars"
+        ]
+      }
+    },
+    "/v2.2/instance/{instance}/env_vars/vsf_api/{env_var}": {
+      "delete": {
+        "description": "Manage vsf api instance's environmental variables",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "instance",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "env_var",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {},
+            "description": "Success"
+          },
+          "404": {
+            "description": "Environment variable variable doesn't exist"
+          },
+          "500": {
+            "description": "Exception occurred"
+          }
+        },
+        "summary": "Manage vsf api instance's environmental variables",
+        "tags": [
+          "v2.2/instance/{namespace}/env_vars"
+        ]
+      }
+    },
+    "/v2.2/instance/{namespace}": {
+      "delete": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/NamespaceV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/NamespaceEnvelopeV22"
+            }
+          }
+        },
+        "tags": [
+          "v2.2/instance"
+        ]
+      },
+      "get": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/NamespaceV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/NamespaceEnvelopeV22"
+            }
+          }
+        },
+        "tags": [
+          "v2.2/instance"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/NamespaceV22"
+            }
+          },
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/NamespaceEnvelopeV22"
+            }
+          }
+        },
+        "tags": [
+          "v2.2/instance"
+        ]
+      }
+    },
+    "/v2.2/instance/{namespace}/ingresses": {
+      "get": {
+        "description": "Get a list of ingresses and information about them",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngressEnvelope"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/IngressEnvelope"
+            }
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Provides a list of ingresses and their types, domains and ips",
+        "tags": [
+          "instance/{namespace}/ingresses"
+        ]
+      }
+    },
+    "/v2.2/instance/{namespace}/kube_config": {
+      "get": {
+        "description": "Get kube config file",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Kubeconfig file"
+          },
+          "500": {
+            "description": "Exception while generating Kubeconfig"
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Get kube config file",
+        "tags": [
+          "instance/{namespace}/kube_config"
+        ]
+      }
+    },
+    "/v2.2/instance/{namespace}/pod/{pod}": {
+      "get": {
+        "description": "Fetch pod details",
+        "parameters": [
+          {
+            "description": "Pod name",
+            "example": "nginx-77dd45c46d-k82ll",
+            "in": "path",
+            "name": "pod",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          },
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodDetails"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Error"
+          },
+          "404": {
+            "description": "Pod not found"
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Fetch pod details",
+        "tags": [
+          "v2.2/instance/{namespace}/pod/{pod}"
+        ]
+      }
+    },
+    "/v2.2/instance/{namespace}/pods": {
+      "get": {
+        "description": "Using this endpoint you can list all pods for selected instance",
+        "parameters": [
+          {
+            "description": "Namespace name",
+            "example": "project-europe-west1-gcp-storefrontcloud-io",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PodsList"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Error"
+          },
+          "404": {
+            "description": "Pods not found"
+          }
+        },
+        "security": [
+          {
+            "FarmerApiKey": [],
+            "FarmerUserId": []
+          }
+        ],
+        "summary": "Get list of pods of your instance",
+        "tags": [
+          "v2.2/instance/{namespace}/pods"
+        ]
+      }
+    }
+  }
+}

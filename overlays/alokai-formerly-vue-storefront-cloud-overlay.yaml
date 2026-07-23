@@ -1,0 +1,35 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Alokai Cloud API
+  version: 1.0.0
+extends: openapi/alokai-formerly-vue-storefront-cloud-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: alokai-formerly-vue-storefront
+    x-apievangelist-rating: enriched
+    description: >-
+      Alokai Cloud ("farmer") API for managing cloud instances and deployments
+      of storefront applications on the Alokai platform. Authenticated with
+      paired X-Api-Key and X-User-Id headers.
+- target: $
+  update:
+    servers:
+    - url: https://farmer.vuestorefront.cloud
+      description: Alokai Cloud API (production) - captured by API Evangelist; not declared in the source spec.
+- target: $.components
+  update:
+    securitySchemes:
+      ApiKey:
+        type: apiKey
+        in: header
+        name: X-Api-Key
+        description: >-
+          API Evangelist enrichment - documented at
+          https://docs.alokai.com/cloud/api/access. Access requires paired
+          X-Api-Key and X-User-Id headers. Not declared in the source spec.
+      UserId:
+        type: apiKey
+        in: header
+        name: X-User-Id
+        description: User identifier paired with X-Api-Key.

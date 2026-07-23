@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn instance/{namespace}/kube_config API
+  version: v1
+tags:
+- name: instance/{namespace}/kube_config
+paths:
+  /instance/{namespace}/kube_config:
+    get:
+      description: Get kube config file
+      parameters:
+      - description: Namespace name
+        example: project-europe-west1-gcp-storefrontcloud-io
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          description: Kubeconfig file
+        '500':
+          description: Exception while generating Kubeconfig
+      security:
+      - FarmerApiKey: []
+        FarmerUserId: []
+      summary: Get kube config file
+      tags:
+      - instance/{namespace}/kube_config
+  /v2.2/instance/{namespace}/kube_config:
+    get:
+      description: Get kube config file
+      parameters:
+      - description: Namespace name
+        example: project-europe-west1-gcp-storefrontcloud-io
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          description: Kubeconfig file
+        '500':
+          description: Exception while generating Kubeconfig
+      security:
+      - FarmerApiKey: []
+        FarmerUserId: []
+      summary: Get kube config file
+      tags:
+      - instance/{namespace}/kube_config

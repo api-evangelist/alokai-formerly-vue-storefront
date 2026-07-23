@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn flush_cache API
+  version: v1
+tags:
+- name: flush_cache
+paths:
+  /flush_cache/{project}:
+    delete:
+      description: Using this endpoint you can flush backend cache for your instance. To flush CDN cache please use `/cdn_cache` endpoint.
+      parameters:
+      - description: Project name
+        in: path
+        name: project
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlushCache'
+          description: Success
+      summary: Flush cache for instance
+      tags:
+      - flush_cache
+components:
+  schemas:
+    FlushCache:
+      properties:
+        code:
+          type: integer
+        result:
+          type: string
+      type: object

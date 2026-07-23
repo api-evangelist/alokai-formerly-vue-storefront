@@ -1,0 +1,33 @@
+generated: '2026-07-17'
+method: searched
+source: live probes of /.well-known/ on Alokai hosts
+hosts:
+- host: https://alokai.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://docs.alokai.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/alokai-formerly-vue-storefront-llms.txt
+- host: https://console.alokai.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+notes: >-
+  No /.well-known/ discovery documents are published on the Alokai marketing,
+  docs, or console hosts. A machine-readable llms.txt IS published at
+  https://docs.alokai.com/llms.txt (captured verbatim).

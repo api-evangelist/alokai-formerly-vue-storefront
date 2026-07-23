@@ -1,0 +1,23 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.alokai.com/ai-coding-support/syncing-skills + https://www.npmjs.com/package/alokai + https://www.npmjs.com/package/@vue-storefront/cli
+clis:
+- name: alokai
+  package: alokai
+  version: 0.0.2
+  install:
+  - npm install -g alokai
+  - npx alokai
+  description: Alokai CLI. Includes the AI toolkit sync workflow that wires Alokai Agent Skills into AI coding assistants.
+  commands:
+  - group: ai
+    commands:
+    - name: alokai ai sync
+      description: Syncs Alokai skills from @alokai/ai-toolkit into agent directories (Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot) and maintains an AGENTS.md marker block.
+- name: "@vue-storefront/cli"
+  package: "@vue-storefront/cli"
+  version: 6.0.2
+  install:
+  - npm install -g @vue-storefront/cli
+  - npx @vue-storefront/cli
+  description: Vue Storefront / Alokai project CLI for scaffolding and managing storefront projects and integrations.

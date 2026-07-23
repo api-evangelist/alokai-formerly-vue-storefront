@@ -1,0 +1,228 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn v2.2/instance/additional_application API
+  version: v1
+tags:
+- name: v2.2/instance/additional_application
+paths:
+  /v2.2/instance/{instance}/additional_application:
+    post:
+      description: Manage instance's additional applications
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/components/schemas/AppV22'
+      - in: path
+        name: instance
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '404':
+          description: Additional application doesn't exist
+        '500':
+          description: Exception occurred
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/AppV22'
+      summary: Manage instance's additional applications
+      tags:
+      - v2.2/instance/additional_application
+  /v2.2/instance/{instance}/additional_application/{additional_application_name}:
+    delete:
+      description: Manage instance's additional applications
+      parameters:
+      - in: path
+        name: instance
+        required: true
+        type: string
+      - in: path
+        name: additional_application_name
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '404':
+          description: Additional application doesn't exist
+        '500':
+          description: Exception occurred
+      summary: Manage instance's additional applications
+      tags:
+      - v2.2/instance/additional_application
+    get:
+      description: Manage instance's additional applications
+      parameters:
+      - in: path
+        name: instance
+        required: true
+        type: string
+      - in: path
+        name: additional_application_name
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '404':
+          description: Additional application doesn't exist
+        '500':
+          description: Exception occurred
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/AppV22'
+      summary: Manage instance's additional applications
+      tags:
+      - v2.2/instance/additional_application
+    put:
+      description: Manage instance's additional applications
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/components/schemas/AppV22'
+      - in: path
+        name: instance
+        required: true
+        type: string
+      - in: path
+        name: additional_application_name
+        required: true
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppV22'
+          description: Success
+        '404':
+          description: Additional application doesn't exist
+        '500':
+          description: Exception occurred
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/AppV22'
+      summary: Manage instance's additional applications
+      tags:
+      - v2.2/instance/additional_application
+components:
+  schemas:
+    AppV22:
+      properties:
+        env_var:
+          additionalProperties:
+            $ref: '#/components/schemas/EnvVar'
+          description: Extra variables injected into the deployment
+          type: object
+        has_base_path:
+          type: boolean
+        health_check:
+          $ref: '#/components/schemas/HealthCheckAdditionalAppsWrap'
+        image:
+          description: Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io
+          example: registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+        port:
+          type: string
+        tag:
+          type: string
+      type: object
+    EnvVar:
+      properties:
+        is_secret:
+          description: Flag to mark environment variable as a secret
+          type: boolean
+        name:
+          description: Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.
+          pattern: ^[a-zA-Z_][a-zA-Z0-9_]*$
+          type: string
+        value:
+          type: string
+      type: object
+    HealthCheckAdditionalAppsWrap:
+      properties:
+        enabled:
+          type: boolean
+        path:
+          description: relative path to use in HTTP request
+          example: /some/path
+          type: string
+        timeout_seconds:
+          description: 'number of seconds representing probe timeout,min: 1, max 30'
+          maximum: 30
+          minimum: 1
+          nullable: true
+          type: integer
+      type: object

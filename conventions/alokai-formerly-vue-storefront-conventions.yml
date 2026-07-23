@@ -1,0 +1,31 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.alokai.com/cloud/api/access + openapi/alokai-formerly-vue-storefront-cloud-openapi.json
+note: >-
+  Cross-cutting request/response semantics for the Alokai Cloud (farmer) API,
+  captured from the docs and derived from the OpenAPI. Alokai is
+  infrastructure/deployment management; it does not expose payments-style
+  idempotency keys, cursor pagination, or field expansion.
+authentication:
+  style: api-key-header
+  headers: [X-Api-Key, X-User-Id]
+  ref: authentication/alokai-formerly-vue-storefront-authentication.yml
+versioning:
+  scheme: uri-path
+  values: [unversioned (legacy /instance/*), v2.2 (/v2.2/*)]
+  note: The Cloud API carries both a legacy unversioned surface and a /v2.2/ surface.
+idempotency:
+  supported: false
+  note: No documented idempotency-key header; write operations (PATCH/PUT/DELETE) are not idempotency-key protected.
+pagination:
+  supported: false
+  note: List endpoints (pods, ingresses) return full collections; no cursor/offset/limit params documented.
+error_envelope:
+  format: plain-json
+  media_type: application/json
+  note: Errors return plain JSON bodies (not RFC 9457 problem+json). See errors/alokai-formerly-vue-storefront-problem-types.yml
+  ref: errors/alokai-formerly-vue-storefront-problem-types.yml
+error_handling_guide: https://docs.alokai.com/guides/error-handling
+rate_limiting:
+  documented: false
+lifecycle_ref: lifecycle/alokai-formerly-vue-storefront-lifecycle.yml

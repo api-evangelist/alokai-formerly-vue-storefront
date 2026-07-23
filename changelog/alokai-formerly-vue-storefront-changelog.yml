@@ -1,0 +1,31 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.alokai.com/alokai-changelog
+scheme: semver
+current_version: 2.3.6
+categories: [Major Changes, Minor Changes, Patch Changes]
+entries:
+- version: 2.3.6
+  date: '2026-07-13'
+  type: patch
+  highlights: Logger skips empty messages; expanded error cause-chain serialization; new storefront logger utilities with console-bridge for structured logging.
+- version: 2.3.5
+  date: '2026-07-09'
+  type: patch
+  highlights: Fixed Next.js standalone Docker images crashing with missing react-dom module on npm/pnpm projects.
+- version: 2.3.4
+  date: '2026-07-07'
+  type: patch
+  highlights: Security fix - middleware error responses changed from HTML to plain text with X-Content-Type-Options nosniff to prevent reflected HTML injection.
+- version: 2.3.3
+  date: '2026-07-06'
+  type: patch
+  highlights: Removed unused platform-integration packages from generated project dependencies to reduce bundle size.
+- version: 2.3.2
+  date: '2026-07-02'
+  type: patch
+  highlights: Fixed deployment-workflow env-var handling where empty-string values were incorrectly treated as set.
+- version: 2.3.1
+  date: '2026-07-02'
+  type: patch
+  highlights: Resolved circuit-breaker request crashes and unauthorized-header leakage into logs.

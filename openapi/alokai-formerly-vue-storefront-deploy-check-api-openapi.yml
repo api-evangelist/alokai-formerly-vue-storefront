@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn deploy_check API
+  version: v1
+tags:
+- name: deploy_check
+paths:
+  /deploy_check/{project}/{tag}:
+    get:
+      description: Using this endpoint you can check if sepecifed tag is deployed and ready
+      parameters:
+      - description: Docker tag
+        in: path
+        name: tag
+        required: true
+        schema:
+          type: string
+        type: string
+      - description: Project name
+        in: path
+        name: project
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeployCheck'
+          description: Success
+      summary: Check if tag is deployed
+      tags:
+      - deploy_check
+components:
+  schemas:
+    DeployCheck:
+      properties:
+        code:
+          type: integer
+        deployed:
+          type: string
+        ready:
+          type: string
+      type: object

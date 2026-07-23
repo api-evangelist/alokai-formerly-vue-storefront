@@ -1,0 +1,87 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn API
+  version: v1
+tags:
+- name: cdn
+paths:
+  /cdn_cache/{instance}/host/{host}/path/{path}:
+    delete:
+      tags:
+      - cdn
+      security: []
+      parameters:
+      - name: host
+        schema:
+          type: string
+        description: 'domain invalidate for example: example.com'
+        required: true
+        in: host
+      - name: path
+        schema:
+          type: string
+        description: 'base64 path to invalidate for example: cHJvZHVjdC9saXN0LzE='
+        required: true
+        in: path
+      - name: instance
+        schema:
+          type: string
+        description: 'instance name for example: project-europe-west1-gcp-storefrontcloud-io'
+        required: true
+        in: path
+      responses:
+        '500':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+          status: 200
+          description: error occurred during invalidation attempt
+        '200':
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties: {}
+          status: 200
+          description: Invalidation in progress
+      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.
+      summary: Endpoint to invalidate uri on specific instance for specific domain
+  /cdn_cache/{instance}/path/{path}:
+    delete:
+      tags:
+      - cdn
+      security: []
+      parameters:
+      - name: path
+        schema:
+          type: string
+        description: 'base64 path to invalidate for example: cHJvZHVjdC9saXN0LzE='
+        required: true
+        in: path
+      - name: instance
+        schema:
+          type: string
+        description: 'instance name for example: project-europe-west1-gcp-storefrontcloud-io'
+        required: true
+        in: path
+      responses:
+        '500':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+          status: 200
+          description: error occurred during invalidation attempt
+        '200':
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties: {}
+          status: 200
+          description: Invalidation in progress
+      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.
+      summary: Endpoint to invalidate uri on specific instance

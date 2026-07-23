@@ -1,0 +1,175 @@
+generated: '2026-07-17'
+method: derived
+status: candidate
+source: openapi/alokai-formerly-vue-storefront-cloud-openapi.json
+note: No official hosted/remote Alokai MCP server was found. Candidate tool list derived one-per-operation
+  from the Alokai Cloud (farmer) OpenAPI. Not an official Alokai artifact.
+server:
+  name: alokai-cloud
+  transport: stdio
+tools:
+- name: get_healthz
+  method: GET
+  path: /healthz
+  description: GET /healthz
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /healthz
+- name: delete_cdn_cache_instance_host_host_path_path
+  method: DELETE
+  path: /cdn_cache/{instance}/host/{host}/path/{path}
+  description: Endpoint to invalidate uri on specific instance for specific domain
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /cdn_cache/{instance}/host/{host}/path/{path}
+- name: delete_cdn_cache_instance_path_path
+  method: DELETE
+  path: /cdn_cache/{instance}/path/{path}
+  description: Endpoint to invalidate uri on specific instance
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /cdn_cache/{instance}/path/{path}
+- name: get_deploy_check_project_tag
+  method: GET
+  path: /deploy_check/{project}/{tag}
+  description: Check if tag is deployed
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /deploy_check/{project}/{tag}
+- name: delete_flush_cache_project
+  method: DELETE
+  path: /flush_cache/{project}
+  description: Flush cache for instance
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /flush_cache/{project}
+- name: delete_instance_namespace
+  method: DELETE
+  path: /instance/{namespace}
+  description: It deletes instance object from Firestore DB
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /instance/{namespace}
+- name: get_instance_namespace
+  method: GET
+  path: /instance/{namespace}
+  description: GET /instance/{namespace}
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}
+- name: patch_instance_namespace
+  method: PATCH
+  path: /instance/{namespace}
+  description: Update instance configuration
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PATCH /instance/{namespace}
+- name: get_instance_namespace_exists
+  method: GET
+  path: /instance/{namespace}/exists
+  description: Checks if instance exists
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/exists
+- name: get_instance_namespace_ingresses
+  method: GET
+  path: /instance/{namespace}/ingresses
+  description: Provides a list of ingresses and their types, domains and ips
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/ingresses
+- name: get_instance_namespace_kube_config
+  method: GET
+  path: /instance/{namespace}/kube_config
+  description: Get kube config file
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/kube_config
+- name: get_instance_namespace_pod
+  method: GET
+  path: /instance/{namespace}/pod
+  description: Get list of pods of your instance
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/pod
+- name: get_instance_namespace_pod_pod
+  method: GET
+  path: /instance/{namespace}/pod/{pod}
+  description: Get status of pods of your instance
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/pod/{pod}
+- name: get_instance_namespace_pod_pod_log
+  method: GET
+  path: /instance/{namespace}/pod/{pod}/log
+  description: Fetch pod logs
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/pod/{pod}/log
+- name: post_v2_2_admin_instance
+  method: POST
+  path: /v2.2/admin/instance
+  description: POST /v2.2/admin/instance
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#POST /v2.2/admin/instance
+- name: delete_v2_2_admin_instance_namespace
+  method: DELETE
+  path: /v2.2/admin/instance/{namespace}
+  description: DELETE /v2.2/admin/instance/{namespace}
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/admin/instance/{namespace}
+- name: get_v2_2_admin_instance_namespace
+  method: GET
+  path: /v2.2/admin/instance/{namespace}
+  description: GET /v2.2/admin/instance/{namespace}
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/admin/instance/{namespace}
+- name: patch_v2_2_admin_instance_namespace
+  method: PATCH
+  path: /v2.2/admin/instance/{namespace}
+  description: PATCH /v2.2/admin/instance/{namespace}
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PATCH /v2.2/admin/instance/{namespace}
+- name: post_v2_2_instance_instance_additional_application
+  method: POST
+  path: /v2.2/instance/{instance}/additional_application
+  description: Manage instance's additional applications
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#POST /v2.2/instance/{instance}/additional_application
+- name: delete_v2_2_instance_instance_additional_application_additio
+  method: DELETE
+  path: /v2.2/instance/{instance}/additional_application/{additional_application_name}
+  description: Manage instance's additional applications
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- name: get_v2_2_instance_instance_additional_application_additional
+  method: GET
+  path: /v2.2/instance/{instance}/additional_application/{additional_application_name}
+  description: Manage instance's additional applications
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- name: put_v2_2_instance_instance_additional_application_additional
+  method: PUT
+  path: /v2.2/instance/{instance}/additional_application/{additional_application_name}
+  description: Manage instance's additional applications
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PUT /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- name: delete_v2_2_instance_instance_env_vars_additional_apps_app_i
+  method: DELETE
+  path: /v2.2/instance/{instance}/env_vars/additional_apps/{app_id}/{env_var}/
+  description: Manage Additional App instance's environmental variables
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/additional_apps/{app_id}/{env_var}/
+- name: delete_v2_2_instance_instance_env_vars_datadog_env_var
+  method: DELETE
+  path: /v2.2/instance/{instance}/env_vars/datadog/{env_var}
+  description: Manage Datadog instance's environmental variables
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/datadog/{env_var}
+- name: delete_v2_2_instance_instance_env_vars_vsf_env_var
+  method: DELETE
+  path: /v2.2/instance/{instance}/env_vars/vsf/{env_var}
+  description: Manage vsf instance's environmental variables
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/vsf/{env_var}
+- name: delete_v2_2_instance_instance_env_vars_vsf_api_env_var
+  method: DELETE
+  path: /v2.2/instance/{instance}/env_vars/vsf_api/{env_var}
+  description: Manage vsf api instance's environmental variables
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/vsf_api/{env_var}
+- name: delete_v2_2_instance_namespace
+  method: DELETE
+  path: /v2.2/instance/{namespace}
+  description: DELETE /v2.2/instance/{namespace}
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{namespace}
+- name: get_v2_2_instance_namespace
+  method: GET
+  path: /v2.2/instance/{namespace}
+  description: GET /v2.2/instance/{namespace}
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}
+- name: patch_v2_2_instance_namespace
+  method: PATCH
+  path: /v2.2/instance/{namespace}
+  description: PATCH /v2.2/instance/{namespace}
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PATCH /v2.2/instance/{namespace}
+- name: get_v2_2_instance_namespace_ingresses
+  method: GET
+  path: /v2.2/instance/{namespace}/ingresses
+  description: Provides a list of ingresses and their types, domains and ips
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/ingresses
+- name: get_v2_2_instance_namespace_kube_config
+  method: GET
+  path: /v2.2/instance/{namespace}/kube_config
+  description: Get kube config file
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/kube_config
+- name: get_v2_2_instance_namespace_pod_pod
+  method: GET
+  path: /v2.2/instance/{namespace}/pod/{pod}
+  description: Fetch pod details
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/pod/{pod}
+- name: get_v2_2_instance_namespace_pods
+  method: GET
+  path: /v2.2/instance/{namespace}/pods
+  description: Get list of pods of your instance
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/pods

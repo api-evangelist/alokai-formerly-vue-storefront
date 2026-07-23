@@ -1,0 +1,160 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn v2.2/instance/{namespace}/pod/{pod} API
+  version: v1
+tags:
+- name: v2.2/instance/{namespace}/pod/{pod}
+paths:
+  /v2.2/instance/{namespace}/pod/{pod}:
+    get:
+      description: Fetch pod details
+      parameters:
+      - description: Pod name
+        example: nginx-77dd45c46d-k82ll
+        in: path
+        name: pod
+        required: true
+        schema:
+          type: string
+        type: string
+      - description: Namespace name
+        example: project-europe-west1-gcp-storefrontcloud-io
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PodDetails'
+          description: Success
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+        '404':
+          description: Pod not found
+      security:
+      - FarmerApiKey: []
+        FarmerUserId: []
+      summary: Fetch pod details
+      tags:
+      - v2.2/instance/{namespace}/pod/{pod}
+components:
+  schemas:
+    PodStatusV22:
+      properties:
+        containers:
+          items:
+            $ref: '#/components/schemas/ContainerStatusV22'
+          type: array
+        env_vars:
+          $ref: '#/components/schemas/PodEnvVars'
+        events:
+          items:
+            $ref: '#/components/schemas/Events'
+          type: array
+        is_ready:
+          type: boolean
+        is_rollout_active:
+          nullable: true
+          type: boolean
+        is_terminating:
+          type: boolean
+        labels:
+          additionalProperties:
+            type: string
+          type: object
+        name:
+          type: string
+        reason:
+          type: string
+        start_time:
+          type: string
+        status:
+          enum:
+          - Running
+          - Pending
+          - Failed
+          - Unknown
+          - Succeeded
+          type: string
+      type: object
+    PodDetails:
+      properties:
+        error:
+          type: boolean
+        message:
+          type: string
+        pod:
+          $ref: '#/components/schemas/PodStatusV22'
+      type: object
+    ContainerStatusV22:
+      properties:
+        image:
+          type: string
+        name:
+          type: string
+        ready:
+          type: boolean
+        restarts:
+          type: integer
+        status:
+          enum:
+          - Waiting
+          - Running
+          - Terminated
+          type: string
+      type: object
+    Error:
+      properties:
+        message:
+          type: string
+      type: object
+    PodEnvVar:
+      properties:
+        container_name:
+          type: string
+        is_secret:
+          description: Flag to mark environment variable as a secret
+          type: boolean
+        name:
+          description: Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.
+          pattern: ^[a-zA-Z_][a-zA-Z0-9_]*$
+          type: string
+        value:
+          type: string
+      type: object
+    PodEnvVars:
+      properties:
+        containers:
+          additionalProperties:
+            additionalProperties:
+              $ref: '#/components/schemas/PodEnvVar'
+            description: Extra variables injected into the deployment
+            type: object
+          description: Extra variables injected into the deployment
+          type: object
+        errors:
+          additionalProperties:
+            type: string
+          description: Errors getting env vars from containers
+          type: object
+      type: object
+    Events:
+      properties:
+        count:
+          type: string
+        last_seen:
+          type: string
+        message:
+          type: string
+        reason:
+          type: string
+      type: object

@@ -1,0 +1,83 @@
+generated: '2026-07-17'
+method: searched
+source: https://www.npmjs.com/ (registry.npmjs.org verified)
+packages:
+- language: javascript
+  registry: npm
+  name: "@vue-storefront/sdk"
+  version: 3.4.2
+  url: https://www.npmjs.com/package/@vue-storefront/sdk
+  install: npm install @vue-storefront/sdk
+  description: Alokai SDK - framework-agnostic communication layer between the storefront and the Middleware.
+  official: true
+- language: javascript
+  registry: npm
+  name: "@vue-storefront/middleware"
+  version: 5.4.1
+  url: https://www.npmjs.com/package/@vue-storefront/middleware
+  install: npm install @vue-storefront/middleware
+  description: Alokai Server Middleware (Express.js) connecting the storefront to commerce backends and third-party services.
+  official: true
+- language: javascript
+  registry: npm
+  name: "@vue-storefront/next"
+  version: 9.0.0
+  url: https://www.npmjs.com/package/@vue-storefront/next
+  install: npm install @vue-storefront/next
+  description: Alokai dedicated features for Next.js.
+  official: true
+- language: javascript
+  registry: npm
+  name: "@vue-storefront/nuxt"
+  version: 12.0.0
+  url: https://www.npmjs.com/package/@vue-storefront/nuxt
+  install: npm install @vue-storefront/nuxt
+  description: Alokai dedicated features for Nuxt.
+  official: true
+- language: javascript
+  registry: npm
+  name: "@vue-storefront/unified-data-model"
+  version: 3.0.0
+  url: https://www.npmjs.com/package/@vue-storefront/unified-data-model
+  install: npm install @vue-storefront/unified-data-model
+  description: Unified Data Model / Unified Data Layer types shared across commerce integrations.
+  official: true
+- language: javascript
+  registry: npm
+  name: "@vue-storefront/cli"
+  version: 6.0.2
+  url: https://www.npmjs.com/package/@vue-storefront/cli
+  install: npm install -g @vue-storefront/cli
+  description: Vue Storefront / Alokai CLI for scaffolding and managing projects.
+  official: true
+- language: javascript
+  registry: npm
+  name: alokai
+  version: 0.0.2
+  url: https://www.npmjs.com/package/alokai
+  install: npm install -g alokai
+  description: Alokai CLI (includes the `alokai ai sync` agent-skills workflow).
+  official: true
+- language: javascript
+  registry: npm
+  name: "@storefront-ui/vue"
+  version: 3.1.2
+  url: https://www.npmjs.com/package/@storefront-ui/vue
+  install: npm install @storefront-ui/vue
+  description: StorefrontUI design-system components for Vue.
+  official: true
+- language: javascript
+  registry: npm
+  name: "@storefront-ui/react"
+  version: 4.0.1
+  url: https://www.npmjs.com/package/@storefront-ui/react
+  install: npm install @storefront-ui/react
+  description: StorefrontUI design-system components for React.
+  official: true
+- language: javascript
+  registry: npm
+  name: "@storefront-ui/shared"
+  url: https://www.npmjs.com/package/@storefront-ui/shared
+  install: npm install @storefront-ui/shared
+  description: Shared utils and typings used by @storefront-ui/* packages.
+  official: true

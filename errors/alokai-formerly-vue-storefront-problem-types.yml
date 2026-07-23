@@ -1,0 +1,100 @@
+generated: '2026-07-17'
+method: derived
+source: openapi/alokai-formerly-vue-storefront-cloud-openapi.json
+format: plain-json
+note: Alokai Cloud API returns plain application/json error bodies (not RFC 9457 problem+json). Status/description
+  derived from OpenAPI 4xx/5xx responses.
+problems:
+- status: 500
+  title: error occurred during invalidation attempt
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /cdn_cache/{instance}/host/{host}/path/{path}
+- status: 500
+  title: error occurred during invalidation attempt
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /cdn_cache/{instance}/path/{path}
+- status: 404
+  title: Not found
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /instance/{namespace}
+- status: 500
+  title: Internal server error
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /instance/{namespace}
+- status: 400
+  title: Bad request
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PATCH /instance/{namespace}
+- status: 500
+  title: Exception when patching instance
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PATCH /instance/{namespace}
+- status: 500
+  title: Error
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/exists
+- status: 500
+  title: Exception while generating Kubeconfig
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/kube_config
+- status: 400
+  title: Error
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/pod/{pod}/log
+- status: 404
+  title: Pod not found
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /instance/{namespace}/pod/{pod}/log
+- status: 404
+  title: Additional application doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#POST /v2.2/instance/{instance}/additional_application
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#POST /v2.2/instance/{instance}/additional_application
+- status: 404
+  title: Additional application doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- status: 404
+  title: Additional application doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- status: 404
+  title: Additional application doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PUT /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#PUT /v2.2/instance/{instance}/additional_application/{additional_application_name}
+- status: 404
+  title: Environment variable variable doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/additional_apps/{app_id}/{env_var}/
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/additional_apps/{app_id}/{env_var}/
+- status: 404
+  title: Environment variable variable doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/datadog/{env_var}
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/datadog/{env_var}
+- status: 404
+  title: Environment variable variable doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/vsf/{env_var}
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/vsf/{env_var}
+- status: 404
+  title: Environment variable variable doesn't exist
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/vsf_api/{env_var}
+- status: 500
+  title: Exception occurred
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#DELETE /v2.2/instance/{instance}/env_vars/vsf_api/{env_var}
+- status: 500
+  title: Exception while generating Kubeconfig
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/kube_config
+- status: 400
+  title: Error
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/pod/{pod}
+- status: 404
+  title: Pod not found
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/pod/{pod}
+- status: 400
+  title: Error
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/pods
+- status: 404
+  title: Pods not found
+  source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/pods

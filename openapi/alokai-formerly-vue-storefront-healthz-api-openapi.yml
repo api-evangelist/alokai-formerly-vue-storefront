@@ -1,0 +1,16 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn Healthz API
+  version: v1
+tags:
+- name: Healthz
+paths:
+  /healthz:
+    get:
+      tags:
+      - Healthz
+      security: []
+      parameters: []
+      responses:
+        default:
+          description: OK

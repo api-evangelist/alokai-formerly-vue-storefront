@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn v2.2/instance/{namespace}/pods API
+  version: v1
+tags:
+- name: v2.2/instance/{namespace}/pods
+paths:
+  /v2.2/instance/{namespace}/pods:
+    get:
+      description: Using this endpoint you can list all pods for selected instance
+      parameters:
+      - description: Namespace name
+        example: project-europe-west1-gcp-storefrontcloud-io
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PodsList'
+          description: Success
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+        '404':
+          description: Pods not found
+      security:
+      - FarmerApiKey: []
+        FarmerUserId: []
+      summary: Get list of pods of your instance
+      tags:
+      - v2.2/instance/{namespace}/pods
+components:
+  schemas:
+    PodItem:
+      properties:
+        containers:
+          type: integer
+        isReady:
+          type: boolean
+        isRolloutActive:
+          nullable: true
+          type: boolean
+        isTerminating:
+          type: boolean
+        name:
+          type: string
+        readyContainers:
+          type: integer
+        reason:
+          type: string
+        restarts:
+          type: integer
+        startTime:
+          type: string
+        status:
+          type: string
+        type:
+          type: string
+      type: object
+    Error:
+      properties:
+        message:
+          type: string
+      type: object
+    PodsList:
+      properties:
+        error:
+          type: boolean
+        message:
+          type: string
+        pods:
+          items:
+            $ref: '#/components/schemas/PodItem'
+          type: array
+      type: object

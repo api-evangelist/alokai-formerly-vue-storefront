@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn Instance API
+  version: v1
+tags:
+- name: Instance
+paths:
+  /instance/{namespace}:
+    get:
+      parameters:
+      - in: path
+        name: namespace
+        required: true
+        type: string
+      responses: {}
+      tags:
+      - Instance

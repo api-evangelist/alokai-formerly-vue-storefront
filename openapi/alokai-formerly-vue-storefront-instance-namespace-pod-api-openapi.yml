@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn instance/{namespace}/pod API
+  version: v1
+tags:
+- name: instance/{namespace}/pod
+paths:
+  /instance/{namespace}/pod:
+    get:
+      description: Using this endpoint you can list all pods for selected instance on Storefront Cloud
+      parameters:
+      - description: Namespace name
+        example: project-europe-west1-gcp-storefrontcloud-io
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PodEnvelope'
+          description: Success
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/PodEnvelope'
+      security:
+      - FarmerApiKey: []
+        FarmerUserId: []
+      summary: Get list of pods of your instance
+      tags:
+      - instance/{namespace}/pod
+components:
+  schemas:
+    PodEnvelope:
+      properties:
+        code:
+          type: integer
+        pods:
+          items:
+            $ref: '#/components/schemas/Pod'
+          type: array
+      type: object
+    Pod:
+      properties:
+        name:
+          type: string
+        ready:
+          type: boolean
+        reason:
+          type: string
+        status:
+          type: string
+      type: object

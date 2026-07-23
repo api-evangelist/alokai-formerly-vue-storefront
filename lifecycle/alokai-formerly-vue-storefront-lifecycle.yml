@@ -1,0 +1,20 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.alokai.com/alokai-changelog + https://docs.alokai.com/alokai-versions + https://status.alokai.com
+versioning:
+  scheme: semver
+  product_current: 2.3.6
+  docs: https://docs.alokai.com/alokai-versions
+  api_scheme: uri-path
+  api_versions: [legacy-unversioned, v2.2]
+  note: Alokai product packages follow semantic versioning; the Cloud API exposes a legacy and a /v2.2/ path surface.
+deprecation:
+  policy_url: https://docs.alokai.com/alokai-versions
+  sunset_header: false
+  note: Alokai publishes supported-version and migration guidance (e.g. migrating to *.alokai.cloud domains); no RFC 8594 Sunset/Deprecation header support documented for the Cloud API.
+sla:
+  support: Gold Support (120 hours/year) included in the Alokai Platform package
+  url: https://alokai.com/pricing
+status_page: https://status.alokai.com
+changelog: https://docs.alokai.com/alokai-changelog
+deprecated_operations: []

@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn instance/{namespace}/pod/{pod}/log API
+  version: v1
+tags:
+- name: instance/{namespace}/pod/{pod}/log
+paths:
+  /instance/{namespace}/pod/{pod}/log:
+    get:
+      description: Fetch pod logs
+      parameters:
+      - in: query
+        name: container
+        required: false
+        schema:
+          type: string
+      - description: Logs age in seconds
+        in: query
+        name: since_sec
+        required: false
+        schema:
+          example: 60
+          type: integer
+      - description: Parameter to determine how many logs should be returned
+        in: query
+        name: tail
+        required: false
+        schema:
+          example: 10
+          type: integer
+      - description: Pod name
+        example: nginx-77dd45c46d-k82ll
+        in: path
+        name: pod
+        required: true
+        schema:
+          type: string
+        type: string
+      - description: Namespace name
+        example: project-europe-west1-gcp-storefrontcloud-io
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PodLogs'
+          description: Success
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+        '404':
+          description: Pod not found
+      security:
+      - FarmerApiKey: []
+        FarmerUserId: []
+      summary: Fetch pod logs
+      tags:
+      - instance/{namespace}/pod/{pod}/log
+components:
+  schemas:
+    PodLogs:
+      properties:
+        code:
+          type: integer
+        logs:
+          type: string
+      type: object
+    Error:
+      properties:
+        message:
+          type: string
+      type: object

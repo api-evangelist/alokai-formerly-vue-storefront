@@ -1,0 +1,24 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.storefrontui.io/ + https://www.npmjs.com/package/@storefront-ui/vue + https://www.npmjs.com/package/@storefront-ui/react
+note: >-
+  StorefrontUI is Alokai's open-source, framework-native UI component library
+  (accessible, Tailwind-based) for building ecommerce storefronts. Distinct from
+  the server-side SDK/Middleware in packages/.
+families:
+- name: StorefrontUI (Vue)
+  loader: "@storefront-ui/vue"
+  version: 3.1.2
+  install: npm install @storefront-ui/vue
+  url: https://docs.storefrontui.io/
+  kind: design-system-components
+- name: StorefrontUI (React)
+  loader: "@storefront-ui/react"
+  version: 4.0.1
+  install: npm install @storefront-ui/react
+  url: https://docs.storefrontui.io/
+  kind: design-system-components
+- name: StorefrontUI Tailwind plugins
+  loaders: ["@storefront-ui/tw-plugin-peer-next", "@storefront-ui/typography"]
+  url: https://docs.storefrontui.io/
+  kind: styling-plugins

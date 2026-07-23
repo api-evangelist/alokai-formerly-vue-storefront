@@ -1,0 +1,24 @@
+generated: '2026-07-17'
+method: generated
+source: openapi/alokai-formerly-vue-storefront-cloud-openapi.json
+note: >-
+  Skills grounded in real Alokai Cloud (farmer) API operations. The source spec
+  declares no operationIds, so operations are referenced by METHOD + path (each
+  verified present in the spec). Alokai also publishes its own agent skills via
+  the @alokai/ai-toolkit package (`alokai ai sync`), which is not on public npm.
+skills:
+- file: alokai-verify-deployment-and-check-health.md
+  name: Verify an Alokai Cloud deployment and check instance health
+  api: openapi/alokai-formerly-vue-storefront-cloud-openapi.json
+  operations:
+  - "GET /deploy_check/{project}/{tag}"
+  - "GET /instance/{namespace}/exists"
+  - "GET /instance/{namespace}/pod"
+  - "GET /instance/{namespace}/pod/{pod}/log"
+- file: alokai-invalidate-cdn-cache.md
+  name: Invalidate Alokai Cloud CDN cache
+  api: openapi/alokai-formerly-vue-storefront-cloud-openapi.json
+  operations:
+  - "DELETE /cdn_cache/{instance}/path/{path}"
+  - "DELETE /cdn_cache/{instance}/host/{host}/path/{path}"
+  - "DELETE /flush_cache/{project}"

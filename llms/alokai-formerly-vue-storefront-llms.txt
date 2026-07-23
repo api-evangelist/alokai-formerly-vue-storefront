@@ -1,0 +1,681 @@
+# Alokai Documentation
+
+- [Alokai Changelog](/alokai-changelog)
+- [Alokai versions](/alokai-versions)
+- [AI Assistant (Alpha)](/assistant)
+- [Alokai Enterprise](/enterprise)
+- [Alokai Docs](/)
+- [AI Coding Support](/ai-coding-support)
+- [Syncing skills](/ai-coding-support/syncing-skills)
+- [Troubleshooting](/ai-coding-support/troubleshooting)
+- [Alokai Cloud](/cloud)
+- [Alokai Console (Cloud management)](/console): Alokai Console is the management interface for running and operating storefront applications deployed on the Alokai platform.
+- [Handling custom OCC endpoints](/cookbook/handling-custom-occ-endpoint)
+- [Cookbook](/cookbook)
+- [OSS Deployment Guide](/cookbook/oss-deployment-guide): In this guide we'll show you how to deploy an Open Source Alokai application to a production server.
+- [Error Handling](/guides/error-handling): Error handling is a critical aspect of building robust distributed systems. Alokai provides an opinionated, type-safe error handling flow that connects your Alokai Middleware with frontend application.
+- [Welcome to Alokai Guides](/guides): Welcome to the guides section of the documentation. Here you will find a collection of guides to help you get started with the platform.
+- [Instrumentation](/guides/instrumentation): If you are extending your contract with Alokai and joined us in 2025 or earlier, you may be required to install Alokai instrumentation as part of your storefront setup.
+- [Overview](/general)
+- [Choosing Your Stack](/general/next-steps): After understanding what makes a Alokai project, there are a few different ways to get started.
+- [Starting new project](/general/starting-new-project)
+- [Middleware](/middleware): Alokai's Server Middleware is an Express.js application that provides a single place for you to connect to the multiple services that you need to run your storefront.
+- [Integrations](/integrations)
+- [Alokai Storefront](/storefront): Build your website faster with a production-ready application that's ready to be customized to your needs.
+- [SDK](/sdk): The Alokai SDK simplifies the development process by providing pre-built functionality to enables seamless interaction between your storefront and various Commerce Platforms and third-party services.
+- [Unified Data Layer](/unified-data-layer): Learn how the Unified Data Layer can help you build storefronts.
+- [Normalizers](/unified-data-layer/normalizers): Normalizers allow different eCommerce platforms to work in the Unified Data Layer.
+- [Unified Data Model](/unified-data-layer/unified-data-model): Learn the data structures that make up the Unified Data Model
+- [Access to API](/cloud/api/access): Access to API is limited by pair X-Api-Key and X-User-Id headers.
+- [Alokai Cloud API](/cloud/api/general-information)
+- [API Reference](/cloud/api/swagger)
+- [Features](/cloud/introduction/features)
+- [Migrating to *.alokai.cloud domains](/cloud/guide/alokai-domain-migration)
+- [Architecture](/cloud/guide/architecture)
+- [CI/CD](/cloud/guide/ci-cd)
+- [Custom Domains & TLS Certificates](/cloud/guide/custom-domain-custom-cert)
+- [Custom Error Page](/cloud/guide/custom-error-page)
+- [Datadog integration config for Alokai Cloud](/cloud/guide/datadog-apm-log-config)
+- [Deployment](/cloud/guide/deployment)
+- [Docker Registry and Docker images of your project](/cloud/guide/docker-registry)
+- [Extensions / Custom applications / Middleware](/cloud/guide/extensions-custom-applications-middleware)
+- [Network](/cloud/guide/network)
+- [NewRelic application config for Alokai Cloud](/cloud/guide/newrelic-app-config)
+- [Outbound traffic IP ranges](/cloud/guide/outbound-traffic-ip-ranges): As an Alokai Cloud administrator, you may want secure communication between Alokai Cloud and your eCommerce integrations.
+- [HTTP request headers](/cloud/guide/request-headers)
+- [Response header customization](/cloud/guide/response-headers)
+- [SSR Cache and CDN](/cloud/guide/ssr-cache-cdn)
+- [Multi-Factor Authentication (MFA)](/console/authentication/mfa)
+- [Single Sign-On (SSO)](/console/authentication/sso)
+- [Alokai Cloud API](/console/classic-alokai/alokai-cloud-api)
+- [CDN](/console/classic-alokai/cdn)
+- [Custom Domains & TLS Certificates](/console/classic-alokai/custom-domain-custom-cert)
+- [Custom Error Page](/console/classic-alokai/custom-error-page)
+- [Domains](/console/classic-alokai/domains)
+- [HTTP request headers](/console/classic-alokai/request-headers)
+- [Response headers](/console/classic-alokai/response-headers)
+- [Security](/console/classic-alokai/security)
+- [Deployed versions & Rollbacks](/console/deployment/deployed-versions)
+- [Healthchecks](/console/deployment/healthchecks): Health checks verify that application components are running correctly and ready to receive traffic.
+- [Replicas](/console/deployment/replicas): The Replicas page in the Console shows the runtime state of application replicas running for the selected instance.
+- [Custom Domains](/console/domains-and-tls/custom-domains)
+- [Custom TLS certificates](/console/domains-and-tls/custom-tls-certificate)
+- [Migrating to *.alokai.cloud domains](/console/guides/alokai-domain-migration)
+- [Deployment](/console/guides/deployment)
+- [Using an External Proxy with Alokai](/console/guides/external-proxy)
+- [Access to your instance via IPv6](/console/guides/ipv6)
+- [Caching rules](/console/optimize-delivery-(cdn)/caching-rules)
+- [Customize robots.txt](/console/optimize-delivery-(cdn)/customize-robots-txt)
+- [Redirects](/console/optimize-delivery-(cdn)/redirects)
+- [Activity log](/console/organization/activity-log)
+- [Alert subscriptions](/console/organization/alert-subscriptions)
+- [General](/console/organization/general)
+- [Member & Invitees](/console/organization/members-invitees)
+- [Alerts](/console/instance/alerts): The alerting policy list is based on two types of triggers: events and treshholds. They are all monitored on an ongoing basis. To receive a message about an incident immediately - subscribe to the alert.
+- [Performance audits](/console/instance/performance)
+- [Uptime](/console/instance/uptime)
+- [Usage](/console/instance/usage)
+- [Datadog exporter](/console/telemetry/datadog): Datadog receives both traces and metrics from the Alokai collector. Traces appear in APM & Services → Distributed Tracing; metrics appear in Metrics Explorer and can be used in dashboards and monitors.
+- [Dynatrace exporter](/console/telemetry/dynatrace): Dynatrace receives both traces and metrics from the Alokai collector via its OTLP ingest API. Traces appear in Distributed Traces and Services; metrics appear in Metrics and can be used in dashboards and alerting.
+- [Instrumenting your application](/console/telemetry/instrumentation): Your application needs to include the OpenTelemetry SDK to send traces and metrics to the Alokai collector. This page covers the Node.js setup, which applies to both the vue-storefront and middleware services.
+- [New Relic exporter](/console/telemetry/newrelic): New Relic receives both traces and metrics from the Alokai collector. Traces appear in APM & Services → Distributed Tracing; metrics appear in Query Your Data and can be used in dashboards and alerts.
+- [Overview](/console/telemetry/overview)
+- [Bot Protection](/console/secure-the-edge-(waf)/bot-protection)
+- [Customize Response Pages](/console/secure-the-edge-(waf)/customize-response-pages)
+- [Limit request body size](/console/secure-the-edge-(waf)/limit-request-body-size)
+- [Maintenance Mode](/console/secure-the-edge-(waf)/maintenance-mode)
+- [Manage header access list](/console/secure-the-edge-(waf)/manage-header-access-list)
+- [Manage IP access list](/console/secure-the-edge-(waf)/manage-ip-access-list)
+- [Order of security features verification](/console/secure-the-edge-(waf)/order-of-security-features-verification)
+- [Set up Basic Auth](/console/secure-the-edge-(waf)/set-up-basic-auth)
+- [Alokai Essentials](/guides/alokai-essentials): On this page you'll find a set of guides that will help you to understand the fundamentals of Alokai and how different parts of our stack will help you to build your Alokai application.
+- [Coding with AI](/guides/best-practices/ai-contexts)
+- [Data Fetching best practices](/guides/best-practices/data-fetching)
+- [Best Practices](/guides/best-practices): In this guide, we have compiled a collection of best practices to help you optimize your development workflow, improve code quality, and ensure maintainability.
+- [Alokai Customization Guide](/guides/customization): On this page, you'll find a set of guides that will help you understand some advanced concepts of Alokai and how to customize the application to your requirements.
+- [Introduction](/guides/kubernetes-probe)
+- [Liveness probes](/guides/kubernetes-probe/liveness-probes)
+- [Readiness probes](/guides/kubernetes-probe/readiness-probes)
+- [Multistore](/guides/multistore): On this page you'll find a set of guides that will help you to understand the fundamentals of Alokai and how different parts of our stack will help you to build your Alokai application.
+- [Migration Guide](/guides/multistore/migration-guide)
+- [Troubleshooting](/guides/troubleshooting): On this page you'll find a set of guides that will help you to resolve common issues that may occur when working with Alokai.
+- [Inspecting network requests](/guides/troubleshooting/inspecting-network-requests)
+- [Multistore Debugging Guide](/guides/troubleshooting/multistore-debugging-guide): Guide for debugging storefront and middleware in a multistore setup using Node.js inspect protocol.
+- [Architecture](/general/basics/architecture)
+- [Data Flow](/general/basics/data-flow): The below document describes the data flow in the typical Alokai application using our SDK and Middleware.
+- [Extensibility](/general/basics/extensibility)
+- [Philosophy](/general/basics/philosophy)
+- [Change Log](/middleware/reference/changelogs)
+- [Creating an API Client](/middleware/guides/api-client): The API client is used by the server middleware to create a server-to-server communication with your custom backend.
+- [Caching](/middleware/guides/caching)
+- [Config Switcher](/middleware/guides/config-switcher)
+- [Downloading Files from Ecommerce Backend](/middleware/guides/downloading-files)
+- [Extending the Middleware](/middleware/guides/extensions): Extensions allow you to customize how the middleware and integrations run. You can add new API endpoints, hook into the request lifecycle, or modify the Express.js application itself.
+- [Data Federation](/middleware/guides/federation)
+- [Installation](/middleware/guides/getting-started): If you're building your Alokai application from scratch, you'll need to set up the middleware to connect to your backend services.
+- [Response Headers](/middleware/guides/headers)
+- [Logger](/middleware/guides/logging)
+- [Retries](/middleware/guides/retries)
+- [Welcome!](/integrations/adyen): The Adyen integration for Alokai Enterprise provides you with typesafe functionality that will help you to accept payments via Adyen.
+- [Alokai integration for Amplience](/integrations/amplience)
+- [Welcome!](/integrations/adyen-sfcc)
+- [BigCommerce integration for Alokai](/integrations/bigcommerce): This project is a BigCommerce integration for Alokai.
+- [Alokai integration for Bloomreach Content](/integrations/bloomreach-content)
+- [Bloomreach Discovery](/integrations/bloomreach-search)
+- [Alokai integration for Builder.io](/integrations/builder)
+- [Commercetools integration for Alokai](/integrations/commercetools): This project is a Commercetools integration for Alokai.
+- [Alokai integration for Contentful](/integrations/contentful)
+- [Alokai Integration for Contentstack](/integrations/contentstack)
+- [CMS Schema Creation Guide](/integrations/custom/create-cms-schemas)
+- [Creating a Custom Integration](/integrations/custom/quick-start): If you're looking to create a custom integration for Alokai, you're in the right place. This guide will walk you through the process of creating a custom integration from scratch.
+- [Unifying the integration](/integrations/custom/unified): This guide will walk you through the process of unifying the integration.
+- [What is an Integration?](/integrations/guide/what-is-an-integration): In Alokai, an integration connects your storefront to a backend platform. It provides the data, logic, and methods to interact with your various services in a type-safe way.
+- [Magento 2 Integration](/integrations/magento): This integration extends the Alokai SDK and Middleware with support for Magento 2 GraphQL API.
+- [AI Assistant (Alpha)](/integrations/odoo/assistant)
+- [Demonstration](/integrations/odoo)
+- [Redis Integration](/integrations/redis): This project is a Redis integration for Alokai.
+- [SAP Commerce Cloud Integration](/integrations/sapcc): This integration extends the Alokai SDK and Middleware with support for SAP Commerce Cloud.
+- [SalesForce Commerce Cloud integration](/integrations/sfcc): This project extends the Alokai SDK and Middleware with support for SalesForce Commerce Cloud.
+- [Alokai integration for SmartEdit](/integrations/smartedit)
+- [Alokai Integration for Storyblok](/integrations/storyblok)
+- [Stripe Integration for commercetools](/integrations/stripe-commercetools)
+- [@alokai/cli](/storefront/change-log/alokai-cli)
+- [@vue-storefront/next](/storefront/change-log/next)
+- [@vue-storefront/nuxt](/storefront/change-log/nuxt)
+- [@vsf-enterprise/storefront-cli](/storefront/change-log/storefront-cli)
+- [Image Optimization](/storefront/features/image-optimization): Serve automatically resized, compressed, and format-optimized images through the Alokai Image Optimizer - via the createImageOptimizer helper from @vue-storefront/next on Next.js, or the @vue-storefront/nuxt module on Nuxt.
+- [URL Routing](/storefront/features/url-routing): Alokai Storefront uses file-based routing with configurable URL patterns that differ between SAP Commerce Cloud and other integrations.
+- [Getting Started](/storefront/introduction/getting-started): To start your journey with Storefront, you need to have a working environment. Alokai Solution Engineers will provide you with everything you need to start developing your application.
+- [Key Concepts](/storefront/introduction/key-concepts)
+- [Tech Stack](/storefront/introduction/tech-stack)
+- [Storefront Modules](/storefront/modules): Storefront Modules add additional functionality to your Storefront. They are quick to install and fully customizable for your business needs.
+- [Product List](/storefront/modules/product-list): The Product List module is a powerful and flexible feature designed to enhance the user experience on your e-commerce platform. It provides an alternative view for product listings on category pages, replacing the traditional grid view with a sleek and efficient list view.
+- [Custom Modules](/sdk/advanced/custom-modules)
+- [Extending a Module](/sdk/advanced/extending-module)
+- [Getting Started](/sdk/getting-started)
+- [Logger](/sdk/getting-started/logger)
+- [The middlewareModule](/sdk/getting-started/middleware-module)
+- [State Management](/sdk/getting-started/state-management)
+- [Change Log](/sdk/reference/changelogs)
+- [@vsf-enterprise/unified-api-bigcommerce](/unified-data-layer/change-log/unified-api-bigcommerce)
+- [@vsf-enterprise/unified-api-commercetools](/unified-data-layer/change-log/unified-api-commercetools)
+- [@vsf-enterprise/unified-api-magento](/unified-data-layer/change-log/unified-api-magento)
+- [@vsf-enterprise/unified-api-sapcc](/unified-data-layer/change-log/unified-api-sapcc)
+- [@vsf-enterprise/unified-api-sfcc](/unified-data-layer/change-log/unified-api-sfcc)
+- [Creating New API Methods](/unified-data-layer/integration-and-setup/creating-new-api-methods): When building your Storefront, you may need additional functionality beyond the Unified Data Methods. Alokai provides an out-of-the-box custom extension for adding new API methods.
+- [Overriding API Methods](/unified-data-layer/integration-and-setup/overriding-api-methods): Learn how to override the Unified Methods, defined within the Unified Data Layer.
+- [Utilising SDK modules](/unified-data-layer/integration-and-setup/utilising-sdk-modules)
+- [Authentication](/unified-data-layer/unified-methods/authentication): The Unified Auth Methods are responsible for registering new customers, logging in existing ones, retrieving or updating customer information, and logging out.
+- [Cart](/unified-data-layer/unified-methods/cart): Create, fetch, edit, or manage coupons for a customer's cart using the Unified Data Layer.
+- [Category](/unified-data-layer/unified-methods/category): The Unified Data Layer provides methods that let you query categories by id or slug.
+- [Checkout](/unified-data-layer/unified-methods/checkout)
+- [Customer](/unified-data-layer/unified-methods/customer): The Customer Address methods can be used to create, fetch, update, or delete an authenticated customer's saved addresses.
+- [Unified Methods](/unified-data-layer/unified-methods): Unified Methods let you interact with your Unified Data Model in a consistent and type-safe way.
+- [Product](/unified-data-layer/unified-methods/product): The Unified Data Layer provides methods that let you query products, fetch product details, and manage product reviews
+- [Settings](/unified-data-layer/unified-methods/settings): Settings methods can be used to retrieve configuration data from the Middleware or SDK.
+- [Purge all](/console/optimize-delivery-(cdn)/purge-cache/purge-all): The documentation only applies to instances deployed on Alokai@Edge.
+- [Purge by keys](/console/optimize-delivery-(cdn)/purge-cache/purge-keys): The documentation only applies to instances deployed on Alokai@Edge.
+- [Purging overview](/console/optimize-delivery-(cdn)/purge-cache/purge-overview): The documentation only applies to instances deployed on Alokai@Edge.
+- [Purge URL](/console/optimize-delivery-(cdn)/purge-cache/purge-url): The documentation only applies to instances deployed on Alokai@Edge.
+- [CDN cache](/console/instance/caching-layer/cdn-cache)
+- [Redis](/console/instance/caching-layer/redis)
+- [Deployment variables](/console/instance/settings/deployment-variables)
+- [Environment variables](/console/instance/settings/environment-variables)
+- [Add Product to Cart](/guides/alokai-essentials/alokai-next-js/add-to-cart)
+- [Connecting Product Details Page with SAP Commerce Cloud](/guides/alokai-essentials/alokai-next-js/connecting-pdp): In the previous step, we have created a template for the a product details page using Storefront UI. Now, we will connect it with the SAP Commerce Cloud backend to display the product details.
+- [Create new Alokai Next.js Project](/guides/alokai-essentials/alokai-next-js/create-project)
+- [First request with Alokai Connect](/guides/alokai-essentials/alokai-next-js/first-request)
+- [Alokai Next.js Guide](/guides/alokai-essentials/alokai-next-js): Welcome to the Alokai Next.js guide. This guide will help you get started with building your first Alokai application from the ground up.
+- [Install and Configure Alokai Middleware](/guides/alokai-essentials/alokai-next-js/install-middleware): In the last section, we have installed the Next.js application and created a new Alokai project. In this section, we will install and configure the Alokai Middleware.
+- [Install and Configure Alokai Context](/guides/alokai-essentials/alokai-next-js/install-sdk): In the last sections, we have configured Alokai Next.js project and installed the Alokai Middleware. In this section, we will install and configure the Alokai Context that contains both the SDK and state manager.
+- [Build Product Details Page with Storefront UI](/guides/alokai-essentials/alokai-next-js/product-page)
+- [Unified Data Layer](/guides/alokai-essentials/alokai-next-js/udl)
+- [Add Product to Cart](/guides/alokai-essentials/alokai-nuxt/add-to-cart)
+- [Connecting Product Details Page with SAP Commerce Cloud](/guides/alokai-essentials/alokai-nuxt/connecting-pdp): In the previous step, we have created a template for the a product details page using Storefront UI. Now, we will connect it with the SAP Commerce Cloud backend to display the product details.
+- [Create new Alokai Nuxt Project](/guides/alokai-essentials/alokai-nuxt/create-project)
+- [First request with Alokai Connect](/guides/alokai-essentials/alokai-nuxt/first-request)
+- [Alokai Nuxt Guide](/guides/alokai-essentials/alokai-nuxt): Welcome to the Alokai Nuxt guide. This guide will help you get started with building your first Alokai application from the ground up.
+- [Install and Configure Alokai Middleware](/guides/alokai-essentials/alokai-nuxt/install-middleware): In the last section, we have installed the Nuxt application and created a new Alokai project. In this section, we will install and configure the Alokai Middleware.
+- [Install and Configure Alokai SDK](/guides/alokai-essentials/alokai-nuxt/install-sdk): In the last sections, we have configured Alokai Nuxt project and installed the Alokai Middleware. In this section, we will install and configure the Alokai Context that contains both the SDK and state manager.
+- [Build Product Details Page with Storefront UI](/guides/alokai-essentials/alokai-nuxt/product-page)
+- [Unified Data Layer](/guides/alokai-essentials/alokai-nuxt/udl)
+- [Add Product to Cart](/guides/alokai-essentials/alokai-react-native/add-to-cart)
+- [Create new Alokai React Native Project](/guides/alokai-essentials/alokai-react-native/create-project)
+- [First request with Alokai Connect](/guides/alokai-essentials/alokai-react-native/first-request)
+- [Alokai React Native Guide](/guides/alokai-essentials/alokai-react-native): Welcome to the Alokai React Native guide. This guide will help you get started with building your first Alokai application from the ground up.
+- [Install and Configure Alokai Middleware](/guides/alokai-essentials/alokai-react-native/install-middleware): In the last section, we have installed the React Native application and created a new Alokai project. In this section, we will install and configure the Alokai Middleware.
+- [Install and Configure Alokai SDK](/guides/alokai-essentials/alokai-react-native/install-sdk): In the last sections, we have configured Alokai React Native project and installed the Alokai Middleware. In this section, we will install and configure the Alokai SDK.
+- [Build Product Listing Page and Product Details Page with Alokai](/guides/alokai-essentials/alokai-react-native/product-page): In the previous step, we have made our first request. But without the UI, it's useless. So, in this step, we will learn how to build a Product Listing Page (PLP) and Product Details Page (PDP) with Alokai.
+- [Unified Data Layer](/guides/alokai-essentials/alokai-react-native/udl)
+- [Improving Core Web Vitals](/guides/best-practices/performance/core-web-vitals)
+- [Introduction to Web Performance](/guides/best-practices/performance): Improve your website's user experience and increase conversions by optimizing your website's performance.
+- [Adding custom fields](/guides/customization/app-router/add-custom-field)
+- [Adding a New Page](/guides/customization/app-router/brands-page)
+- [Changing product slug](/guides/customization/app-router/changing-product-slug)
+- [Adding New API Methods](/guides/customization/app-router/custom-methods): The Unified Data Model contains the most commonly used data for eCommerce backends, but there will be times when you need additional information, combine data from multiple sources, or create a new data structure.
+- [Alokai Customization Guide](/guides/customization/app-router)
+- [Calling custom endpoints](/guides/customization/app-router/method-overriding)
+- [UI customizations](/guides/customization/app-router/ui-customizations)
+- [The Multistore Problem and Alokai's Solution](/guides/multistore/introduction)
+- [Use Cases](/guides/multistore/introduction/use-cases): While this reusability mechanism is universal, we describe some of the most common cases where an efficient eCommerce setup can provide transformative value for your business.
+- [Patterns](/guides/multistore/patterns): Explore common multistore implementation patterns and best practices. These patterns help you build scalable and maintainable multistore solutions using Alokai's tools and conventions.
+- [Inheritance Best Practices](/guides/multistore/patterns/inheritance-best-practices): This guide covers best practices for managing inheritance in Alokai multistore projects.
+- [Integrations Management](/guides/multistore/patterns/integrations-management): This guide covers how to manage different integrations across your stores in Alokai multistore projects.
+- [Using Playwright in a Multistore Setup](/guides/multistore/patterns/playwright-in-multistore)
+- [Using Git Submodules for team separation](/guides/multistore/patterns/using-git-submodules)
+- [@alokai/cli](/guides/multistore/tooling-and-concepts/cli-reference)
+- [File-based inheritance](/guides/multistore/tooling-and-concepts)
+- [Configuration Strategies](/middleware/guides/circuit-breaker/configuration-strategies): Every project is different. This section helps you pick the right circuit breaker setup based on your integration's reliability profile and traffic patterns.
+- [Failure Handling](/middleware/guides/circuit-breaker/failure-handling)
+- [Logging & Troubleshooting](/middleware/guides/circuit-breaker/logging-and-troubleshooting): This page explains how to read circuit breaker logs and what to do when you see them. Each log line tells you two things: what state the breaker is in, and whether your traffic is being blocked right now.
+- [Method-Level Granularity](/middleware/guides/circuit-breaker/method-level-granularity)
+- [Circuit Breaker](/middleware/guides/circuit-breaker/overview)
+- [Presets](/middleware/guides/circuit-breaker/presets): Presets provide ready-made circuit breaker configurations so you don't have to tune individual settings. Pick the one that best matches your backend's reliability profile.
+- [Consequences of Not Normalizing Errors](/middleware/guides/error-handling/consequences): This section shows real problems that happen when errors aren't normalized properly. Understanding these helps you avoid production issues.
+- [Custom Error Handlers](/middleware/guides/error-handling/custom-error-handler)
+- [Real-World Examples](/middleware/guides/error-handling/examples): This section shows patterns from production integrations you can copy and adapt. Each example explains the problem, the pattern, and why it works.
+- [Error Handling in Middleware](/middleware/guides/error-handling/overview): When building middleware integrations, you're essentially creating a translation layer between vendor-specific errors and your frontend. This guide will help you do that correctly.
+- [Throwing Errors in Middleware](/middleware/guides/error-handling/throwing-errors): This section covers the practical tools you'll use every day when handling errors in middleware.
+- [Validation Errors](/middleware/guides/error-handling/validation-errors): This section covers how to handle validation errors in middleware, including automatic normalization of schema validation libraries like zod, valibot, and arktype.
+- [When to Use try/catch](/middleware/guides/error-handling/when-to-use-try-catch): This is the most important section for writing clean middleware code. Understanding when to use (and skip) try/catch will save you from writing unnecessary code.
+- [Basics](/integrations/adyen/guides/basics)
+- [Extend Get Payment Methods Request](/integrations/adyen/guides/extendgetpaymentmethodsrequest)
+- [Extend Payment Request](/integrations/adyen/guides/extendpaymentrequest)
+- [Payment Methods Guide](/integrations/adyen/guides/paymentmethods)
+- [Commercetools: Configuration](/integrations/adyen/introduction/configuration): Adyen Commercetools Integration Configuration Options
+- [Commercetools: Quickstart](/integrations/adyen/introduction)
+- [Adyen commercetools API v2 -> v3](/integrations/adyen/migration-guides/adyen-commercetools-api-v2-v3)
+- [Adyen commercetools SDK v1 -> v2](/integrations/adyen/migration-guides/adyen-commercetools-sdk-v1-v2)
+- [Legacy Adyen commercetools to SDK v2](/integrations/adyen/migration-guides/legacy-adyen-commercetool-to-sdk-v2)
+- [FAQ](/integrations/adyen/references/faq)
+- [Installation](/integrations/amplience/introduction/installation)
+- [Usage](/integrations/amplience/introduction/usage)
+- [Salesforce Commerce Cloud setup](/integrations/adyen-sfcc/introduction/sfcc-setup)
+- [Alokai Storefront configuration](/integrations/adyen-sfcc/introduction/storefront-starter-setup)
+- [Extend Payment Request](/integrations/adyen-sfcc/guides/extend-payment-request)
+- [Placing your first order](/integrations/adyen-sfcc/guides/first-order)
+- [Payment Methods Guide](/integrations/adyen-sfcc/guides/payment-methods)
+- [Payment Retries](/integrations/adyen-sfcc/guides/payment-retry)
+- [FAQ](/integrations/adyen-sfcc/references/faq)
+- [Embedded checkout](/integrations/bigcommerce/advanced/embedded-checkout)
+- [Filters](/integrations/bigcommerce/advanced/filters)
+- [Multi-currency overview](/integrations/bigcommerce/advanced/multi-currency): The BigCommerce integration supports the usage of multiple currencies.
+- [Configuring BigCommerce](/integrations/bigcommerce/getting-started/configuring-bigcommerce)
+- [Configuring Alokai](/integrations/bigcommerce/getting-started/configuring-vue-storefront)
+- [Quick start](/integrations/bigcommerce/getting-started/quick-start)
+- [Supported Features](/integrations/bigcommerce/getting-started/supported-features)
+- [Installation](/integrations/bloomreach-content/getting-started/installation)
+- [Usage](/integrations/bloomreach-content/getting-started/usage)
+- [Categories](/integrations/bloomreach-search/legacy/categories)
+- [Custom query](/integrations/bloomreach-search/legacy/custom-query): This section will cover the basics of using custom queries.
+- [Basics: Definitions](/integrations/bloomreach-search/legacy/definitions): This section will cover accessing and reusing fragments of GraphQL queries definitions used internally.
+- [Legacy GraphQL API](/integrations/bloomreach-search/legacy/introduction)
+- [Items](/integrations/bloomreach-search/legacy/items)
+- [Installation](/integrations/builder/introduction/installation)
+- [Usage](/integrations/builder/introduction/usage)
+- [Custom Queries](/integrations/commercetools/advanced/custom-queries)
+- [Commercetools API GraphQL Queries Documentation](/integrations/commercetools/advanced/graphql-queries): This documentation provides an overview of the GraphQL queries executed by specific methods in the Commercetools API.
+- [Authentication](/integrations/commercetools/basics/authentication)
+- [Cart](/integrations/commercetools/basics/cart)
+- [Cart](/integrations/commercetools/basics/checkout)
+- [Products](/integrations/commercetools/basics/products)
+- [Users](/integrations/commercetools/basics/users)
+- [Wishlist](/integrations/commercetools/basics/wishlist)
+- [Configuration](/integrations/commercetools/getting-started/configuration)
+- [Quick start](/integrations/commercetools/getting-started/quick-start)
+- [Supported Features](/integrations/commercetools/getting-started/supported-features): This page lists the Commercetools features supported by this integration.
+- [Installation](/integrations/contentful/getting-started/installation)
+- [Usage](/integrations/contentful/getting-started/usage)
+- [Installation](/integrations/contentstack/getting-started/installation)
+- [Usage](/integrations/contentstack/getting-started/usage)
+- [Custom Queries](/integrations/magento/advanced/custom-queries)
+- [Magento 2 API GraphQL Queries Documentation](/integrations/magento/advanced/graphql-queries): This documentation provides an overview of the GraphQL queries executed by specific methods in the Magento 2 API.
+- [Authentication](/integrations/magento/basics/authentication): In this section, we will cover the basics of authentication.
+- [Cart](/integrations/magento/basics/cart): In this section, we will cover the basics of cart. We will show you how to add products to cart, update cart items, remove cart items, and get cart totals.
+- [Checkout](/integrations/magento/basics/checkout)
+- [Miscellaneous](/integrations/magento/basics/misc): In this section, we will cover the basics of various miscellaneous methods.
+- [Products](/integrations/magento/basics/products): In this section, we will cover the basics of products. We will show you how to fetch products from in a variety of ways.
+- [Users](/integrations/magento/basics/users): In this section, we will cover the basics of users. We will show you how to fetch user data, create new users, and update existing users.
+- [Wishlist](/integrations/magento/basics/wishlist): In this section, we will cover the basics of wishlist. We will show you how to fetch wishlist data, create new wishlist, and update existing wishlist.
+- [Quick start](/integrations/magento/getting-started/quick-start)
+- [Supported Features](/integrations/magento/getting-started/supported-features): This page lists the Magento 2 features supported by this integration.
+- [Contributing](/integrations/odoo/contributing)
+- [Overview](/integrations/odoo/general)
+- [Starting new project](/integrations/odoo/general/new-project)
+- [Testing local](/integrations/odoo/general/testing-local)
+- [Building APIs](/integrations/odoo/sdk): A brief introduction to the purpose of the documentation, focusing on building front-end APIs that interact with Odoo.
+- [Middleware](/integrations/odoo/middleware): Alokai's Server Middleware is an Express.js application that provides a single place for you to connect to the multiple services that you need to run your storefront.
+- [Basic usage](/integrations/redis/guides/basic-usage): This guide will show you how to use methods of the Alokai SDK module for Redis.
+- [Setup for Alokai Storefront](/integrations/redis/introduction/setup-for-alokai-storefront)
+- [Assisted Service Module](/integrations/sapcc/features/assisted-service-module): If Assisted Service Module is enabled on your SAP Commerce Cloud instance, you can configure the Alokai SAPCC integration to make use of it.
+- [B2B Features](/integrations/sapcc/features/b2b-features): Since version 4.0.0, Alokai's integration for SAP Commerce Cloud allows you to use B2B features of your SAP Commerce Cloud instance.
+- [Generated API](/integrations/sapcc/features/generated-api)
+- [Local development with a custom SAPCC instance](/integrations/sapcc/features/local-development)
+- [Registering multiple integrations](/integrations/sapcc/features/multiple-instances)
+- [Alokai SAP OCC Extension](/integrations/sapcc/features/occ-extension)
+- [PKCE authentication](/integrations/sapcc/features/pkce-authentication)
+- [Refresh token and retry mechanism](/integrations/sapcc/features/refresh-and-retry)
+- [Session management](/integrations/sapcc/features/session-management)
+- [Quick start](/integrations/sapcc/getting-started/quick-start)
+- [Supported Features](/integrations/sapcc/getting-started/supported-features)
+- [Configuration](/integrations/sfcc/getting-started/configuration)
+- [Quick start](/integrations/sfcc/getting-started/quick-start)
+- [Supported features](/integrations/sfcc/getting-started/supported-features): This page lists the SalesForce Commerce Cloud features supported by this integration.
+- [API Clients Configuration](/integrations/sfcc/basics/api-clients)
+- [Authentication](/integrations/sfcc/basics/authentication): In this section, we will cover the basics of authentication.
+- [Basket](/integrations/sfcc/basics/basket): In this section, we will cover the basics of baskets. We will show you how to use baskets in a variety of ways.
+- [Products](/integrations/sfcc/basics/products): In this section, we will cover the basics of products. We will show you how to fetch products in a variety of ways.
+- [Users](/integrations/sfcc/basics/users): In this section, we will cover the basics of users. We will show you how to use users in a variety of ways.
+- [Wishlist](/integrations/sfcc/basics/wishlist): In this section, we will cover the basics of wishlists (product lists). We will show you how to use wishlists in a variety of ways.
+- [sfcc-api](/integrations/sfcc/reference/sfcc-api)
+- [sfcc-sdk](/integrations/sfcc/reference/sfcc-sdk)
+- [@vsf-enterprise/sfcc-types](/integrations/sfcc/reference/sfcc-types)
+- [Installation](/integrations/smartedit/getting-started/installation)
+- [Usage](/integrations/smartedit/getting-started/usage)
+- [Installation](/integrations/storyblok/introduction/installation)
+- [Usage](/integrations/storyblok/introduction/usage)
+- [Manual capture](/integrations/stripe-commercetools/basics/manual-capture): The integration gives you a possibility to set capture_method as manual while creating Stripe Payment intents.
+- [Protecting extension module with Basic Auth](/integrations/stripe-commercetools/basics/protecting-extension-module-with-basic-auth)
+- [Using SDK to perform payment](/integrations/stripe-commercetools/basics/using-sdk-to-perform-payment)
+- [Setting up the Modules](/integrations/stripe-commercetools/guide/modules-setup)
+- [Setup of the SDK module](/integrations/stripe-commercetools/guide/setup-of-the-sdk-module)
+- [Setup of the Alokai module](/integrations/stripe-commercetools/guide/setup-of-the-vsf-middleware-module): The third part of the setup is installing Stripe integration for commercetools in your Alokai middleware.
+- [Changelog of the extension Module](/integrations/stripe-commercetools/reference/changelog-of-the-extension-module)
+- [Changelog of the notification Module](/integrations/stripe-commercetools/reference/changelog-of-the-notification-module)
+- [Changelog of the SDK module](/integrations/stripe-commercetools/reference/changelog-of-the-sdk-module)
+- [Changelog of the Alokai module](/integrations/stripe-commercetools/reference/changelog-of-the-vsf-module)
+- [FAQ](/integrations/stripe-commercetools/reference/faq)
+- [Automatically Refreshing Access Tokens](/storefront/features/authentication/refresh-token): Learn how to automatically refresh access tokens for logged-in users in the Alokai Storefront and Unified SAP Integration
+- [Middleware](/storefront/features/file-upload/file-upload)
+- [Caching API responses](/storefront/features/cdn/caching-api-responses)
+- [CDN in Console](/storefront/features/cdn/cdn-in-console)
+- [Setting for how long the content should be cached (TTL)](/storefront/features/cdn/enabling-ssr-caching)
+- [What pages should I cache?](/storefront/features/cdn/making-ssr-cacheable)
+- [What next?](/storefront/features/cdn/what-next): After you have prepared the website to be CDN ready, feel free to contact our team. We will guide you through the next steps based on your individual case.
+- [Adding Additional Currencies](/storefront/features/internationalization/currency-switching): Learn how to configure additional currencies in your storefront and switch between them.
+- [Multi-language Support](/storefront/features/internationalization/internationalization-support): Configure your Alokai Storefront to support multiple languages with both static and dynamic content.
+- [Alokai Storefront Features](/storefront/features/storefront-features)
+- [Theming Your Storefront](/storefront/features/storefront-features/theming): Learn how to customize the look and feel of your Storefront
+- [Frontend components](/storefront/modules/cms/components)
+- [CMS](/storefront/modules/cms)
+- [Content Localization](/storefront/modules/cms/internationalization)
+- [Unified architecture](/storefront/modules/cms/unified-architecture)
+- [SAP Commerce Cloud: Assisted Service Mode](/storefront/modules/sap/asm): The Assisted Service Mode (ASM) is a module that allows customer support agents to emulate customers and perform actions on their behalf. This powerful tool provides a seamless way for support agents to assist customers in real-time, enhancing the overall customer experience.
+- [SAP Commerce Cloud: CDC Authentication](/storefront/modules/sap/cdc): The SAP Customer Data Cloud (CDC) module replaces the default OCC login with Gigya-based authentication. It handles login, registration, password management, and profile updates through Gigya's identity platform while keeping SAP Commerce Cloud as the source of truth for customer data.
+- [SAP Commerce Cloud: Quick Order](/storefront/modules/sap/quick-order): SAP Quick Order is a module for shop owners looking to streamline the purchasing process of their customers. It adds a dynamic form within your store that offers a seamless and intuitive experience tailored for busy professionals.
+- [SAP Commerce Cloud: Re-Order](/storefront/modules/sap/re-order): SAP Re-Order module allows customers to easily place a new order for the same or similar products that they have previously purchased from an ecommerce store. This module can help increase customer loyalty, retention and revenue by offering convenience and personalization.
+- [Coding Standards](/storefront/modules/contributing/coding-standards)
+- [Development](/storefront/modules/contributing/development): New modules can be developed using the Alokai CLI (@vsf-enterprise/storefront-cli) tool. Writing new modules or modifying existing modules is possible with dev mode in CLI.
+- [File structure](/storefront/modules/contributing/file-structure): The module has to have a proper structure so CLI can read it properly and copy parts of modules in the right places.
+- [Tech Stack](/storefront/modules/contributing/tech-stack)
+- [Adding Playwright Tests to Your Module](/storefront/modules/contributing/writing-tests)
+- [Algolia Search Integration](/storefront/modules/search-integrations/algolia): Replace the default product search in your Alokai Storefront project with Algolia
+- [Salesforce Commerce Cloud: Storefront Toolkit](/storefront/modules/sfcc/toolkit): The Storefront Toolkit is a module that allows site merchandizers to view the storefront as it would appear at a specific date and time. They can specify a customer group or source code and see how the storefront looks when logged in as a customer of the group or using the source code.
+- [B2B for SAP Commerce Cloud](/unified-data-layer/features/advanced/b2b-sapcc): Learn how to add B2B features to your SAP Commerce Cloud Storefront.
+- [Custom Queries in Unified Data Layer](/unified-data-layer/features/advanced/custom-queries)
+- [Swapping eCommerce Platforms](/unified-data-layer/features/advanced/swap-ecommerce-platform): Learn how to switch your e-commerce platform integration with the Alokai Storefront and Unified Data Layer
+- [Working with Facets](/unified-data-layer/features/product/dynamic-facets): Learn how to configure your middleware to customize facet types and filter facets.
+- [Choosing Your Multistore Approach](/guides/multistore/patterns/subpath/choosing-approach): Understanding when to use domain-based vs path-based routing is crucial for making the right architectural decision for your multistore project.
+- [Sub-path Routing Implementation](/guides/multistore/patterns/subpath/implementation): This guide provides step-by-step instructions for implementing sub-path routing in your Alokai application.
+- [Mixed Domain and Sub-path Routing](/guides/multistore/patterns/subpath/mixed-routing)
+- [Sub-path Routing Overview](/guides/multistore/patterns/subpath/overview)
+- [Development - Writing an integration tests with Playwright](/guides/multistore/tooling-and-concepts/development/integration-tests)
+- [Development - Using a local environment](/guides/multistore/tooling-and-concepts/development/local-environment): This guide explains how to set up and run your local development environment for Alokai multistore projects, building on the concepts of file-based inheritance.
+- [Development - Managing the stores](/guides/multistore/tooling-and-concepts/development/managing-the-stores): This guide covers the core operations for managing stores in Alokai multistore projects through the Alokai CLI.
+- [Deployment - CD Pipeline](/guides/multistore/tooling-and-concepts/deployment/cd)
+- [Deployment - Configuration](/guides/multistore/tooling-and-concepts/deployment/configuration): Deploying your Alokai stores is incredibly simple! With our powerful deployment system, you can go from development to production in just a few minutes.
+- [Deployment - How it works?](/guides/multistore/tooling-and-concepts/deployment): Ever wondered how Alokai transforms your codebase into a live, running application? This guide takes you behind the scenes of the deployment process, showing you exactly how your code goes from development to production.
+- [@vsf-enterprise/adyen-commercetools-api](/integrations/adyen/references/changelogs/vsf-enterprise-adyen-commercetools-api)
+- [@vsf-enterprise/adyen-commercetools-sdk](/integrations/adyen/references/changelogs/vsf-enterprise-adyen-commercetools-sdk)
+- [@vsf-enterprise/adyen-commercetools-types](/integrations/adyen/references/changelogs/vsf-enterprise-adyen-commercetools-types)
+- [Change Log](/integrations/amplience/reference/changelogs/amplience-api)
+- [@vsf-enterprise/amplience-sdk](/integrations/amplience/reference/changelogs/amplience-sdk)
+- [Changelogs](/integrations/amplience/reference/changelogs)
+- [@vsf-enterprise/adyen-sfcc-api](/integrations/adyen-sfcc/references/changelogs/vsf-enterprise-sfcc-commercetools-api)
+- [@vsf-enterprise/adyen-sfcc-sdk](/integrations/adyen-sfcc/references/changelogs/vsf-enterprise-sfcc-commercetools-sdk)
+- [@vsf-enterprise/adyen-sfcc-types](/integrations/adyen-sfcc/references/changelogs/vsf-enterprise-sfcc-commercetools-types)
+- [Change logs](/integrations/bigcommerce/reference/changelogs)
+- [Legacy](/integrations/bigcommerce/reference/changelogs/legacy)
+- [Change Log](/integrations/bigcommerce/reference/changelogs/vsf-enterprise-bigcommerce-api)
+- [@vsf-enterprise/bigcommerce-sdk](/integrations/bigcommerce/reference/changelogs/vsf-enterprise-bigcommerce-sdk)
+- [@vsf-enterprise/bigcommerce-types](/integrations/bigcommerce/reference/changelogs/vsf-enterprise-bigcommerce-types)
+- [Change logs](/integrations/bloomreach-content/reference/changelogs)
+- [@vsf-enterprise/bloomreach-content-api](/integrations/bloomreach-content/reference/changelogs/vsf-enterprise-bloomreach-content-api)
+- [Change Log](/integrations/bloomreach-content/reference/changelogs/vsf-enterprise-bloomreach-content-manager)
+- [Change Log](/integrations/bloomreach-content/reference/changelogs/vsf-enterprise-bloomreach-content-sdk)
+- [Change logs](/integrations/bloomreach-search/reference/changelogs)
+- [@vsf-enterprise/bloomreach-discovery-api](/integrations/bloomreach-search/reference/changelogs/vsf-enterprise-bloomreach-search-api-client)
+- [@vsf-enterprise/bloomreach-discovery-sdk](/integrations/bloomreach-search/reference/changelogs/vsf-enterprise-bloomreach-search-sdk)
+- [Change Log](/integrations/builder/reference/changelogs/builder-api)
+- [@vsf-enterprise/builder-sdk](/integrations/builder/reference/changelogs/builder-sdk)
+- [Changelogs](/integrations/builder/reference/changelogs)
+- [Change logs](/integrations/commercetools/reference/changelogs)
+- [Release notes v1.10.0](/integrations/commercetools/reference/changelogs/legacy)
+- [Change Log](/integrations/commercetools/reference/changelogs/vsf-enterprise-commercetools-api)
+- [Change Log](/integrations/commercetools/reference/changelogs/vsf-enterprise-commercetools-composables)
+- [Change Log](/integrations/commercetools/reference/changelogs/vsf-enterprise-commercetools-sdk)
+- [Change Log](/integrations/commercetools/reference/changelogs/vsf-enterprise-commercetools-types)
+- [Migrating from 1.12.0 to SDK](/integrations/commercetools/reference/migration-guides/composables-to-sdk)
+- [Migration guides](/integrations/commercetools/reference/migration-guides)
+- [Changelogs](/integrations/contentful/reference/changelogs)
+- [@vsf-enterprise/contentful-api](/integrations/contentful/reference/changelogs/vsf-enterprise-contentful-api)
+- [@vsf-enterprise/contentful-sdk](/integrations/contentful/reference/changelogs/vsf-enterprise-contentful-sdk)
+- [@vsf-enterprise/contentstack-api](/integrations/contentstack/reference/changelogs/contentstack-api)
+- [@vsf-enterprise/contentstack-sdk](/integrations/contentstack/reference/changelogs/contentstack-sdk)
+- [Changelogs](/integrations/contentstack/reference/changelogs)
+- [Change logs](/integrations/magento/reference/changelogs)
+- [@vue-storefront/magento-api](/integrations/magento/reference/changelogs/vsf-enterprise-magento-api)
+- [@vue-storefront/magento-sdk](/integrations/magento/reference/changelogs/vsf-enterprise-magento-sdk)
+- [@vue-storefront/magento-types](/integrations/magento/reference/changelogs/vsf-enterprise-magento-types)
+- [Changelogs](/integrations/redis/reference/changelogs)
+- [@vsf-enterprise/redis-sdk](/integrations/redis/reference/changelogs/vsf-enterprise-redis-sdk)
+- [Change logs](/integrations/sapcc/reference/changelogs)
+- [Change Log](/integrations/sapcc/reference/changelogs/vsf-enterprise-sap-commerce-webservices-sdk)
+- [Change Log](/integrations/sapcc/reference/changelogs/vsf-enterprise-sapcc-api)
+- [Change Log](/integrations/sapcc/reference/changelogs/vsf-enterprise-sapcc-sdk)
+- [Change Log](/integrations/sapcc/reference/changelogs/vsf-enterprise-sapcc-types)
+- [sfcc-api](/integrations/sfcc/reference/changelogs/sfcc-api)
+- [sfcc-sdk](/integrations/sfcc/reference/changelogs/sfcc-sdk)
+- [@vsf-enterprise/sfcc-types](/integrations/sfcc/reference/changelogs/sfcc-types)
+- [Change logs](/integrations/smartedit/reference/changelogs)
+- [@vsf-enterprise/smartedit-sdk](/integrations/smartedit/reference/changelogs/smartedit-sdk)
+- [@vsf-enterprise/smartedit-api](/integrations/smartedit/reference/changelogs/vsf-enterprise-smartedit-api)
+- [Changelogs](/integrations/storyblok/reference/changelogs)
+- [@vsf-enterprise/storyblok-api](/integrations/storyblok/reference/changelogs/storyblok-api)
+- [@vsf-enterprise/storyblok-sdk](/integrations/storyblok/reference/changelogs/storyblok-sdk)
+- [Creating CMS components](/storefront/modules/cms/guides/creating-components): This guide will show you how you could approach adding new components to your Alokai & CMS setup. The described steps will also come in handy while editing the existing components.
+- [Creating CMS pages](/storefront/modules/cms/guides/creating-pages)
+- [Using Multiple CMS Systems](/storefront/modules/cms/guides/multiple-cms)
+- [Quick start](/storefront/modules/cms/guides/quick-start)
+- [Resolving CMS pages](/storefront/modules/cms/guides/resolving-pages)
+- [Amplience](/storefront/modules/cms/modules/amplience)
+- [Bloomreach Content](/storefront/modules/cms/modules/bloomreach-content)
+- [Builder.io](/storefront/modules/cms/modules/builderio)
+- [Contentful](/storefront/modules/cms/modules/contentful)
+- [Contentstack](/storefront/modules/cms/modules/contentstack)
+- [SmartEdit](/storefront/modules/cms/modules/smartedit)
+- [Storyblok](/storefront/modules/cms/modules/storyblok): Storyblok is a powerful dynamic content management system that allows developers to manage, deliver, and optimize content for various digital experiences.
+- [Available models](/storefront/modules/sap/compass/available-models)
+- [First workflow](/storefront/modules/sap/compass/examples): Now that you understand the way Alokai Compass works and have it intalled in your Storefront project, you can start creating engaging AI interactions.
+- [Installation](/storefront/modules/sap/compass/installation)
+- [Alokai Compass](/storefront/modules/sap/compass/overview)
+- [SAP Commerce Cloud: B2B Register](/storefront/modules/sap/b2b/register): SAP B2B Registration module consists set of steps that an entity has to follow in order to access or obtain account credentials for purchasing in commerce.
+- [Bloomreach Discovery](/storefront/modules/search-integrations/bloomreach)
+- [SAP Commerce Cloud: Coveo integration](/storefront/modules/search-integrations/coveo): Alokai & Coveo Search Integration: Supercharge Your Online Store
+- [Address normalizers](/unified-data-layer/reference/bigcommerce/normalizers/address-normalizer): Address management in the Storefront requires bidirectional normalization.
+- [Attributes normalizer](/unified-data-layer/reference/bigcommerce/normalizers/attributes-normalizer): Attributes are Unified Data Layer representation of BigCommerce options. The normalizeAttribute function maps the variant's or cart item option into an SfAttribute.
+- [Cart normalizer](/unified-data-layer/reference/bigcommerce/normalizers/cart-normalizer)
+- [Category normalizer](/unified-data-layer/reference/bigcommerce/normalizers/category-normalizer)
+- [Customer normalizer](/unified-data-layer/reference/bigcommerce/normalizers/customer-normalizer)
+- [Facet normalizer](/unified-data-layer/reference/bigcommerce/normalizers/facet-normalizer)
+- [Money normalizer](/unified-data-layer/reference/bigcommerce/normalizers/money-normalizer)
+- [Order normalizer](/unified-data-layer/reference/bigcommerce/normalizers/order-normalizer)
+- [Product normalizers](/unified-data-layer/reference/bigcommerce/normalizers/product-normalizers)
+- [Product review normalizer](/unified-data-layer/reference/bigcommerce/normalizers/product-review-normalizer)
+- [AddCartLineItem](/unified-data-layer/reference/bigcommerce/methods/add-cart-line-item)
+- [ApplyCouponToCart](/unified-data-layer/reference/bigcommerce/methods/apply-coupon-to-cart)
+- [ChangeCustomerPassword](/unified-data-layer/reference/bigcommerce/methods/change-customer-password)
+- [CreateCustomerAddress](/unified-data-layer/reference/bigcommerce/methods/create-customer-address)
+- [DeleteCustomerAddress](/unified-data-layer/reference/bigcommerce/methods/delete-customer-address)
+- [GetCart](/unified-data-layer/reference/bigcommerce/methods/get-cart)
+- [GetCategories](/unified-data-layer/reference/bigcommerce/methods/get-categories)
+- [GetCategory](/unified-data-layer/reference/bigcommerce/methods/get-category)
+- [GetCurrencies](/unified-data-layer/reference/bigcommerce/methods/get-currencies)
+- [GetCustomerAddresses](/unified-data-layer/reference/bigcommerce/methods/get-customer-addresses)
+- [GetCustomer](/unified-data-layer/reference/bigcommerce/methods/get-customer)
+- [GetOrderDetails](/unified-data-layer/reference/bigcommerce/methods/get-order-details)
+- [GetOrders](/unified-data-layer/reference/bigcommerce/methods/get-orders)
+- [GetProductDetails](/unified-data-layer/reference/bigcommerce/methods/get-product-details)
+- [GetProductReviews](/unified-data-layer/reference/bigcommerce/methods/get-product-reviews)
+- [GetProducts](/unified-data-layer/reference/bigcommerce/methods/get-products)
+- [LoginCustomer](/unified-data-layer/reference/bigcommerce/methods/login-customer)
+- [LogoutCustomer](/unified-data-layer/reference/bigcommerce/methods/logout-customer)
+- [RegisterCustomer](/unified-data-layer/reference/bigcommerce/methods/register-customer)
+- [RemoveCartLineItem](/unified-data-layer/reference/bigcommerce/methods/remove-cart-line-item)
+- [RemoveCouponFromCart](/unified-data-layer/reference/bigcommerce/methods/remove-coupon-from-cart)
+- [SearchProducts](/unified-data-layer/reference/bigcommerce/methods/search-products)
+- [UpdateCartLineItem](/unified-data-layer/reference/bigcommerce/methods/update-cart-line-item)
+- [UpdateCustomerAddress](/unified-data-layer/reference/bigcommerce/methods/update-customer-address)
+- [UpdateCustomer](/unified-data-layer/reference/bigcommerce/methods/update-customer)
+- [AddCartLineItem](/unified-data-layer/reference/commercetools/methods/add-cart-line-item)
+- [ApplyCouponToCart](/unified-data-layer/reference/commercetools/methods/apply-coupon-to-cart)
+- [ChangeCustomerPassword](/unified-data-layer/reference/commercetools/methods/change-customer-password)
+- [CreateCustomerAddress](/unified-data-layer/reference/commercetools/methods/create-customer-address)
+- [DeleteCustomerAddress](/unified-data-layer/reference/commercetools/methods/delete-customer-address)
+- [GetAvailableShippingMethods](/unified-data-layer/reference/commercetools/methods/get-available-shipping-methods)
+- [GetCart](/unified-data-layer/reference/commercetools/methods/get-cart)
+- [GetCategories](/unified-data-layer/reference/commercetools/methods/get-categories)
+- [GetCategory](/unified-data-layer/reference/commercetools/methods/get-category)
+- [GetCurrencies](/unified-data-layer/reference/commercetools/methods/get-currencies)
+- [GetCustomerAddresses](/unified-data-layer/reference/commercetools/methods/get-customer-addresses)
+- [GetCustomer](/unified-data-layer/reference/commercetools/methods/get-customer)
+- [GetOrderDetails](/unified-data-layer/reference/commercetools/methods/get-order-details)
+- [GetOrders](/unified-data-layer/reference/commercetools/methods/get-orders)
+- [GetProductDetails](/unified-data-layer/reference/commercetools/methods/get-product-details)
+- [GetProductReviews](/unified-data-layer/reference/commercetools/methods/get-product-reviews)
+- [GetProducts](/unified-data-layer/reference/commercetools/methods/get-products)
+- [LoginCustomer](/unified-data-layer/reference/commercetools/methods/login-customer)
+- [LogoutCustomer](/unified-data-layer/reference/commercetools/methods/logout-customer)
+- [PlaceOrder](/unified-data-layer/reference/commercetools/methods/place-order)
+- [RegisterCustomer](/unified-data-layer/reference/commercetools/methods/register-customer)
+- [RemoveCartLineItem](/unified-data-layer/reference/commercetools/methods/remove-cart-line-item)
+- [RemoveCouponFromCart](/unified-data-layer/reference/commercetools/methods/remove-coupon-from-cart)
+- [SearchProducts](/unified-data-layer/reference/commercetools/methods/search-products)
+- [SetCartAddress](/unified-data-layer/reference/commercetools/methods/set-cart-address)
+- [SetCustomerEmail](/unified-data-layer/reference/commercetools/methods/set-customer-email)
+- [SetShippingMethod](/unified-data-layer/reference/commercetools/methods/set-shipping-method)
+- [UpdateCartLineItem](/unified-data-layer/reference/commercetools/methods/update-cart-line-item)
+- [UpdateCustomerAddress](/unified-data-layer/reference/commercetools/methods/update-customer-address)
+- [UpdateCustomer](/unified-data-layer/reference/commercetools/methods/update-customer)
+- [Address normalizers](/unified-data-layer/reference/magento/normalizers/address-normalizer): Address management in the Storefront requires bidirectional normalization.
+- [Attributes normalizer](/unified-data-layer/reference/magento/normalizers/attributes-normalizer): Attributes are Unified Data Layer representation of Magento option. The normalizeAttribute function maps the variant's attributes into an array of SfAttribute.
+- [Cart normalizer](/unified-data-layer/reference/magento/normalizers/cart-normalizer)
+- [Category normalizer](/unified-data-layer/reference/magento/normalizers/category-normalizer)
+- [Customer normalizer](/unified-data-layer/reference/magento/normalizers/customer-normalizer)
+- [Facet normalizer](/unified-data-layer/reference/magento/normalizers/facet-normalizer)
+- [Image normalizer](/unified-data-layer/reference/magento/normalizers/image-normalizer)
+- [Money normalizer](/unified-data-layer/reference/magento/normalizers/money-normalizer)
+- [Order normalizer](/unified-data-layer/reference/magento/normalizers/order-normalizer)
+- [Product normalizers](/unified-data-layer/reference/magento/normalizers/product-normalizers)
+- [Product review normalizer](/unified-data-layer/reference/magento/normalizers/product-review-normalizer)
+- [AddCartLineItem](/unified-data-layer/reference/magento/methods/add-cart-line-item)
+- [ApplyCouponToCart](/unified-data-layer/reference/magento/methods/apply-coupon-to-cart)
+- [ChangeCustomerPassword](/unified-data-layer/reference/magento/methods/change-customer-password)
+- [CreateCustomerAddress](/unified-data-layer/reference/magento/methods/create-customer-address)
+- [DeleteCustomerAddress](/unified-data-layer/reference/magento/methods/delete-customer-address)
+- [GetAvailableShippingMethods](/unified-data-layer/reference/magento/methods/get-available-shipping-methods)
+- [GetCart](/unified-data-layer/reference/magento/methods/get-cart)
+- [GetCategories](/unified-data-layer/reference/magento/methods/get-categories)
+- [GetCategory](/unified-data-layer/reference/magento/methods/get-category)
+- [GetCurrencies](/unified-data-layer/reference/magento/methods/get-currencies)
+- [GetCustomerAddresses](/unified-data-layer/reference/magento/methods/get-customer-addresses)
+- [GetCustomer](/unified-data-layer/reference/magento/methods/get-customer)
+- [GetOrderDetails](/unified-data-layer/reference/magento/methods/get-order-details)
+- [GetOrders](/unified-data-layer/reference/magento/methods/get-orders)
+- [GetProductDetails](/unified-data-layer/reference/magento/methods/get-product-details)
+- [GetProductReviews](/unified-data-layer/reference/magento/methods/get-product-reviews)
+- [GetProducts](/unified-data-layer/reference/magento/methods/get-products)
+- [LoginCustomer](/unified-data-layer/reference/magento/methods/login-customer)
+- [LogoutCustomer](/unified-data-layer/reference/magento/methods/logout-customer)
+- [PlaceOrder](/unified-data-layer/reference/magento/methods/place-order)
+- [RegisterCustomer](/unified-data-layer/reference/magento/methods/register-customer)
+- [RemoveCartLineItem](/unified-data-layer/reference/magento/methods/remove-cart-line-item)
+- [RemoveCouponFromCart](/unified-data-layer/reference/magento/methods/remove-coupon-from-cart)
+- [SearchProducts](/unified-data-layer/reference/magento/methods/search-products)
+- [SetCartAddress](/unified-data-layer/reference/magento/methods/set-cart-address)
+- [SetCustomerEmail](/unified-data-layer/reference/magento/methods/set-customer-email)
+- [SetShippingMethod](/unified-data-layer/reference/magento/methods/set-shipping-method)
+- [UpdateCartLineItem](/unified-data-layer/reference/magento/methods/update-cart-line-item)
+- [UpdateCustomerAddress](/unified-data-layer/reference/magento/methods/update-customer-address)
+- [UpdateCustomer](/unified-data-layer/reference/magento/methods/update-customer)
+- [Address normalizers](/unified-data-layer/reference/commercetools/normalizers/address-normalizer): Address management in the Storefront requires bidirectional normalization.
+- [Attributes normalizer](/unified-data-layer/reference/commercetools/normalizers/attributes-normalizer): Attributes are Unified Data Layer representation of Commercetools RawProductAttribute. The normalizeAttribute function maps the variant's RawProductAttribute into an SfAttribute.
+- [Cart normalizer](/unified-data-layer/reference/commercetools/normalizers/cart-normalizer)
+- [Category normalizer](/unified-data-layer/reference/commercetools/normalizers/category-normalizer)
+- [Customer normalizer](/unified-data-layer/reference/commercetools/normalizers/customer-normalizer)
+- [Facet normalizer](/unified-data-layer/reference/commercetools/normalizers/facet-normalizer)
+- [Image normalizer](/unified-data-layer/reference/commercetools/normalizers/image-normalizer)
+- [Money normalizer](/unified-data-layer/reference/commercetools/normalizers/money-normalizer)
+- [Order normalizer](/unified-data-layer/reference/commercetools/normalizers/order-normalizer)
+- [Product normalizers](/unified-data-layer/reference/commercetools/normalizers/product-normalizers)
+- [Product review normalizer](/unified-data-layer/reference/commercetools/normalizers/product-review-normalizer)
+- [Address normalizers](/unified-data-layer/reference/sapcc/normalizers/address-normalizers): Address management in the Storefront requires bidirectional normalization.
+- [Attributes normalizer](/unified-data-layer/reference/sapcc/normalizers/attributes-normalizer): Attributes are Unified Data Layer representation of SAP VariantOptionQualifiers. The normalizeAttribute function maps VariantOptionQualifier into a SfAttribute.
+- [Cart normalizer](/unified-data-layer/reference/sapcc/normalizers/cart-normalizer)
+- [Category normalizer](/unified-data-layer/reference/sapcc/normalizers/category-normalizer)
+- [Customer normalizer](/unified-data-layer/reference/sapcc/normalizers/customer-normalizer)
+- [Facet normalizer](/unified-data-layer/reference/sapcc/normalizers/facet-normalizer)
+- [Image normalizer](/unified-data-layer/reference/sapcc/normalizers/image-normalizer)
+- [Money normalizer](/unified-data-layer/reference/sapcc/normalizers/money-normalizer)
+- [Order normalizer](/unified-data-layer/reference/sapcc/normalizers/order-normalizer)
+- [Product normalizers](/unified-data-layer/reference/sapcc/normalizers/product-normalizers)
+- [Product review normalizer](/unified-data-layer/reference/sapcc/normalizers/product-review-normalizer)
+- [AddCartLineItem](/unified-data-layer/reference/sapcc/methods/add-cart-line-item)
+- [ApplyCouponToCart](/unified-data-layer/reference/sapcc/methods/apply-coupon-to-cart)
+- [ChangeCustomerPassword](/unified-data-layer/reference/sapcc/methods/change-customer-password)
+- [CreateCustomerAddress](/unified-data-layer/reference/sapcc/methods/create-customer-address)
+- [DeleteCustomerAddress](/unified-data-layer/reference/sapcc/methods/delete-customer-address)
+- [GetAvailableShippingMethods](/unified-data-layer/reference/sapcc/methods/get-available-shipping-methods)
+- [GetCart](/unified-data-layer/reference/sapcc/methods/get-cart)
+- [GetCategories](/unified-data-layer/reference/sapcc/methods/get-categories)
+- [GetCategory](/unified-data-layer/reference/sapcc/methods/get-category)
+- [GetCurrencies](/unified-data-layer/reference/sapcc/methods/get-currencies)
+- [GetCustomerAddresses](/unified-data-layer/reference/sapcc/methods/get-customer-addresses)
+- [GetCustomer](/unified-data-layer/reference/sapcc/methods/get-customer)
+- [GetOrderDetails](/unified-data-layer/reference/sapcc/methods/get-order-details)
+- [GetOrders](/unified-data-layer/reference/sapcc/methods/get-orders)
+- [GetProductDetails](/unified-data-layer/reference/sapcc/methods/get-product-details)
+- [GetProductReviews](/unified-data-layer/reference/sapcc/methods/get-product-reviews)
+- [GetProducts](/unified-data-layer/reference/sapcc/methods/get-products)
+- [LoginCustomer](/unified-data-layer/reference/sapcc/methods/login-customer)
+- [LogoutCustomer](/unified-data-layer/reference/sapcc/methods/logout-customer)
+- [PlaceOrder](/unified-data-layer/reference/sapcc/methods/place-order)
+- [RegisterCustomer](/unified-data-layer/reference/sapcc/methods/register-customer)
+- [RemoveCartLineItem](/unified-data-layer/reference/sapcc/methods/remove-cart-line-item)
+- [RemoveCouponFromCart](/unified-data-layer/reference/sapcc/methods/remove-coupon-from-cart)
+- [SearchProducts](/unified-data-layer/reference/sapcc/methods/search-products)
+- [SetCartAddress](/unified-data-layer/reference/sapcc/methods/set-cart-address)
+- [SetCustomerEmail](/unified-data-layer/reference/sapcc/methods/set-customer-email)
+- [SetShippingMethod](/unified-data-layer/reference/sapcc/methods/set-shipping-method)
+- [UpdateCartLineItem](/unified-data-layer/reference/sapcc/methods/update-cart-line-item)
+- [UpdateCustomerAddress](/unified-data-layer/reference/sapcc/methods/update-customer-address)
+- [UpdateCustomer](/unified-data-layer/reference/sapcc/methods/update-customer)
+- [AddCartLineItem](/unified-data-layer/reference/sfcc/methods/add-cart-line-item)
+- [ApplyCouponToCart](/unified-data-layer/reference/sfcc/methods/apply-coupon-to-cart)
+- [ChangeCustomerPassword](/unified-data-layer/reference/sfcc/methods/change-customer-password)
+- [CreateCustomerAddress](/unified-data-layer/reference/sfcc/methods/create-customer-address)
+- [DeleteCustomerAddress](/unified-data-layer/reference/sfcc/methods/delete-customer-address)
+- [GetAvailableShippingMethods](/unified-data-layer/reference/sfcc/methods/get-available-shipping-methods)
+- [GetCart](/unified-data-layer/reference/sfcc/methods/get-cart)
+- [GetCategories](/unified-data-layer/reference/sfcc/methods/get-categories)
+- [GetCategory](/unified-data-layer/reference/sfcc/methods/get-category)
+- [GetCurrencies](/unified-data-layer/reference/sfcc/methods/get-currencies)
+- [GetCustomerAddresses](/unified-data-layer/reference/sfcc/methods/get-customer-addresses)
+- [GetCustomer](/unified-data-layer/reference/sfcc/methods/get-customer)
+- [GetOrderDetails](/unified-data-layer/reference/sfcc/methods/get-order-details)
+- [GetOrders](/unified-data-layer/reference/sfcc/methods/get-orders)
+- [GetProductDetails](/unified-data-layer/reference/sfcc/methods/get-product-details)
+- [GetProducts](/unified-data-layer/reference/sfcc/methods/get-products)
+- [LoginCustomer](/unified-data-layer/reference/sfcc/methods/login-customer)
+- [LogoutCustomer](/unified-data-layer/reference/sfcc/methods/logout-customer)
+- [PlaceOrder](/unified-data-layer/reference/sfcc/methods/place-order)
+- [RegisterCustomer](/unified-data-layer/reference/sfcc/methods/register-customer)
+- [RemoveCartLineItem](/unified-data-layer/reference/sfcc/methods/remove-cart-line-item)
+- [RemoveCouponFromCart](/unified-data-layer/reference/sfcc/methods/remove-coupon-from-cart)
+- [SearchProducts](/unified-data-layer/reference/sfcc/methods/search-products)
+- [SetCartAddress](/unified-data-layer/reference/sfcc/methods/set-cart-address)
+- [SetCustomerEmail](/unified-data-layer/reference/sfcc/methods/set-customer-email)
+- [SetShippingMethod](/unified-data-layer/reference/sfcc/methods/set-shipping-method)
+- [UpdateCartLineItem](/unified-data-layer/reference/sfcc/methods/update-cart-line-item)
+- [UpdateCustomerAddress](/unified-data-layer/reference/sfcc/methods/update-customer-address)
+- [UpdateCustomer](/unified-data-layer/reference/sfcc/methods/update-customer)
+- [Address normalizers](/unified-data-layer/reference/sfcc/normalizers/address-normalizers): Address management in the Storefront requires bidirectional normalization.
+- [Attributes normalizer](/unified-data-layer/reference/sfcc/normalizers/attributes-normalizer): Attributes are Unified Data Layer representation of SFCC VariationAttribute values. The normalizeAttribute function map a single VariationValue along with list of VariationAttributes into an SfAttribute.
+- [Cart normalizer](/unified-data-layer/reference/sfcc/normalizers/cart-normalizer)
+- [Category normalizer](/unified-data-layer/reference/sfcc/normalizers/category-normalizer)
+- [Customer normalizer](/unified-data-layer/reference/sfcc/normalizers/customer-normalizer)
+- [Facet normalizer](/unified-data-layer/reference/sfcc/normalizers/facet-normalizer)
+- [Image normalizer](/unified-data-layer/reference/sfcc/normalizers/image-normalizer)
+- [Money normalizer](/unified-data-layer/reference/sfcc/normalizers/money-normalizer)
+- [Order normalizer](/unified-data-layer/reference/sfcc/normalizers/order-normalizer)
+- [Product normalizers](/unified-data-layer/reference/sfcc/normalizers/product-normalizers)
+- [Product review normalizer](/unified-data-layer/reference/sfcc/normalizers/product-review-normalizer): The normalizeProductReview don't exists in SFCC normalizers due to lack of support for product's reviews in SFCC.
+- [Manual Setup](/storefront/modules/search-integrations/bloomreach/content/getting-started/manual-setup)
+- [Quick Start](/storefront/modules/search-integrations/bloomreach/content/getting-started/quick-start)
+- [Configuration](/storefront/modules/search-integrations/bloomreach/content/unified/configuration)
+- [Customization](/storefront/modules/search-integrations/bloomreach/content/unified/customization): Once the basics are working, you'll likely want to customize how facets are displayed, support multiple currencies or languages, or extend the normalized response with fields specific to your store.
+- [Index Structure](/storefront/modules/search-integrations/bloomreach/content/unified/index-structure): The unified extension is designed to work out of the box when your Bloomreach catalog follows certain field naming conventions. This guide explains what those conventions are, and what to do when your catalog differs.
+- [Reference](/storefront/modules/search-integrations/bloomreach/content/unified/reference): Quick-reference tables for all configuration options, API parameters, normalizers, and expected index fields.
+- [Usage](/storefront/modules/search-integrations/bloomreach/content/unified/usage)
+- [Analytics](/storefront/modules/search-integrations/coveo/content/advanced-guide/analytics)
+- [Load dynamically facets](/storefront/modules/search-integrations/coveo/content/advanced-guide/load-dynamically-facets)
+- [Normalizers](/storefront/modules/search-integrations/coveo/content/advanced-guide/normalizers): In our integration, we use so-called normalizers to map data received from the Coveo to match Unified Data Model. It is possible to overwrite these normalizers with functions respecting the contract.
+- [URL Parameters Mapping](/storefront/modules/search-integrations/coveo/content/advanced-guide/url-mappers)
+- [With Alokai](/storefront/modules/search-integrations/coveo/content/advanced-guide/with-alokai)
+- [Changelog](/storefront/modules/search-integrations/coveo/content/changelog)
+- [Frontend](/storefront/modules/search-integrations/coveo/content/installation/frontend-modification)
+- [Install the Module](/storefront/modules/search-integrations/coveo/content/installation/install-the-module)
+- [Middleware Extension](/storefront/modules/search-integrations/coveo/content/installation/middleware-extension)
+- [Quick Start](/storefront/modules/search-integrations/coveo/content/quick-start/quick-start)
+- [Configuration Files](/storefront/modules/search-integrations/coveo/content/configuration/config-files): There are additional configuration files that you can use to customize the UI and behavior of the Coveo module. You can find these files in the config directory of the coveo module.
+- [Search Engine](/storefront/modules/search-integrations/coveo/content/configuration/search-engine)

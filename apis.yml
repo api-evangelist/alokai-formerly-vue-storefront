@@ -1,8 +1,15 @@
 aid: alokai-formerly-vue-storefront
 name: Alokai (formerly Vue Storefront)
-description: 'Alokai (formerly Vue Storefront) is a company surfaced as a portfolio company of creandum
-  and added to the API Evangelist network as a stub for enrichment. Sector: saas. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  Alokai (formerly Vue Storefront) is a Frontend-as-a-Service platform for
+  composable, headless commerce. It connects enterprise ecommerce backends
+  (SAP Commerce Cloud, Salesforce, Adobe Commerce/Magento, commercetools,
+  BigCommerce, Shopware and others) to fast, customizable storefronts through
+  the Alokai SDK, a server-side Middleware layer, a Unified Data Layer, the
+  StorefrontUI component library, and Alokai Cloud hosting managed via the
+  Alokai Console. The Alokai Cloud API ("farmer", OpenAPI 3.0) programmatically
+  manages cloud instances, deployments, pods, ingresses, CDN cache and
+  environment variables, authenticated with X-Api-Key and X-User-Id headers.
 url: https://raw.githubusercontent.com/api-evangelist/alokai-formerly-vue-storefront/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +17,355 @@ x-backed-by:
 - creandum
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
+image: https://images.contentstack.io/v3/assets/bltb1a38d5d52a9d1a1/bltd2e8b4aaef77df33/65f899d60c744de1117c17ef/OG_Product_Overview_(1).png
 tags:
 - Company
 - Saas
-apis: []
+- Ecommerce
+- Composable Commerce
+- Headless Commerce
+- Frontend as a Service
+- Storefront
+- SDK
+- Middleware
+- Cloud Hosting
+apis:
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-cdn-api
+  name: Alokai (formerly Vue Storefront) cdn API
+  description: The cdn API from Alokai (formerly Vue Storefront) — 2 operation(s) for cdn.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - cdn
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-cdn-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-deploy-check-api
+  name: Alokai (formerly Vue Storefront) deploy_check API
+  description: >-
+    The deploy_check API from Alokai (formerly Vue Storefront) — 1 operation(s) for deploy_check.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - deploy_check
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-deploy-check-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-flush-cache-api
+  name: Alokai (formerly Vue Storefront) flush_cache API
+  description: >-
+    The flush_cache API from Alokai (formerly Vue Storefront) — 1 operation(s) for flush_cache.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - flush_cache
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-flush-cache-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-healthz-api
+  name: Alokai (formerly Vue Storefront) Healthz API
+  description: The Healthz API from Alokai (formerly Vue Storefront) — 1 operation(s) for healthz.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - Healthz
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-healthz-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-api
+  name: Alokai (formerly Vue Storefront) Instance API
+  description: The Instance API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - Instance
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-api
+  name: Alokai (formerly Vue Storefront) instance/{namespace} API
+  description: >-
+    The instance/{namespace} API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - instance/{namespace}
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-namespace-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-exists-api
+  name: Alokai (formerly Vue Storefront) instance/{namespace}/exists API
+  description: >-
+    The instance/{namespace}/exists API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/exists.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - instance/{namespace}/exists
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-namespace-exists-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-ingresses-api
+  name: Alokai (formerly Vue Storefront) instance/{namespace}/ingresses API
+  description: >-
+    The instance/{namespace}/ingresses API from Alokai (formerly Vue Storefront) — 2 operation(s) for
+    instance/{namespace}/ingresses.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - instance/{namespace}/ingresses
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-namespace-ingresses-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-kube-config-api
+  name: Alokai (formerly Vue Storefront) instance/{namespace}/kube_config API
+  description: >-
+    The instance/{namespace}/kube_config API from Alokai (formerly Vue Storefront) — 2 operation(s) for
+    instance/{namespace}/kube_config.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - instance/{namespace}/kube_config
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-namespace-kube-config-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-pod-api
+  name: Alokai (formerly Vue Storefront) instance/{namespace}/pod API
+  description: >-
+    The instance/{namespace}/pod API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/pod.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - instance/{namespace}/pod
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-namespace-pod-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-pod-pod-api
+  name: Alokai (formerly Vue Storefront) instance/{namespace}/pod/{pod} API
+  description: >-
+    The instance/{namespace}/pod/{pod} API from Alokai (formerly Vue Storefront) — 1 operation(s) for
+    instance/{namespace}/pod/{pod}.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - instance/{namespace}/pod/{pod}
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-namespace-pod-pod-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-pod-pod-log-api
+  name: Alokai (formerly Vue Storefront) instance/{namespace}/pod/{pod}/log API
+  description: >-
+    The instance/{namespace}/pod/{pod}/log API from Alokai (formerly Vue Storefront) — 1 operation(s)
+    for instance/{namespace}/pod/{pod}/log.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - instance/{namespace}/pod/{pod}/log
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-instance-namespace-pod-pod-log-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-v2-2-admin-instance-api
+  name: Alokai (formerly Vue Storefront) v2.2/admin/instance API
+  description: >-
+    The v2.2/admin/instance API from Alokai (formerly Vue Storefront) — 2 operation(s) for v2.2/admin/instance.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - v2.2/admin/instance
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-v2-2-admin-instance-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-v2-2-instance-additional-application-api
+  name: Alokai (formerly Vue Storefront) v2.2/instance/additional_application API
+  description: >-
+    The v2.2/instance/additional_application API from Alokai (formerly Vue Storefront) — 2 operation(s)
+    for v2.2/instance/additional_application.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - v2.2/instance/additional_application
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/alokai-formerly-vue-storefront-v2-2-instance-additional-application-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-v2-2-instance-api
+  name: Alokai (formerly Vue Storefront) v2.2/instance API
+  description: >-
+    The v2.2/instance API from Alokai (formerly Vue Storefront) — 1 operation(s) for v2.2/instance.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - v2.2/instance
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-v2-2-instance-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-v2-2-instance-namespace-env-vars-api
+  name: Alokai (formerly Vue Storefront) v2.2/instance/{namespace}/env_vars API
+  description: >-
+    The v2.2/instance/{namespace}/env_vars API from Alokai (formerly Vue Storefront) — 4 operation(s)
+    for v2.2/instance/{namespace}/env_vars.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - v2.2/instance/{namespace}/env_vars
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-v2-2-instance-namespace-env-vars-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-v2-2-instance-namespace-pod-pod-api
+  name: Alokai (formerly Vue Storefront) v2.2/instance/{namespace}/pod/{pod} API
+  description: >-
+    The v2.2/instance/{namespace}/pod/{pod} API from Alokai (formerly Vue Storefront) — 1 operation(s)
+    for v2.2/instance/{namespace}/pod/{pod}.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - v2.2/instance/{namespace}/pod/{pod}
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-v2-2-instance-namespace-pod-pod-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
+- aid: >-
+    alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-v2-2-instance-namespace-pods-api
+  name: Alokai (formerly Vue Storefront) v2.2/instance/{namespace}/pods API
+  description: >-
+    The v2.2/instance/{namespace}/pods API from Alokai (formerly Vue Storefront) — 1 operation(s) for
+    v2.2/instance/{namespace}/pods.
+  humanURL: https://docs.alokai.com/cloud/api/swagger
+  baseURL: https://farmer.vuestorefront.cloud
+  tags:
+  - v2.2/instance/{namespace}/pods
+  properties:
+  - type: OpenAPI
+    url: openapi/alokai-formerly-vue-storefront-v2-2-instance-namespace-pods-api-openapi.yml
+  - type: Authentication
+    url: authentication/alokai-formerly-vue-storefront-authentication.yml
+  - type: ErrorCatalog
+    url: errors/alokai-formerly-vue-storefront-problem-types.yml
+  - type: DataModel
+    url: data-model/alokai-formerly-vue-storefront-data-model.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +374,58 @@ maintainers:
 common:
 - type: Website
   url: https://alokai.com/
+- type: Documentation
+  url: https://docs.alokai.com/
+- type: APIReference
+  url: https://docs.alokai.com/cloud/api/swagger
+- type: GettingStarted
+  url: https://docs.alokai.com/general/starting-new-project
+- type: DeveloperPortal
+  url: https://docs.alokai.com/
+- type: Blog
+  url: https://alokai.com/blog
+- type: Pricing
+  url: https://alokai.com/pricing
+- type: SignUp
+  url: https://alokai.com/request-demo
+- type: Support
+  url: https://alokai.com/contact/sales
+- type: TermsOfService
+  url: https://alokai.com/legal-directory
+- type: PrivacyPolicy
+  url: https://alokai.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/vuestorefront
+- type: StatusPage
+  url: https://status.alokai.com
+- type: Packages
+  url: packages/alokai-formerly-vue-storefront-packages.yml
+- type: SDKs
+  url: packages/alokai-formerly-vue-storefront-packages.yml
+- type: CLI
+  url: cli/alokai-formerly-vue-storefront-cli.yml
+- type: Components
+  url: components/alokai-formerly-vue-storefront-components.yml
+- type: ChangeLog
+  url: https://docs.alokai.com/alokai-changelog
+- type: ChangeLog
+  url: changelog/alokai-formerly-vue-storefront-changelog.yml
+- type: Lifecycle
+  url: lifecycle/alokai-formerly-vue-storefront-lifecycle.yml
+- type: Conventions
+  url: conventions/alokai-formerly-vue-storefront-conventions.yml
+- type: Conformance
+  url: conformance/alokai-formerly-vue-storefront-conformance.yml
+- type: LLMsTxt
+  url: llms/alokai-formerly-vue-storefront-llms.txt
+- type: WellKnown
+  url: well-known/alokai-formerly-vue-storefront-well-known.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/alokai-formerly-vue-storefront-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

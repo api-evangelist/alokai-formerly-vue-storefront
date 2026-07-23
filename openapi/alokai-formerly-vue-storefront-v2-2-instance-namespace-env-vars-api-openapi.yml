@@ -1,0 +1,103 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn v2.2/instance/{namespace}/env_vars API
+  version: v1
+tags:
+- name: v2.2/instance/{namespace}/env_vars
+paths:
+  /v2.2/instance/{instance}/env_vars/additional_apps/{app_id}/{env_var}/:
+    delete:
+      description: Manage Additional App instance's environmental variables
+      parameters:
+      - in: path
+        name: instance
+        required: true
+        type: string
+      - in: path
+        name: app_id
+        required: true
+        type: string
+      - in: path
+        name: env_var
+        required: true
+        type: string
+      responses:
+        '200':
+          content: {}
+          description: Success
+        '404':
+          description: Environment variable variable doesn't exist
+        '500':
+          description: Exception occurred
+      summary: Manage Additional App instance's environmental variables
+      tags:
+      - v2.2/instance/{namespace}/env_vars
+  /v2.2/instance/{instance}/env_vars/datadog/{env_var}:
+    delete:
+      description: Manage Datadog instance's environmental variables
+      parameters:
+      - in: path
+        name: instance
+        required: true
+        type: string
+      - in: path
+        name: env_var
+        required: true
+        type: string
+      responses:
+        '200':
+          content: {}
+          description: Success
+        '404':
+          description: Environment variable variable doesn't exist
+        '500':
+          description: Exception occurred
+      summary: Manage Datadog instance's environmental variables
+      tags:
+      - v2.2/instance/{namespace}/env_vars
+  /v2.2/instance/{instance}/env_vars/vsf/{env_var}:
+    delete:
+      description: Manage vsf instance's environmental variables
+      parameters:
+      - in: path
+        name: instance
+        required: true
+        type: string
+      - in: path
+        name: env_var
+        required: true
+        type: string
+      responses:
+        '200':
+          content: {}
+          description: Success
+        '404':
+          description: Environment variable variable doesn't exist
+        '500':
+          description: Exception occurred
+      summary: Manage vsf instance's environmental variables
+      tags:
+      - v2.2/instance/{namespace}/env_vars
+  /v2.2/instance/{instance}/env_vars/vsf_api/{env_var}:
+    delete:
+      description: Manage vsf api instance's environmental variables
+      parameters:
+      - in: path
+        name: instance
+        required: true
+        type: string
+      - in: path
+        name: env_var
+        required: true
+        type: string
+      responses:
+        '200':
+          content: {}
+          description: Success
+        '404':
+          description: Environment variable variable doesn't exist
+        '500':
+          description: Exception occurred
+      summary: Manage vsf api instance's environmental variables
+      tags:
+      - v2.2/instance/{namespace}/env_vars

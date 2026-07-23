@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn instance/{namespace}/exists API
+  version: v1
+tags:
+- name: instance/{namespace}/exists
+paths:
+  /instance/{namespace}/exists:
+    get:
+      description: Checks if instance exists
+      parameters:
+      - description: Namespace name
+        example: project-europe-west1-gcp-storefrontcloud-io
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NamespaceStatus'
+          description: Success
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NamespaceStatus'
+          description: Error
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/NamespaceStatus'
+      security:
+      - FarmerApiKey: []
+        FarmerUserId: []
+      summary: Checks if instance exists
+      tags:
+      - instance/{namespace}/exists
+components:
+  schemas:
+    NamespaceStatus:
+      properties:
+        code:
+          description: response code
+          type: integer
+        error:
+          description: only for error, should be bool
+          type: string
+        is_exists:
+          description: True or False, if instance exists or not
+          type: boolean
+        message:
+          description: additional message, displays error message as well
+          type: string
+      type: object

@@ -1,0 +1,1085 @@
+openapi: 3.0.0
+info:
+  title: farmer cdn v2.2/admin/instance API
+  version: v1
+tags:
+- name: v2.2/admin/instance
+paths:
+  /v2.2/admin/instance:
+    post:
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/components/schemas/AdminNamespaceSchemaV22'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/AdminNamespaceEnvelopeV22'
+      tags:
+      - v2.2/admin/instance
+  /v2.2/admin/instance/{namespace}:
+    delete:
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/components/schemas/AdminNamespaceSchemaV22'
+      - in: path
+        name: namespace
+        required: true
+        type: string
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/AdminNamespaceEnvelopeV22'
+      tags:
+      - v2.2/admin/instance
+    get:
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/components/schemas/AdminNamespaceSchemaV22'
+      - in: path
+        name: namespace
+        required: true
+        type: string
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/AdminNamespaceEnvelopeV22'
+      tags:
+      - v2.2/admin/instance
+    patch:
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/components/schemas/AdminNamespaceSchemaV22'
+      - in: path
+        name: namespace
+        required: true
+        type: string
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/components/schemas/AdminNamespaceEnvelopeV22'
+      tags:
+      - v2.2/admin/instance
+components:
+  schemas:
+    BasicAuth:
+      properties:
+        allowed_ips:
+          description: List containing IP addresses
+          items:
+            description: IP addresses as interface (eg. '1.2.3.4/24')
+          type: array
+        enabled:
+          type: boolean
+        login:
+          description: Basic Auth login data
+          type: string
+          writeOnly: true
+        pass_hash:
+          description: Basic Auth base64 encoded hash of login/pass (`htpasswd -nb user pass | base64`)
+          type: string
+        password:
+          description: Basic Auth password data
+          type: string
+          writeOnly: true
+      type: object
+    UptimeRobot:
+      properties:
+        additional_contact_emails:
+          items:
+            format: email
+            type: string
+          type: array
+      type: object
+    HostAliases:
+      properties:
+        hostname:
+          type: string
+        ip:
+          type: string
+      type: object
+    LocalCloudJson:
+      properties:
+        disabled:
+          description: Disable default local-cloud.json injecting
+          type: boolean
+      type: object
+    OpenTelemetryAttributes:
+      properties:
+        environment:
+          type: string
+      type: object
+    HealthCheckAdditionalAppsWrap:
+      properties:
+        enabled:
+          type: boolean
+        path:
+          description: relative path to use in HTTP request
+          example: /some/path
+          type: string
+        timeout_seconds:
+          description: 'number of seconds representing probe timeout,min: 1, max 30'
+          maximum: 30
+          minimum: 1
+          nullable: true
+          type: integer
+      type: object
+    DefaultDomain:
+      properties:
+        disabled:
+          description: Enable or disable default project's domain
+          type: boolean
+      type: object
+    IsolatedWorkloadsSelector:
+      properties:
+        match_labels:
+          additionalProperties:
+            type: string
+          type: object
+      type: object
+    AdminHealthCheckVsfWrap:
+      properties:
+        enabled:
+          type: boolean
+        liveness_probe:
+          $ref: '#/components/schemas/Enabled'
+        path:
+          type: string
+        readiness_probe:
+          $ref: '#/components/schemas/Enabled'
+        timeout_seconds:
+          description: 'number of seconds representing probe timeout,min: 1, max 30'
+          maximum: 30
+          minimum: 1
+          nullable: true
+          type: integer
+        url:
+          description: Relative path to use in HTTP request
+          example: /some/path
+          type: string
+      type: object
+    OpenTelemetryIntegrationsNewrelic:
+      properties:
+        enabled:
+          type: boolean
+        endpoint:
+          type: string
+        exporters:
+          $ref: '#/components/schemas/OpenTelemetryNewrelicExporters'
+        licenseKey:
+          type: string
+      type: object
+    OpenTelemetryDynatraceExporters:
+      properties:
+        logs:
+          $ref: '#/components/schemas/Enabled'
+        metrics:
+          $ref: '#/components/schemas/Enabled'
+        traces:
+          $ref: '#/components/schemas/Enabled'
+      type: object
+    Enabled:
+      properties:
+        enabled:
+          type: boolean
+      type: object
+    DefaultBackendEnabled:
+      properties:
+        enabled:
+          description: whether to enable default backend on the GCE Ingress
+          type: boolean
+      type: object
+    Fastly:
+      properties:
+        enabled:
+          type: boolean
+        hostname:
+          type: string
+        nucleus_instance_uuid:
+          format: uuid
+          readOnly: true
+          type: string
+      type: object
+    AdminNamespaceSchemaV22:
+      properties:
+        additional_apps:
+          $ref: '#/components/schemas/AdminAdditionalAppsV22'
+        api_disabled:
+          type: boolean
+        api_version:
+          type: string
+        azure_log_analytics:
+          $ref: '#/components/schemas/AzureLogAnalytics'
+        backend_cache:
+          $ref: '#/components/schemas/BackendCache'
+        basic_auth:
+          $ref: '#/components/schemas/BasicAuth'
+        created_at:
+          readOnly: true
+          type: string
+        datadog:
+          $ref: '#/components/schemas/DatadogV22'
+        environment_type:
+          type: string
+        fastly:
+          $ref: '#/components/schemas/Fastly'
+        filebeat:
+          $ref: '#/components/schemas/Filebeat'
+        front_version:
+          description: Docker image id
+          type: string
+        gcp_project:
+          type: string
+        ingress:
+          $ref: '#/components/schemas/AdminIngress'
+        instance_domain:
+          readOnly: true
+          type: string
+        instance_namespace:
+          maxLength: 63
+          minLength: 2
+          type: string
+        isolated_workloads:
+          $ref: '#/components/schemas/IsolatedWorkloads'
+        labels:
+          additionalProperties:
+            type: string
+          type: object
+        logs:
+          $ref: '#/components/schemas/Logs'
+        loki:
+          $ref: '#/components/schemas/Loki'
+        metrics:
+          $ref: '#/components/schemas/Metrics'
+        monitoring:
+          $ref: '#/components/schemas/Monitoring'
+        new_cert_manager:
+          type: boolean
+        newrelic:
+          $ref: '#/components/schemas/Newrelic'
+        nginx:
+          $ref: '#/components/schemas/Enabled'
+        open_telemetry:
+          $ref: '#/components/schemas/OpenTelemetry'
+        org_id:
+          type: integer
+        provider:
+          type: string
+        redirects:
+          $ref: '#/components/schemas/Redirects'
+        redis:
+          $ref: '#/components/schemas/Redis'
+        region:
+          type: string
+        toleration_and_node_selector_on_env_type:
+          $ref: '#/components/schemas/TolerationAndNodeSelectorOnEnvType'
+        updated_at:
+          readOnly: true
+          type: string
+        use_lets_encrypt:
+          type: boolean
+        vsf:
+          $ref: '#/components/schemas/AdminVsfV22'
+        vsf_api:
+          $ref: '#/components/schemas/VsfApiV22'
+        vsf_api_version:
+          type: string
+        vsf_version:
+          type: string
+        vue_api:
+          $ref: '#/components/schemas/VueApi'
+        www_redirect:
+          description: Enable or disable WWW redirect
+          example: true
+          type: boolean
+        x_content_type_options_tag:
+          enum:
+          - nosniff
+          nullable: true
+          type: string
+        x_frame_options:
+          description: Enable or disable X-Frame-Options header
+          example: true
+          type: boolean
+        x_robots_tag:
+          description: Change X-Robots-Tag header value
+          example: none
+          type: string
+      type: object
+    AdminIngress:
+      properties:
+        cors:
+          $ref: '#/components/schemas/Cors'
+        custom_domain:
+          $ref: '#/components/schemas/CustomDomain'
+        default_backend:
+          $ref: '#/components/schemas/DefaultBackendEnabled'
+        default_domain:
+          $ref: '#/components/schemas/DefaultDomain'
+        enabled:
+          description: whether ingress is enabled or not
+          type: boolean
+        gcp_cloud_cdn:
+          $ref: '#/components/schemas/GcpCloudCdn'
+        legacy:
+          description: whether ingress is legacy (nginx ingress) or not (gce ingress) - read/write
+          type: boolean
+        whitelist:
+          $ref: '#/components/schemas/Whitelist'
+      type: object
+    AppV22:
+      properties:
+        env_var:
+          additionalProperties:
+            $ref: '#/components/schemas/EnvVar'
+          description: Extra variables injected into the deployment
+          type: object
+        has_base_path:
+          type: boolean
+        health_check:
+          $ref: '#/components/schemas/HealthCheckAdditionalAppsWrap'
+        image:
+          description: Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io
+          example: registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+        port:
+          type: string
+        tag:
+          type: string
+      type: object
+    AzureLogAnalytics:
+      properties:
+        add_tag_field:
+          description: Whether to add tag field to record
+          type: boolean
+        add_time_field:
+          description: Whether to add field with current time to records
+          type: boolean
+        customer_id:
+          description: Azure Operations Management Suite workspace ID
+          type: string
+        enabled:
+          description: whether to enable Azure Log Analytics logging
+          type: boolean
+        endpoint:
+          description: custom service endpoint for clients that use private azure cloud
+          type: string
+        local_time:
+          description: Whether to use local time in inserted time record
+          type: boolean
+        log_type:
+          description: Name of event type that is being submitted to Azure Log Analytics e.g. AccessLogs
+          enum:
+          - a
+          - b
+          - c
+          - d
+          - e
+          - f
+          - g
+          - h
+          - i
+          - j
+          - k
+          - l
+          - m
+          - n
+          - o
+          - p
+          - q
+          - r
+          - s
+          - t
+          - u
+          - v
+          - w
+          - x
+          - y
+          - z
+          - A
+          - B
+          - C
+          - D
+          - E
+          - F
+          - G
+          - H
+          - I
+          - J
+          - K
+          - L
+          - M
+          - N
+          - O
+          - P
+          - Q
+          - R
+          - S
+          - T
+          - U
+          - V
+          - W
+          - X
+          - Y
+          - Z
+          - '0'
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '5'
+          - '6'
+          - '7'
+          - '8'
+          - '9'
+          minLength: 1
+          type: string
+        shared_key:
+          description: primary or secondary Connected Sources client auth key
+          type: string
+        tag_field_name:
+          description: Name of field with custom tag
+          type: string
+        time_field_name:
+          description: Name of field with inserted time
+          type: string
+      type: object
+    LogsBackend:
+      properties:
+        elasticsearch:
+          $ref: '#/components/schemas/Enabled'
+        gcp:
+          $ref: '#/components/schemas/Enabled'
+      type: object
+    NewRelicInfra:
+      properties:
+        license_key:
+          type: string
+      type: object
+    VsfApiV22:
+      properties:
+        env_var:
+          additionalProperties:
+            $ref: '#/components/schemas/EnvVarWithFilter'
+          description: Extra variables injected into the deployment
+          type: object
+        host_aliases:
+          items:
+            $ref: '#/components/schemas/HostAliases'
+          type: array
+        hpa:
+          $ref: '#/components/schemas/Hpa'
+        split_to:
+          items:
+            description: List of relative urls to server split VSF1 API deployment
+            example: '["/api","/img"]'
+            type: string
+          type: array
+      type: object
+    EnvVarWithFilter:
+      properties:
+        is_secret:
+          description: Flag to mark environment variable as a secret
+          type: boolean
+        name:
+          description: Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.
+          pattern: ^[a-zA-Z_][a-zA-Z0-9_]*$
+          type: string
+        only_for:
+          description: split API deployment to exclusively set variable for (without leading slash)
+          example: api
+          type: string
+        value:
+          type: string
+      type: object
+    DatadogV22:
+      properties:
+        api_key:
+          type: string
+        apm:
+          $ref: '#/components/schemas/Enabled'
+        env_var:
+          additionalProperties:
+            $ref: '#/components/schemas/EnvVar'
+          description: Extra variables injected into the deployment
+          type: object
+        logs:
+          $ref: '#/components/schemas/Enabled'
+      type: object
+    BackendCache:
+      properties:
+        enabled:
+          description: whether to enable Backend Cache feature
+          type: boolean
+        maxmemory_policy:
+          description: 'noevictioneviction policies for the redis instance, allowed values: ,allkeys-lrueviction policies for the redis instance, allowed values: ,allkeys-lfueviction policies for the redis instance, allowed values: ,volatile-lrueviction policies for the redis instance, allowed values: ,volatile-lfueviction policies for the redis instance, allowed values: ,allkeys-randomeviction policies for the redis instance, allowed values: ,volatile-randomeviction policies for the redis instance, allowed values: ,volatile-ttl'
+          enum:
+          - noeviction
+          - allkeys-lru
+          - allkeys-lfu
+          - volatile-lru
+          - volatile-lfu
+          - allkeys-random
+          - volatile-random
+          - volatile-ttl
+          type: string
+        memory_size_gb:
+          description: size of the instance in gigabytes
+          maximum: 300
+          minimum: 1
+          type: integer
+        override_service_name:
+          description: whether to override the default service name (redis) with the backend-cache-redis
+          type: boolean
+        tier:
+          description: tier to user, either BASIC or STANDARD_HA
+          enum:
+          - BASIC
+          - STANDARD_HA
+          type: string
+        version:
+          description: version of the instance, either REDIS_4_0, REDIS_5_0 or REDIS_6_X
+          enum:
+          - REDIS_4_0
+          - REDIS_5_0
+          - REDIS_6_X
+          type: string
+      type: object
+    CustomDomain:
+      properties:
+        domains:
+          description: Array containing list of domains to add or domain objects
+          items:
+            example: 'mydomain.com or {"name":"mydomain.com", "secret_name": "custom-tls"}'
+          type: array
+        enabled:
+          type: boolean
+      type: object
+    OpenTelemetryNewrelicExporters:
+      properties:
+        logs:
+          $ref: '#/components/schemas/Enabled'
+        metrics:
+          $ref: '#/components/schemas/Enabled'
+        traces:
+          $ref: '#/components/schemas/Enabled'
+      type: object
+    EnvVar:
+      properties:
+        is_secret:
+          description: Flag to mark environment variable as a secret
+          type: boolean
+        name:
+          description: Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.
+          pattern: ^[a-zA-Z_][a-zA-Z0-9_]*$
+          type: string
+        value:
+          type: string
+      type: object
+    Whitelist:
+      properties:
+        enabled:
+          type: boolean
+        ips:
+          description: List containing IP addresses
+          items:
+            description: IP addresses as interface (eg. '1.2.3.4/24')
+          type: array
+      type: object
+    Cors:
+      properties:
+        allow_credentials:
+          description: Enable or disable Access-Control-Allow-Credentails in cross-origin requests
+          type: boolean
+        allow_headers:
+          description: List containing headers allowed to be sent in cross-origin request
+          items:
+            example: X-My-Header
+            type: string
+          type: array
+        allow_methods:
+          description: List containing methods allowed to be used in CORS requests
+          items:
+            example: GET
+            type: string
+          type: array
+        allow_origin:
+          description: List containing headers allowed to be sent in cross-origin request
+          items:
+            example: http://some.origin
+            type: string
+          type: array
+        cors_max_age:
+          description: how long responses to pre-flight requests are allowed to be cached by browsers
+          example: '600'
+          type: integer
+        enabled:
+          description: Enable or disable CORS settings
+          type: boolean
+        expose_headers:
+          description: List containing headers allowed to be allowed in cross-origin response
+          items:
+            example: X-My-Header
+            type: string
+          type: array
+      type: object
+    AdminNamespaceResponseV22:
+      properties:
+        additional_apps:
+          $ref: '#/components/schemas/AdminAdditionalAppsV22'
+        api_disabled:
+          type: boolean
+        api_version:
+          type: string
+        azure_log_analytics:
+          $ref: '#/components/schemas/AzureLogAnalytics'
+        backend_cache:
+          $ref: '#/components/schemas/BackendCache'
+        basic_auth:
+          $ref: '#/components/schemas/BasicAuth'
+        created_at:
+          readOnly: true
+          type: string
+        datadog:
+          $ref: '#/components/schemas/DatadogV22'
+        docker_image_namespace:
+          type: string
+        environment_type:
+          type: string
+        fastly:
+          $ref: '#/components/schemas/Fastly'
+        filebeat:
+          $ref: '#/components/schemas/Filebeat'
+        front_version:
+          description: Docker image id
+          type: string
+        gcp_project:
+          type: string
+        ingress:
+          $ref: '#/components/schemas/AdminIngress'
+        instance_domain:
+          readOnly: true
+          type: string
+        instance_namespace:
+          maxLength: 63
+          minLength: 2
+          type: string
+        isolated_workloads:
+          $ref: '#/components/schemas/IsolatedWorkloads'
+        labels:
+          additionalProperties:
+            type: string
+          type: object
+        logs:
+          $ref: '#/components/schemas/Logs'
+        loki:
+          $ref: '#/components/schemas/Loki'
+        metrics:
+          $ref: '#/components/schemas/Metrics'
+        monitoring:
+          $ref: '#/components/schemas/Monitoring'
+        new_cert_manager:
+          type: boolean
+        newrelic:
+          $ref: '#/components/schemas/Newrelic'
+        nginx:
+          $ref: '#/components/schemas/Enabled'
+        open_telemetry:
+          $ref: '#/components/schemas/OpenTelemetry'
+        org_id:
+          type: integer
+        provider:
+          type: string
+        redirects:
+          $ref: '#/components/schemas/Redirects'
+        redis:
+          $ref: '#/components/schemas/Redis'
+        region:
+          type: string
+        toleration_and_node_selector_on_env_type:
+          $ref: '#/components/schemas/TolerationAndNodeSelectorOnEnvType'
+        updated_at:
+          readOnly: true
+          type: string
+        use_lets_encrypt:
+          type: boolean
+        vsf:
+          $ref: '#/components/schemas/AdminVsfV22'
+        vsf_api:
+          $ref: '#/components/schemas/VsfApiV22'
+        vsf_api_version:
+          type: string
+        vsf_version:
+          type: string
+        vue_api:
+          $ref: '#/components/schemas/VueApi'
+        www_redirect:
+          description: Enable or disable WWW redirect
+          example: true
+          type: boolean
+        x_content_type_options_tag:
+          enum:
+          - nosniff
+          nullable: true
+          type: string
+        x_frame_options:
+          description: Enable or disable X-Frame-Options header
+          example: true
+          type: boolean
+        x_robots_tag:
+          description: Change X-Robots-Tag header value
+          example: none
+          type: string
+      required:
+      - docker_image_namespace
+      type: object
+    ResourcesRequestsLimits:
+      properties:
+        cpu:
+          type: string
+        memory:
+          type: string
+      type: object
+    AdminHealthCheckV22:
+      properties:
+        liveness_probe:
+          $ref: '#/components/schemas/Enabled'
+        readiness_probe:
+          $ref: '#/components/schemas/Enabled'
+      type: object
+    OpenTelemetry:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/OpenTelemetryAttributes'
+        integrations:
+          $ref: '#/components/schemas/OpenTelemetryIntegrations'
+        logLevel:
+          type: string
+        replicaCount:
+          type: integer
+      type: object
+    Monitoring:
+      properties:
+        enabled:
+          type: boolean
+        oncall:
+          $ref: '#/components/schemas/Enabled'
+        pagerduty:
+          $ref: '#/components/schemas/Enabled'
+        stakater:
+          $ref: '#/components/schemas/Stakater'
+      type: object
+    Resources:
+      properties:
+        limits:
+          $ref: '#/components/schemas/ResourcesRequestsLimits'
+        requests:
+          $ref: '#/components/schemas/ResourcesRequestsLimits'
+      type: object
+    Newrelic:
+      properties:
+        api_insert_key:
+          type: string
+        enabled:
+          type: boolean
+        newrelic_infra:
+          $ref: '#/components/schemas/NewRelicInfra'
+      type: object
+    Metrics:
+      properties:
+        middleware:
+          $ref: '#/components/schemas/Base'
+        ssr:
+          $ref: '#/components/schemas/Base'
+      type: object
+    Loki:
+      properties:
+        enabled:
+          type: boolean
+        extra_labels:
+          description: Grafana loki extra labels in json format
+          type: object
+        password:
+          description: Grafana loki user password
+          type: string
+        url:
+          description: Grafana loki endpoint for example 'https://logs-prod-us-central1.grafana.net'
+          type: string
+        username:
+          description: Grafana loki username
+          type: string
+      type: object
+    IsolatedWorkloads:
+      properties:
+        enabled:
+          type: boolean
+        selector:
+          $ref: '#/components/schemas/IsolatedWorkloadsSelector'
+      required:
+      - enabled
+      - selector
+      type: object
+    AdminAdditionalAppsV22:
+      properties:
+        apps:
+          additionalProperties:
+            $ref: '#/components/schemas/AppV22'
+          type: object
+        apps_health_check:
+          additionalProperties:
+            $ref: '#/components/schemas/AdminHealthCheckV22'
+          type: object
+        apps_hpa:
+          additionalProperties:
+            $ref: '#/components/schemas/AdminAppHpaV22'
+          type: object
+        enabled:
+          type: boolean
+        ha:
+          $ref: '#/components/schemas/Enabled'
+        monitoring:
+          $ref: '#/components/schemas/Enabled'
+      type: object
+    Logs:
+      properties:
+        backend:
+          $ref: '#/components/schemas/LogsBackend'
+        enabled:
+          type: boolean
+      type: object
+    Redis:
+      properties:
+        enabled:
+          type: boolean
+        resources:
+          $ref: '#/components/schemas/Resources'
+        service:
+          $ref: '#/components/schemas/Service'
+      type: object
+    Redirects:
+      properties:
+        fetch_uri_map_from_file:
+          $ref: '#/components/schemas/Enabled'
+        to_lower_case:
+          $ref: '#/components/schemas/Enabled'
+        to_no_trailing_slash:
+          $ref: '#/components/schemas/Enabled'
+        to_www:
+          $ref: '#/components/schemas/Enabled'
+        uri_map:
+          items:
+            $ref: '#/components/schemas/Rule'
+          type: array
+      type: object
+    Hpa:
+      properties:
+        max_replicas:
+          type: integer
+        min_replicas:
+          type: integer
+      type: object
+    VueApiResources:
+      properties:
+        limits:
+          $ref: '#/components/schemas/VueApiResourcesConfig'
+        requests:
+          $ref: '#/components/schemas/VueApiResourcesConfig'
+      type: object
+    OpenTelemetryIntegrationsJaeger:
+      properties:
+        enabled:
+          type: boolean
+        endpoint:
+          type: string
+        exporters:
+          $ref: '#/components/schemas/OpenTelemetryJaegerExporters'
+        tlsInsecure:
+          type: boolean
+      type: object
+    GcpCloudCdn:
+      properties:
+        enabled:
+          type: boolean
+        query_string_allowlist:
+          description: List containing names of query string parameters to include in cache keysAll other parameters are excluded. You can specify `query_string_denylist` or `query_string_allowlist`, but not both.
+          items:
+            example: someQueryString
+            type: string
+          type: array
+        query_string_denylist:
+          description: List containing names of query string parameters to exclude from cache keysAll other parameters are included. You can specify `query_string_denylist` or `query_string_allowlist`, but not both.
+          items:
+            example: someQueryString
+            type: string
+          type: array
+      type: object
+    AdminNamespaceEnvelopeV22:
+      properties:
+        code:
+          description: HTTP response code
+          example: '204'
+          type: integer
+        error:
+          description: error flag, possible values true|false
+          example: false
+          type: boolean
+        instance:
+          $ref: '#/components/schemas/AdminNamespaceResponseV22'
+        message:
+          description: Error message
+          example: Instance doesn't exits
+          type: string
+      type: object
+    OpenTelemetryJaegerExporters:
+      properties:
+        traces:
+          $ref: '#/components/schemas/Enabled'
+      type: object
+    VueApi:
+      properties:
+        api_ecosystem:
+          type: boolean
+        health_check_url:
+          description: Set endpoint for API healthchecks
+          example: true
+          type: string
+        resources:
+          $ref: '#/components/schemas/VueApiResources'
+      type: object
+    AdminAppHpaV22:
+      properties:
+        max_replicas:
+          type: integer
+        min_replicas:
+          type: integer
+      type: object
+    Base:
+      properties:
+        enabled:
+          type: boolean
+        maxReturnedMetrics:
+          type: integer
+        metrics:
+          items:
+            type: string
+          type: array
+      type: object
+    VueApiResourcesConfig:
+      properties:
+        ephemeral_storage:
+          type: string
+        memory:
+          type: string
+      type: object
+    Stakater:
+      properties:
+        uptime_robot:
+          $ref: '#/components/schemas/UptimeRobot'
+      type: object
+    OpenTelemetryIntegrationsDynatrace:
+      properties:
+        apiToken:
+          type: string
+        enabled:
+          type: boolean
+        endpoint:
+          type: string
+        exporters:
+          $ref: '#/components/schemas/OpenTelemetryDynatraceExporters'
+      type: object
+    Service:
+      properties:
+        create:
+          type: boolean
+      type: object
+    Filebeat:
+      properties:
+        enabled:
+          description: Enable or disable Filebeat for logs
+          example: true
+          type: boolean
+      type: object
+    OpenTelemetryIntegrations:
+      properties:
+        datadog:
+          $ref: '#/components/schemas/OpenTelemetryIntegrationsDatadog'
+        dynatrace:
+          $ref: '#/components/schemas/OpenTelemetryIntegrationsDynatrace'
+        jaeger:
+          $ref: '#/components/schemas/OpenTelemetryIntegrationsJaeger'
+        newrelic:
+          $ref: '#/components/schemas/OpenTelemetryIntegrationsNewrelic'
+      type: object
+    Rule:
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+      required:
+      - from
+      - to
+      type: object
+    AdminVsfV22:
+      properties:
+        env_var:
+          additionalProperties:
+            $ref: '#/components/schemas/EnvVar'
+          description: Extra variables injected into the deployment
+          type: object
+        health_check:
+          $ref: '#/components/schemas/AdminHealthCheckVsfWrap'
+        hpa:
+          $ref: '#/components/schemas/Hpa'
+        local_cloud_json:
+          $ref: '#/components/schemas/LocalCloudJson'
+      type: object
+    TolerationAndNodeSelectorOnEnvType:
+      properties:
+        enabled:
+          description: whether to enable dedicated node pool support for instance
+          type: boolean
+      type: object
+    OpenTelemetryIntegrationsDatadog:
+      properties:
+        apiKey:
+          type: string
+        enabled:
+          type: boolean
+        exporters:
+          $ref: '#/components/schemas/OpenTelemetryDatadogExporters'
+        logsIntakeEndpoint:
+          type: string
+        site:
+          type: string
+      type: object
+    OpenTelemetryDatadogExporters:
+      properties:
+        apm:
+          $ref: '#/components/schemas/Enabled'
+        logs:
+          $ref: '#/components/schemas/Enabled'
+        metrics:
+          $ref: '#/components/schemas/Enabled'
+        traces:
+          $ref: '#/components/schemas/Enabled'
+      type: object
