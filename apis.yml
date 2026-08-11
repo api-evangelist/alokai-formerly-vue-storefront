@@ -372,6 +372,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: MCPServer
+  url: mcp/alokai-formerly-vue-storefront-mcp.yml
+- type: Overlay
+  url: overlays/alokai-formerly-vue-storefront-cloud-overlay.yaml
 - type: Website
   url: https://alokai.com/
 - type: Documentation
