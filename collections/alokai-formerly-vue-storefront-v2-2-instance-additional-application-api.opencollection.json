@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn v2.2/instance/additional_application API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2.2/instance/additional_application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Manage instance's additional applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/additional_application",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage instance's additional applications"
+        },
+        {
+          "info": {
+            "name": "Manage instance's additional applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/additional_application/:additional_application_name",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "additional_application_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage instance's additional applications"
+        },
+        {
+          "info": {
+            "name": "Manage instance's additional applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/additional_application/:additional_application_name",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "additional_application_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage instance's additional applications"
+        },
+        {
+          "info": {
+            "name": "Manage instance's additional applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/additional_application/:additional_application_name",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "additional_application_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage instance's additional applications"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

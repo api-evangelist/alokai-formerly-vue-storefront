@@ -1,0 +1,382 @@
+{
+  "item": [
+    {
+      "id": "8bbcae21-c8ad-4246-a899-fa9ae8107205",
+      "name": "instance/{namespace}",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c0adf857-c1e5-42e8-ae89-1b3fe8d4c684",
+          "name": "It deletes instance object from Firestore DB",
+          "request": {
+            "name": "It deletes instance object from Firestore DB",
+            "description": {
+              "content": "It deletes instance object from Firestore DB",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "instance",
+                ":namespace"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) Namespace name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "fce23a31-99de-4e09-92de-3a50ca2bf305",
+              "name": "Successfully deleted instance",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57c43946-d94d-4c93-8e87-2d9aa3f25ca9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6903b3d1-f99e-438c-9f32-9713897aa176",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c221303-c893-4f87-9f72-13bdc88aa1bd",
+          "name": "Update instance configuration",
+          "request": {
+            "name": "Update instance configuration",
+            "description": {
+              "content": "Updates instance, merge update data with current configuration",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "instance",
+                ":namespace"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "namespace",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"additional_apps\": {\n    \"apps\": [\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"<string>\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"<string>\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      },\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"<string>\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"<string>\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      }\n    ],\n    \"enabled\": \"<boolean>\",\n    \"ha\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"monitoring\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"api_disabled\": \"<boolean>\",\n  \"api_version\": \"<string>\",\n  \"azure_log_analytics\": {\n    \"add_tag_field\": \"<boolean>\",\n    \"add_time_field\": \"<boolean>\",\n    \"customer_id\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endpoint\": \"<string>\",\n    \"local_time\": \"<boolean>\",\n    \"log_type\": \"<string>\",\n    \"shared_key\": \"<string>\",\n    \"tag_field_name\": \"<string>\",\n    \"time_field_name\": \"<string>\"\n  },\n  \"basic_auth\": {\n    \"enabled\": \"<boolean>\",\n    \"login\": \"<string>\",\n    \"pass_hash\": \"<string>\",\n    \"password\": \"<string>\"\n  },\n  \"datadog\": {\n    \"api_key\": \"<string>\",\n    \"apm\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"logs\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"environment_type\": \"<string>\",\n  \"filebeat\": {\n    \"enabled\": \"<boolean>\"\n  },\n  \"front_version\": \"<string>\",\n  \"ingress\": {\n    \"cors\": {\n      \"allow_credentials\": \"<boolean>\",\n      \"allow_headers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"allow_methods\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"allow_origin\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"cors_max_age\": \"<integer>\",\n      \"enabled\": \"<boolean>\",\n      \"expose_headers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"custom_domain\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"default_domain\": {\n      \"disabled\": \"<boolean>\"\n    },\n    \"gcp_cloud_cdn\": {\n      \"enabled\": \"<boolean>\",\n      \"query_string_allowlist\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"query_string_denylist\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"whitelist\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"instance_namespace\": \"<string>\",\n  \"loki\": {\n    \"enabled\": \"<boolean>\",\n    \"extra_labels\": \"<object>\",\n    \"password\": \"<string>\",\n    \"url\": \"<string>\",\n    \"username\": \"<string>\"\n  },\n  \"new_cert_manager\": \"<boolean>\",\n  \"newrelic\": {\n    \"api_insert_key\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"newrelic_infra\": {\n      \"license_key\": \"<string>\"\n    }\n  },\n  \"nginx\": {\n    \"custom_error_page\": {\n      \"body\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"provider\": \"<string>\",\n  \"redis\": {\n    \"enabled\": \"<boolean>\",\n    \"resources\": {\n      \"limits\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    },\n    \"service\": {\n      \"create\": \"<boolean>\"\n    }\n  },\n  \"region\": \"<string>\",\n  \"use_lets_encrypt\": \"<boolean>\",\n  \"vsf\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"health_check\": {\n      \"enabled\": \"<boolean>\",\n      \"path\": \"<string>\",\n      \"timeout_seconds\": \"<integer>\",\n      \"url\": \"<string>\"\n    },\n    \"local_cloud_json\": {\n      \"disabled\": \"<boolean>\"\n    }\n  },\n  \"vsf_api\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"host_aliases\": [\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      },\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      }\n    ],\n    \"hpa\": {\n      \"max_replicas\": \"<integer>\",\n      \"min_replicas\": \"<integer>\"\n    },\n    \"split_to\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"vsf_api_version\": \"<string>\",\n  \"vsf_version\": \"<string>\",\n  \"vue_api\": {\n    \"api_ecosystem\": \"<boolean>\",\n    \"health_check_url\": \"<string>\",\n    \"resources\": {\n      \"limits\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    }\n  },\n  \"www_redirect\": \"<boolean>\",\n  \"x_content_type_options_tag\": \"<string>\",\n  \"x_frame_options\": \"<boolean>\",\n  \"x_robots_tag\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bb16f479-b1b4-4315-824a-d360f1ee606e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"additional_apps\": {\n    \"apps\": [\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"/some/path\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      },\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"/some/path\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      }\n    ],\n    \"enabled\": \"<boolean>\",\n    \"ha\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"monitoring\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"api_disabled\": \"<boolean>\",\n  \"api_version\": \"<string>\",\n  \"azure_log_analytics\": {\n    \"add_tag_field\": \"<boolean>\",\n    \"add_time_field\": \"<boolean>\",\n    \"customer_id\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endpoint\": \"<string>\",\n    \"local_time\": \"<boolean>\",\n    \"log_type\": \"<string>\",\n    \"shared_key\": \"<string>\",\n    \"tag_field_name\": \"<string>\",\n    \"time_field_name\": \"<string>\"\n  },\n  \"basic_auth\": {\n    \"enabled\": \"<boolean>\",\n    \"login\": \"<string>\",\n    \"pass_hash\": \"<string>\",\n    \"password\": \"<string>\"\n  },\n  \"datadog\": {\n    \"api_key\": \"<string>\",\n    \"apm\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"logs\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"environment_type\": \"<string>\",\n  \"filebeat\": {\n    \"enabled\": true\n  },\n  \"front_version\": \"<string>\",\n  \"ingress\": {\n    \"cors\": {\n      \"allow_credentials\": \"<boolean>\",\n      \"allow_headers\": [\n        \"X-My-Header\",\n        \"X-My-Header\"\n      ],\n      \"allow_methods\": [\n        \"GET\",\n        \"GET\"\n      ],\n      \"allow_origin\": [\n        \"http://some.origin\",\n        \"http://some.origin\"\n      ],\n      \"cors_max_age\": \"<integer>\",\n      \"enabled\": \"<boolean>\",\n      \"expose_headers\": [\n        \"X-My-Header\",\n        \"X-My-Header\"\n      ]\n    },\n    \"custom_domain\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"default_domain\": {\n      \"disabled\": \"<boolean>\"\n    },\n    \"gcp_cloud_cdn\": {\n      \"enabled\": \"<boolean>\",\n      \"query_string_allowlist\": [\n        \"someQueryString\",\n        \"someQueryString\"\n      ],\n      \"query_string_denylist\": [\n        \"someQueryString\",\n        \"someQueryString\"\n      ]\n    },\n    \"whitelist\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"instance_namespace\": \"<string>\",\n  \"loki\": {\n    \"enabled\": \"<boolean>\",\n    \"extra_labels\": \"<object>\",\n    \"password\": \"<string>\",\n    \"url\": \"<string>\",\n    \"username\": \"<string>\"\n  },\n  \"new_cert_manager\": \"<boolean>\",\n  \"newrelic\": {\n    \"api_insert_key\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"newrelic_infra\": {\n      \"license_key\": \"<string>\"\n    }\n  },\n  \"nginx\": {\n    \"custom_error_page\": {\n      \"body\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"provider\": \"<string>\",\n  \"redis\": {\n    \"enabled\": \"<boolean>\",\n    \"resources\": {\n      \"limits\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    },\n    \"service\": {\n      \"create\": \"<boolean>\"\n    }\n  },\n  \"region\": \"<string>\",\n  \"use_lets_encrypt\": \"<boolean>\",\n  \"vsf\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"health_check\": {\n      \"enabled\": \"<boolean>\",\n      \"path\": \"<string>\",\n      \"timeout_seconds\": \"<integer>\",\n      \"url\": \"/some/path\"\n    },\n    \"local_cloud_json\": {\n      \"disabled\": \"<boolean>\"\n    }\n  },\n  \"vsf_api\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"api\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"api\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"host_aliases\": [\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      },\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      }\n    ],\n    \"hpa\": {\n      \"max_replicas\": \"<integer>\",\n      \"min_replicas\": \"<integer>\"\n    },\n    \"split_to\": [\n      \"[\\\"/api\\\",\\\"/img\\\"]\",\n      \"[\\\"/api\\\",\\\"/img\\\"]\"\n    ]\n  },\n  \"vsf_api_version\": \"<string>\",\n  \"vsf_version\": \"<string>\",\n  \"vue_api\": {\n    \"api_ecosystem\": \"<boolean>\",\n    \"health_check_url\": \"<string>\",\n    \"resources\": {\n      \"limits\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    }\n  },\n  \"www_redirect\": true,\n  \"x_content_type_options_tag\": \"<string>\",\n  \"x_frame_options\": true,\n  \"x_robots_tag\": \"none\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "98e91c4a-bbb0-4408-8148-9e673a9107cf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"additional_apps\": {\n    \"apps\": [\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"/some/path\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      },\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"/some/path\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      }\n    ],\n    \"enabled\": \"<boolean>\",\n    \"ha\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"monitoring\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"api_disabled\": \"<boolean>\",\n  \"api_version\": \"<string>\",\n  \"azure_log_analytics\": {\n    \"add_tag_field\": \"<boolean>\",\n    \"add_time_field\": \"<boolean>\",\n    \"customer_id\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endpoint\": \"<string>\",\n    \"local_time\": \"<boolean>\",\n    \"log_type\": \"<string>\",\n    \"shared_key\": \"<string>\",\n    \"tag_field_name\": \"<string>\",\n    \"time_field_name\": \"<string>\"\n  },\n  \"basic_auth\": {\n    \"enabled\": \"<boolean>\",\n    \"login\": \"<string>\",\n    \"pass_hash\": \"<string>\",\n    \"password\": \"<string>\"\n  },\n  \"datadog\": {\n    \"api_key\": \"<string>\",\n    \"apm\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"logs\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"environment_type\": \"<string>\",\n  \"filebeat\": {\n    \"enabled\": true\n  },\n  \"front_version\": \"<string>\",\n  \"ingress\": {\n    \"cors\": {\n      \"allow_credentials\": \"<boolean>\",\n      \"allow_headers\": [\n        \"X-My-Header\",\n        \"X-My-Header\"\n      ],\n      \"allow_methods\": [\n        \"GET\",\n        \"GET\"\n      ],\n      \"allow_origin\": [\n        \"http://some.origin\",\n        \"http://some.origin\"\n      ],\n      \"cors_max_age\": \"<integer>\",\n      \"enabled\": \"<boolean>\",\n      \"expose_headers\": [\n        \"X-My-Header\",\n        \"X-My-Header\"\n      ]\n    },\n    \"custom_domain\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"default_domain\": {\n      \"disabled\": \"<boolean>\"\n    },\n    \"gcp_cloud_cdn\": {\n      \"enabled\": \"<boolean>\",\n      \"query_string_allowlist\": [\n        \"someQueryString\",\n        \"someQueryString\"\n      ],\n      \"query_string_denylist\": [\n        \"someQueryString\",\n        \"someQueryString\"\n      ]\n    },\n    \"whitelist\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"instance_namespace\": \"<string>\",\n  \"loki\": {\n    \"enabled\": \"<boolean>\",\n    \"extra_labels\": \"<object>\",\n    \"password\": \"<string>\",\n    \"url\": \"<string>\",\n    \"username\": \"<string>\"\n  },\n  \"new_cert_manager\": \"<boolean>\",\n  \"newrelic\": {\n    \"api_insert_key\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"newrelic_infra\": {\n      \"license_key\": \"<string>\"\n    }\n  },\n  \"nginx\": {\n    \"custom_error_page\": {\n      \"body\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"provider\": \"<string>\",\n  \"redis\": {\n    \"enabled\": \"<boolean>\",\n    \"resources\": {\n      \"limits\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    },\n    \"service\": {\n      \"create\": \"<boolean>\"\n    }\n  },\n  \"region\": \"<string>\",\n  \"use_lets_encrypt\": \"<boolean>\",\n  \"vsf\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"health_check\": {\n      \"enabled\": \"<boolean>\",\n      \"path\": \"<string>\",\n      \"timeout_seconds\": \"<integer>\",\n      \"url\": \"/some/path\"\n    },\n    \"local_cloud_json\": {\n      \"disabled\": \"<boolean>\"\n    }\n  },\n  \"vsf_api\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"api\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"api\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"host_aliases\": [\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      },\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      }\n    ],\n    \"hpa\": {\n      \"max_replicas\": \"<integer>\",\n      \"min_replicas\": \"<integer>\"\n    },\n    \"split_to\": [\n      \"[\\\"/api\\\",\\\"/img\\\"]\",\n      \"[\\\"/api\\\",\\\"/img\\\"]\"\n    ]\n  },\n  \"vsf_api_version\": \"<string>\",\n  \"vsf_version\": \"<string>\",\n  \"vue_api\": {\n    \"api_ecosystem\": \"<boolean>\",\n    \"health_check_url\": \"<string>\",\n    \"resources\": {\n      \"limits\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    }\n  },\n  \"www_redirect\": true,\n  \"x_content_type_options_tag\": \"<string>\",\n  \"x_frame_options\": true,\n  \"x_robots_tag\": \"none\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3645fcd9-6b68-4710-b804-3fbdfe857e51",
+              "name": "Exception when patching instance",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"additional_apps\": {\n    \"apps\": [\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"/some/path\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      },\n      {\n        \"env_var\": [\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"is_secret\": \"<boolean>\",\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"has_base_path\": \"<boolean>\",\n        \"health_check\": {\n          \"enabled\": \"<boolean>\",\n          \"path\": \"/some/path\",\n          \"timeout_seconds\": \"<integer>\"\n        },\n        \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"port\": \"<string>\",\n        \"tag\": \"<string>\"\n      }\n    ],\n    \"enabled\": \"<boolean>\",\n    \"ha\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"monitoring\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"api_disabled\": \"<boolean>\",\n  \"api_version\": \"<string>\",\n  \"azure_log_analytics\": {\n    \"add_tag_field\": \"<boolean>\",\n    \"add_time_field\": \"<boolean>\",\n    \"customer_id\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endpoint\": \"<string>\",\n    \"local_time\": \"<boolean>\",\n    \"log_type\": \"<string>\",\n    \"shared_key\": \"<string>\",\n    \"tag_field_name\": \"<string>\",\n    \"time_field_name\": \"<string>\"\n  },\n  \"basic_auth\": {\n    \"enabled\": \"<boolean>\",\n    \"login\": \"<string>\",\n    \"pass_hash\": \"<string>\",\n    \"password\": \"<string>\"\n  },\n  \"datadog\": {\n    \"api_key\": \"<string>\",\n    \"apm\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"logs\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"environment_type\": \"<string>\",\n  \"filebeat\": {\n    \"enabled\": true\n  },\n  \"front_version\": \"<string>\",\n  \"ingress\": {\n    \"cors\": {\n      \"allow_credentials\": \"<boolean>\",\n      \"allow_headers\": [\n        \"X-My-Header\",\n        \"X-My-Header\"\n      ],\n      \"allow_methods\": [\n        \"GET\",\n        \"GET\"\n      ],\n      \"allow_origin\": [\n        \"http://some.origin\",\n        \"http://some.origin\"\n      ],\n      \"cors_max_age\": \"<integer>\",\n      \"enabled\": \"<boolean>\",\n      \"expose_headers\": [\n        \"X-My-Header\",\n        \"X-My-Header\"\n      ]\n    },\n    \"custom_domain\": {\n      \"enabled\": \"<boolean>\"\n    },\n    \"default_domain\": {\n      \"disabled\": \"<boolean>\"\n    },\n    \"gcp_cloud_cdn\": {\n      \"enabled\": \"<boolean>\",\n      \"query_string_allowlist\": [\n        \"someQueryString\",\n        \"someQueryString\"\n      ],\n      \"query_string_denylist\": [\n        \"someQueryString\",\n        \"someQueryString\"\n      ]\n    },\n    \"whitelist\": {\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"instance_namespace\": \"<string>\",\n  \"loki\": {\n    \"enabled\": \"<boolean>\",\n    \"extra_labels\": \"<object>\",\n    \"password\": \"<string>\",\n    \"url\": \"<string>\",\n    \"username\": \"<string>\"\n  },\n  \"new_cert_manager\": \"<boolean>\",\n  \"newrelic\": {\n    \"api_insert_key\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"newrelic_infra\": {\n      \"license_key\": \"<string>\"\n    }\n  },\n  \"nginx\": {\n    \"custom_error_page\": {\n      \"body\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"provider\": \"<string>\",\n  \"redis\": {\n    \"enabled\": \"<boolean>\",\n    \"resources\": {\n      \"limits\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"cpu\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    },\n    \"service\": {\n      \"create\": \"<boolean>\"\n    }\n  },\n  \"region\": \"<string>\",\n  \"use_lets_encrypt\": \"<boolean>\",\n  \"vsf\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"health_check\": {\n      \"enabled\": \"<boolean>\",\n      \"path\": \"<string>\",\n      \"timeout_seconds\": \"<integer>\",\n      \"url\": \"/some/path\"\n    },\n    \"local_cloud_json\": {\n      \"disabled\": \"<boolean>\"\n    }\n  },\n  \"vsf_api\": {\n    \"env_var\": [\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"api\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"is_secret\": \"<boolean>\",\n        \"name\": \"<string>\",\n        \"only_for\": \"api\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"host_aliases\": [\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      },\n      {\n        \"hostname\": \"<string>\",\n        \"ip\": \"<string>\"\n      }\n    ],\n    \"hpa\": {\n      \"max_replicas\": \"<integer>\",\n      \"min_replicas\": \"<integer>\"\n    },\n    \"split_to\": [\n      \"[\\\"/api\\\",\\\"/img\\\"]\",\n      \"[\\\"/api\\\",\\\"/img\\\"]\"\n    ]\n  },\n  \"vsf_api_version\": \"<string>\",\n  \"vsf_version\": \"<string>\",\n  \"vue_api\": {\n    \"api_ecosystem\": \"<boolean>\",\n    \"health_check_url\": \"<string>\",\n    \"resources\": {\n      \"limits\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      },\n      \"requests\": {\n        \"ephemeral_storage\": \"<string>\",\n        \"memory\": \"<string>\"\n      }\n    }\n  },\n  \"www_redirect\": true,\n  \"x_content_type_options_tag\": \"<string>\",\n  \"x_frame_options\": true,\n  \"x_robots_tag\": \"none\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "68124976-4284-46ae-85ca-efd22f6fb616",
+    "name": "farmer cdn instance/{namespace} API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "cdn",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Endpoint to invalidate uri on specific instance for specific domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/cdn_cache/:instance/host/:host/path/:path",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "base64 path to invalidate for example: cHJvZHVjdC9saXN0LzE="
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path",
+                "description": "instance name for example: project-europe-west1-gcp-storefrontcloud-io"
+              }
+            ]
+          },
+          "docs": "Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint."
+        },
+        {
+          "info": {
+            "name": "Endpoint to invalidate uri on specific instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/cdn_cache/:instance/path/:path",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "base64 path to invalidate for example: cHJvZHVjdC9saXN0LzE="
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path",
+                "description": "instance name for example: project-europe-west1-gcp-storefrontcloud-io"
+              }
+            ]
+          },
+          "docs": "Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

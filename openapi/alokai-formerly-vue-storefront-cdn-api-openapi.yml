@@ -46,7 +46,8 @@ paths:
                 properties: {}
           status: 200
           description: Invalidation in progress
-      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.
+      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend
+        Cache use `/flush_cache` endpoint.
       summary: Endpoint to invalidate uri on specific instance for specific domain
   /cdn_cache/{instance}/path/{path}:
     delete:
@@ -83,5 +84,9 @@ paths:
                 properties: {}
           status: 200
           description: Invalidation in progress
-      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.
+      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend
+        Cache use `/flush_cache` endpoint.
       summary: Endpoint to invalidate uri on specific instance
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

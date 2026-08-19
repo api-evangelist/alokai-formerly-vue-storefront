@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn instance/{namespace}/pod/{pod}/log API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "instance/{namespace}/pod/{pod}/log",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch pod logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/instance/:namespace/pod/:pod/log",
+            "params": [
+              {
+                "name": "container",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "since_sec",
+                "value": "",
+                "type": "query",
+                "description": "Logs age in seconds"
+              },
+              {
+                "name": "tail",
+                "value": "",
+                "type": "query",
+                "description": "Parameter to determine how many logs should be returned"
+              },
+              {
+                "name": "pod",
+                "value": "nginx-77dd45c46d-k82ll",
+                "type": "path",
+                "description": "Pod name"
+              },
+              {
+                "name": "namespace",
+                "value": "project-europe-west1-gcp-storefrontcloud-io",
+                "type": "path",
+                "description": "Namespace name"
+              }
+            ]
+          },
+          "docs": "Fetch pod logs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

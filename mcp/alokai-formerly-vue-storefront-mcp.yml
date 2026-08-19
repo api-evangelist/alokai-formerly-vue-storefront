@@ -173,3 +173,9 @@ tools:
   path: /v2.2/instance/{namespace}/pods
   description: Get list of pods of your instance
   source_operation: openapi/alokai-formerly-vue-storefront-cloud-openapi.json#GET /v2.2/instance/{namespace}/pods
+deployment:
+  mode: none
+  verified: derived
+  tools: 33
+  checked: '2026-08-12'
+  source: catalog MCP census

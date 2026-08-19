@@ -1,0 +1,120 @@
+{
+  "item": [
+    {
+      "id": "496dff08-8514-4187-8d40-66b0fd2cdb8b",
+      "name": "flush_cache",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff7974ee-2ac4-4471-a932-030c022d9335",
+          "name": "Flush cache for instance",
+          "request": {
+            "name": "Flush cache for instance",
+            "description": {
+              "content": "Using this endpoint you can flush backend cache for your instance. To flush CDN cache please use `/cdn_cache` endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "flush_cache",
+                ":project"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) Project name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e55e793-f5af-49c8-b211-b26ea9eef887",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "flush_cache",
+                    ":project"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) Project name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1182,\n  \"result\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bdd4bd5e-3880-41bf-aa43-9438eb4c50b9",
+    "name": "farmer cdn flush_cache API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

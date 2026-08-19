@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn Healthz API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Healthz",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /healthz",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/healthz"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

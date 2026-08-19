@@ -158,3 +158,6 @@ components:
         reason:
           type: string
       type: object
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

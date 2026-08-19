@@ -1,0 +1,159 @@
+{
+  "item": [
+    {
+      "id": "5034cf7a-eda9-4e44-b796-6946b2e7c912",
+      "name": "instance/{namespace}/pod",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d6b9da1-a28f-43a5-ae54-05e9b4d9b27a",
+          "name": "Get list of pods of your instance",
+          "request": {
+            "name": "Get list of pods of your instance",
+            "description": {
+              "content": "Using this endpoint you can list all pods for selected instance on Storefront Cloud",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "instance",
+                ":namespace",
+                "pod"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) Namespace name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "d721587f-a66c-4c6d-bd37-7d840f2f41dd",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace",
+                    "pod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6510,\n  \"pods\": [\n    {\n      \"name\": \"string\",\n      \"ready\": true,\n      \"reason\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"ready\": true,\n      \"reason\": \"string\",\n      \"status\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "689ba89b-5ab0-416f-90f6-e438756e850f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace",
+                    "pod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "73587ded-17ce-4445-9b7f-3d5e52b462ab",
+    "name": "farmer cdn instance/{namespace}/pod API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

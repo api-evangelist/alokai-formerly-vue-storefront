@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn Instance API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Instance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /instance/{namespace}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/instance/:namespace",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

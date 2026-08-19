@@ -154,7 +154,9 @@ components:
         health_check:
           $ref: '#/components/schemas/HealthCheckAdditionalAppsWrap'
         image:
-          description: Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io
+          description: Additional applicatiom image name. Image should be stored in VSF docker registry
+            in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its
+            images in namespace foo-storefrontcloud-io
           example: registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension
           type: string
         name:
@@ -476,13 +478,17 @@ components:
         enabled:
           type: boolean
         query_string_allowlist:
-          description: List containing names of query string parameters to include in cache keysAll other parameters are excluded. You can specify `query_string_denylist` or `query_string_allowlist`, but not both.
+          description: List containing names of query string parameters to include in cache keysAll other
+            parameters are excluded. You can specify `query_string_denylist` or `query_string_allowlist`,
+            but not both.
           items:
             example: someQueryString
             type: string
           type: array
         query_string_denylist:
-          description: List containing names of query string parameters to exclude from cache keysAll other parameters are included. You can specify `query_string_denylist` or `query_string_allowlist`, but not both.
+          description: List containing names of query string parameters to exclude from cache keysAll
+            other parameters are included. You can specify `query_string_denylist` or `query_string_allowlist`,
+            but not both.
           items:
             example: someQueryString
             type: string
@@ -659,3 +665,6 @@ components:
           example: Instance doesn't exists
           type: string
       type: object
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

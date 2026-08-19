@@ -51,3 +51,6 @@ paths:
       summary: Get kube config file
       tags:
       - instance/{namespace}/kube_config
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

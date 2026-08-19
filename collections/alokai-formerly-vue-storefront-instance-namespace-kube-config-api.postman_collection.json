@@ -1,0 +1,267 @@
+{
+  "item": [
+    {
+      "id": "d55b5f34-e308-4d98-bda3-8cc2a878421d",
+      "name": "instance/{namespace}/kube_config",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c4b79e8c-31f5-4f93-be73-77eb5f3d08ee",
+          "name": "Get kube config file",
+          "request": {
+            "name": "Get kube config file",
+            "description": {
+              "content": "Get kube config file",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "instance",
+                ":namespace",
+                "kube_config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) Namespace name"
+                }
+              ]
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "b4b5954e-b1a0-412a-9643-c59e32d26338",
+              "name": "Kubeconfig file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace",
+                    "kube_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ba6262f6-caa7-4135-9379-b408cbf27411",
+              "name": "Exception while generating Kubeconfig",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace",
+                    "kube_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f99166da-1491-4a35-b552-78f67f344778",
+          "name": "Get kube config file",
+          "request": {
+            "name": "Get kube config file",
+            "description": {
+              "content": "Get kube config file",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":namespace",
+                "kube_config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) Namespace name"
+                }
+              ]
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "621afd27-c1a3-4742-8355-d8e9a16078c3",
+              "name": "Kubeconfig file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":namespace",
+                    "kube_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ef899c0f-f4fd-4c18-ba4d-96d7afa12bf0",
+              "name": "Exception while generating Kubeconfig",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":namespace",
+                    "kube_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2c342459-e3ae-48b6-a437-b0efda09ea7e",
+    "name": "farmer cdn instance/{namespace}/kube_config API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

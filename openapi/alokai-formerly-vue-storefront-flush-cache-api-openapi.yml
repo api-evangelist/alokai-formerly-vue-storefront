@@ -7,7 +7,8 @@ tags:
 paths:
   /flush_cache/{project}:
     delete:
-      description: Using this endpoint you can flush backend cache for your instance. To flush CDN cache please use `/cdn_cache` endpoint.
+      description: Using this endpoint you can flush backend cache for your instance. To flush CDN cache
+        please use `/cdn_cache` endpoint.
       parameters:
       - description: Project name
         in: path
@@ -35,3 +36,6 @@ components:
         result:
           type: string
       type: object
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

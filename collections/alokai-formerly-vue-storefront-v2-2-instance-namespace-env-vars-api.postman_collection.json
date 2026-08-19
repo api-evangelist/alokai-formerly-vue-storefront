@@ -1,0 +1,852 @@
+{
+  "item": [
+    {
+      "id": "ad40d2b0-eb4e-430d-98f6-f9e5e8c30b42",
+      "name": "v2.2/instance/{namespace}/env_vars",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6b53cbb1-ba5a-4965-992c-fdf4871b24b4",
+          "name": "Manage Additional App instance's environmental variables",
+          "request": {
+            "name": "Manage Additional App instance's environmental variables",
+            "description": {
+              "content": "Manage Additional App instance's environmental variables",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "env_vars",
+                "additional_apps",
+                ":app_id",
+                ":env_var",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "app_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "env_var",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ccb75fe-7477-4dc8-beee-5888366ff191",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "additional_apps",
+                    ":app_id",
+                    ":env_var",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "app_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "37ec7080-11aa-47c6-b47d-3bb6a1e6ce5f",
+              "name": "Environment variable variable doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "additional_apps",
+                    ":app_id",
+                    ":env_var",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "app_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d938f0e2-890d-4e78-bc85-bcf9be8307ea",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "additional_apps",
+                    ":app_id",
+                    ":env_var",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "app_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2b3c285d-70d0-4686-84f7-3ba4abb60329",
+          "name": "Manage Datadog instance's environmental variables",
+          "request": {
+            "name": "Manage Datadog instance's environmental variables",
+            "description": {
+              "content": "Manage Datadog instance's environmental variables",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "env_vars",
+                "datadog",
+                ":env_var"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "env_var",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "953936ab-854c-4876-b5df-999b6e178cc6",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "datadog",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4e81c323-810e-4e44-af24-6875fb7fa543",
+              "name": "Environment variable variable doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "datadog",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "40918f60-1c4b-49d8-8b6f-645056489f4f",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "datadog",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48e0acc5-c5e4-4d6a-9754-a82fe49e8712",
+          "name": "Manage vsf instance's environmental variables",
+          "request": {
+            "name": "Manage vsf instance's environmental variables",
+            "description": {
+              "content": "Manage vsf instance's environmental variables",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "env_vars",
+                "vsf",
+                ":env_var"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "env_var",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e3c5472-3b0d-4dab-87aa-286c0391f8dc",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "vsf",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8504fbfe-7434-4177-9cc4-c61e63204d20",
+              "name": "Environment variable variable doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "vsf",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0eaf8da9-c130-40d7-b2b2-924560a03f22",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "vsf",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c4deaa7-24d5-401c-8ff7-d241991ae106",
+          "name": "Manage vsf api instance's environmental variables",
+          "request": {
+            "name": "Manage vsf api instance's environmental variables",
+            "description": {
+              "content": "Manage vsf api instance's environmental variables",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "env_vars",
+                "vsf_api",
+                ":env_var"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "env_var",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42087828-fff7-42a6-99f8-84a5114026cc",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "vsf_api",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1c284f73-081e-43b8-8669-5273f5a3fafe",
+              "name": "Environment variable variable doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "vsf_api",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b26aa6df-53b6-4258-b5bb-cd0de1aff9c0",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "env_vars",
+                    "vsf_api",
+                    ":env_var"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "env_var",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8ea89863-63d7-4afb-ae57-907ff7ba24c9",
+    "name": "farmer cdn v2.2/instance/{namespace}/env_vars API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

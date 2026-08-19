@@ -57,3 +57,6 @@ components:
           description: additional message, displays error message as well
           type: string
       type: object
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

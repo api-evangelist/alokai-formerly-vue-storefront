@@ -187,7 +187,9 @@ components:
         health_check:
           $ref: '#/components/schemas/HealthCheckAdditionalAppsWrap'
         image:
-          description: Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io
+          description: Additional applicatiom image name. Image should be stored in VSF docker registry
+            in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its
+            images in namespace foo-storefrontcloud-io
           example: registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension
           type: string
         name:
@@ -226,3 +228,6 @@ components:
           nullable: true
           type: integer
       type: object
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

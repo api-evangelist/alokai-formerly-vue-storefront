@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "7d258f71-51d3-4bd9-bb53-23847eb8d2f3",
+      "name": "instance/{namespace}/pod/{pod}/log",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "64e01df2-878d-45b1-9d51-ac473ddb5fcf",
+          "name": "Fetch pod logs",
+          "request": {
+            "name": "Fetch pod logs",
+            "description": {
+              "content": "Fetch pod logs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "instance",
+                ":namespace",
+                "pod",
+                ":pod",
+                "log"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "container",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "since_sec",
+                  "value": "<integer>",
+                  "description": "Logs age in seconds"
+                },
+                {
+                  "disabled": false,
+                  "key": "tail",
+                  "value": "<integer>",
+                  "description": "Parameter to determine how many logs should be returned"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pod",
+                  "description": "(Required) Pod name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) Namespace name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "6e4b421f-4401-46f9-ab42-d0a162bb214d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace",
+                    "pod",
+                    ":pod",
+                    "log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "container",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "since_sec",
+                      "value": "60"
+                    },
+                    {
+                      "key": "tail",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pod",
+                      "description": "(Required) Pod name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4837,\n  \"logs\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c0da4398-6c14-4c39-a88f-49f447aac092",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace",
+                    "pod",
+                    ":pod",
+                    "log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "container",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "since_sec",
+                      "value": "60"
+                    },
+                    {
+                      "key": "tail",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pod",
+                      "description": "(Required) Pod name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19270e28-5f16-45d6-a0cb-6489e1fb96f5",
+              "name": "Pod not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instance",
+                    ":namespace",
+                    "pod",
+                    ":pod",
+                    "log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "container",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "since_sec",
+                      "value": "60"
+                    },
+                    {
+                      "key": "tail",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pod",
+                      "description": "(Required) Pod name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "de835590-afad-4453-befb-aed218178ac2",
+    "name": "farmer cdn instance/{namespace}/pod/{pod}/log API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

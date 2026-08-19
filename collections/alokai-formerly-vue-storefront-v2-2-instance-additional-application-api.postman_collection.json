@@ -1,0 +1,1365 @@
+{
+  "item": [
+    {
+      "id": "01cf1201-98aa-4c17-aca2-a6bd07e3dea7",
+      "name": "v2.2/instance/additional_application",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e9ff131a-0c33-43d6-b93b-ac70da1c0f6d",
+          "name": "Manage instance's additional applications",
+          "request": {
+            "name": "Manage instance's additional applications",
+            "description": {
+              "content": "Manage instance's additional applications",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "additional_application"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab204d0a-ce93-4205-b506-cb2e2c362336",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94f8f249-ad4a-4358-b1fb-9b4f17bfaab0",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e09b9698-f9ea-437f-960e-397e62d33178",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9b7e616-958e-4541-a29a-8e06a086b230",
+              "name": "Additional application doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "516fd016-64bb-4bbc-8434-f3242a828089",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f4972462-758e-4616-b43f-8c07f1c33a28",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1989b76-73fd-4917-9e2d-64c394ab1cfb",
+          "name": "Manage instance's additional applications",
+          "request": {
+            "name": "Manage instance's additional applications",
+            "description": {
+              "content": "Manage instance's additional applications",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "additional_application",
+                ":additional_application_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "additional_application_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "faccdd4c-85b8-4aad-ab48-85fb8711e67e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "258abb70-71e3-4746-9b97-5784d479ab9d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3b6f3eb-c440-49f4-af58-2db3946c9553",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "faca6b59-e0ba-43df-a7c2-5dbada2e5d73",
+              "name": "Additional application doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f1ea6f10-c389-44eb-85a1-6037d9e3db73",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f4e1c03-596f-41aa-8a4c-47cf6aac8e5c",
+          "name": "Manage instance's additional applications",
+          "request": {
+            "name": "Manage instance's additional applications",
+            "description": {
+              "content": "Manage instance's additional applications",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "additional_application",
+                ":additional_application_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "additional_application_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9388575b-89da-425d-b8b6-4de584dba769",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "243e42fc-36ab-4021-9d5e-4b6349291d7b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c9a1f12-08e6-4ef7-809d-c16f20e0ed38",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6fc8a793-ee94-4fbd-8b90-e9bc35cdb848",
+              "name": "Additional application doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b907bf89-d6e2-4891-9a42-f0b230bb0bbf",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5980210d-bd7d-4f38-b079-8f84b5c48ba2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f86dbb79-df21-44d1-ba67-84360e1faddb",
+          "name": "Manage instance's additional applications",
+          "request": {
+            "name": "Manage instance's additional applications",
+            "description": {
+              "content": "Manage instance's additional applications",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":instance",
+                "additional_application",
+                ":additional_application_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "additional_application_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1495e166-324c-4297-8ec0-e7f73a32c165",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a558048-cf9f-474c-ac90-e6a50f593185",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f4bab6e-40ae-4e81-b26a-66e9e7248abc",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"env_var\": {\n    \"key_0\": {\n      \"is_secret\": false,\n      \"name\": \"k\",\n      \"value\": \"string\"\n    },\n    \"key_1\": {\n      \"is_secret\": false,\n      \"name\": \"VU\",\n      \"value\": \"string\"\n    }\n  },\n  \"has_base_path\": false,\n  \"health_check\": {\n    \"enabled\": false,\n    \"path\": \"/some/path\",\n    \"timeout_seconds\": 10\n  },\n  \"image\": \"registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension\",\n  \"name\": \"string\",\n  \"path\": \"string\",\n  \"port\": \"string\",\n  \"tag\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6ded5d4-6ae8-4caa-ac56-6ebc2e8237bf",
+              "name": "Additional application doesn't exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e82b412a-5643-4bfe-84fc-fd4c9faf6075",
+              "name": "Exception occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "acb48d93-0072-4634-8285-7b642f27ecac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":instance",
+                    "additional_application",
+                    ":additional_application_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "additional_application_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "51427734-aa8a-4009-b653-329e66361755",
+    "name": "farmer cdn v2.2/instance/additional_application API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

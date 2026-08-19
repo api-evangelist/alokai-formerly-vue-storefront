@@ -101,3 +101,6 @@ paths:
       summary: Manage vsf api instance's environmental variables
       tags:
       - v2.2/instance/{namespace}/env_vars
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

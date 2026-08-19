@@ -87,3 +87,6 @@ components:
           description: url map name (for GCE ingresses)
           readOnly: true
       type: object
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

@@ -15,3 +15,6 @@ paths:
       responses: {}
       tags:
       - Instance
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

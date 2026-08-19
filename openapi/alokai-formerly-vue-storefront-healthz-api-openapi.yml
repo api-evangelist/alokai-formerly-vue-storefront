@@ -14,3 +14,6 @@ paths:
       responses:
         default:
           description: OK
+servers:
+- url: https://farmer.vuestorefront.cloud
+  description: Base URL reconciled from apis.yml

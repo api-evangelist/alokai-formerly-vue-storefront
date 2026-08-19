@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "05feca9a-7fcb-47c5-a472-b2846551693a",
+      "name": "v2.2/instance/{namespace}/pods",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f098f323-9367-44e4-b8cb-38b6a7b5b9f8",
+          "name": "Get list of pods of your instance",
+          "request": {
+            "name": "Get list of pods of your instance",
+            "description": {
+              "content": "Using this endpoint you can list all pods for selected instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2.2",
+                "instance",
+                ":namespace",
+                "pods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) Namespace name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "812c56b0-2120-4319-8ebe-f9071b6925f8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":namespace",
+                    "pods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": false,\n  \"message\": \"string\",\n  \"pods\": [\n    {\n      \"containers\": 2771,\n      \"isReady\": true,\n      \"isRolloutActive\": false,\n      \"isTerminating\": true,\n      \"name\": \"string\",\n      \"readyContainers\": 2451,\n      \"reason\": \"string\",\n      \"restarts\": 7795,\n      \"startTime\": \"string\",\n      \"status\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"containers\": 7520,\n      \"isReady\": false,\n      \"isRolloutActive\": true,\n      \"isTerminating\": false,\n      \"name\": \"string\",\n      \"readyContainers\": 2627,\n      \"reason\": \"string\",\n      \"restarts\": 8071,\n      \"startTime\": \"string\",\n      \"status\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f257905f-ff94-45c8-91d2-c0d3e1a2a002",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":namespace",
+                    "pods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52813857-c091-48d4-9592-67c83ec86c54",
+              "name": "Pods not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "instance",
+                    ":namespace",
+                    "pods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) Namespace name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ed12e773-4f41-4adb-95bf-6d6822d0c5d5",
+    "name": "farmer cdn v2.2/instance/{namespace}/pods API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

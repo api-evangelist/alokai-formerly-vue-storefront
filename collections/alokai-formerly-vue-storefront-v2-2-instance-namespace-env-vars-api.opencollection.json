@@ -1,0 +1,115 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn v2.2/instance/{namespace}/env_vars API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2.2/instance/{namespace}/env_vars",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Manage Additional App instance's environmental variables",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/env_vars/additional_apps/:app_id/:env_var/",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "env_var",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage Additional App instance's environmental variables"
+        },
+        {
+          "info": {
+            "name": "Manage Datadog instance's environmental variables",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/env_vars/datadog/:env_var",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "env_var",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage Datadog instance's environmental variables"
+        },
+        {
+          "info": {
+            "name": "Manage vsf instance's environmental variables",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/env_vars/vsf/:env_var",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "env_var",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage vsf instance's environmental variables"
+        },
+        {
+          "info": {
+            "name": "Manage vsf api instance's environmental variables",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:instance/env_vars/vsf_api/:env_var",
+            "params": [
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "env_var",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Manage vsf api instance's environmental variables"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

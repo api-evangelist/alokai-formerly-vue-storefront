@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn instance/{namespace}/kube_config API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "instance/{namespace}/kube_config",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get kube config file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/instance/:namespace/kube_config",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "project-europe-west1-gcp-storefrontcloud-io",
+                "type": "path",
+                "description": "Namespace name"
+              }
+            ]
+          },
+          "docs": "Get kube config file"
+        },
+        {
+          "info": {
+            "name": "Get kube config file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:namespace/kube_config",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "project-europe-west1-gcp-storefrontcloud-io",
+                "type": "path",
+                "description": "Namespace name"
+              }
+            ]
+          },
+          "docs": "Get kube config file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

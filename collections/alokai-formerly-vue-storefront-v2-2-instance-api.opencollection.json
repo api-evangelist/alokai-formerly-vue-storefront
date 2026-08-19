@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn v2.2/instance API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2.2/instance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2.2/instance/{namespace}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:namespace",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PATCH /v2.2/instance/{namespace}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:namespace",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "DELETE /v2.2/instance/{namespace}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:namespace",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

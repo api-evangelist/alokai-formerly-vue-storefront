@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn instance/{namespace} API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "instance/{namespace}",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update instance configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://farmer.vuestorefront.cloud/instance/:namespace",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates instance, merge update data with current configuration"
+        },
+        {
+          "info": {
+            "name": "It deletes instance object from Firestore DB",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://farmer.vuestorefront.cloud/instance/:namespace",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "project-europe-west1-gcp-storefrontcloud-io",
+                "type": "path",
+                "description": "Namespace name"
+              }
+            ]
+          },
+          "docs": "It deletes instance object from Firestore DB"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

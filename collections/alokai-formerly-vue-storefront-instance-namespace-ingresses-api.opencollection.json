@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "farmer cdn instance/{namespace}/ingresses API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "instance/{namespace}/ingresses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provides a list of ingresses and their types, domains and ips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/instance/:namespace/ingresses",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "project-europe-west1-gcp-storefrontcloud-io",
+                "type": "path",
+                "description": "Namespace name"
+              }
+            ]
+          },
+          "docs": "Get a list of ingresses and information about them"
+        },
+        {
+          "info": {
+            "name": "Provides a list of ingresses and their types, domains and ips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://farmer.vuestorefront.cloud/v2.2/instance/:namespace/ingresses",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "project-europe-west1-gcp-storefrontcloud-io",
+                "type": "path",
+                "description": "Namespace name"
+              }
+            ]
+          },
+          "docs": "Get a list of ingresses and information about them"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

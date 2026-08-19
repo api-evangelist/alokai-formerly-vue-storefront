@@ -1,0 +1,318 @@
+{
+  "item": [
+    {
+      "id": "318243b5-e271-48f6-9080-31c8a94f9f4a",
+      "name": "v2.2/admin/instance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6c1d0317-21f3-4851-8e5b-a361c960e53f",
+          "name": "/v2.2/admin/instance",
+          "request": {
+            "name": "/v2.2/admin/instance",
+            "description": {},
+            "url": {
+              "path": [
+                "v2.2",
+                "admin",
+                "instance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "15224865-cd42-4cff-8510-f727d1a7f034",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "admin",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d7ee3287-549e-4697-81e8-1f3e90e896df",
+          "name": "/v2.2/admin/instance/:namespace",
+          "request": {
+            "name": "/v2.2/admin/instance/:namespace",
+            "description": {},
+            "url": {
+              "path": [
+                "v2.2",
+                "admin",
+                "instance",
+                ":namespace"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "namespace",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e8d0038-ee45-4609-9006-390c013d0824",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "admin",
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6f3ab2b4-953e-443b-86cc-8b67c36385b2",
+          "name": "/v2.2/admin/instance/:namespace",
+          "request": {
+            "name": "/v2.2/admin/instance/:namespace",
+            "description": {},
+            "url": {
+              "path": [
+                "v2.2",
+                "admin",
+                "instance",
+                ":namespace"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "namespace",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aed2b2c9-0476-4c15-b7b8-5b6016d7d8ec",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "admin",
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a11c7e3-5953-4409-94b2-a8ecd76bfec7",
+          "name": "/v2.2/admin/instance/:namespace",
+          "request": {
+            "name": "/v2.2/admin/instance/:namespace",
+            "description": {},
+            "url": {
+              "path": [
+                "v2.2",
+                "admin",
+                "instance",
+                ":namespace"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "namespace",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6fc5a160-ec28-4d08-90d4-eb3990631a0a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2.2",
+                    "admin",
+                    "instance",
+                    ":namespace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://farmer.vuestorefront.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "00d2fa71-6f5a-4e8e-9c0c-8002ec1bd270",
+    "name": "farmer cdn v2.2/admin/instance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
