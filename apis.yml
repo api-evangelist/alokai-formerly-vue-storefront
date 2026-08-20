@@ -35,6 +35,17 @@ modified: '2026-07-17'
 image: https://images.contentstack.io/v3/assets/bltb1a38d5d52a9d1a1/bltd2e8b4aaef77df33/65f899d60c744de1117c17ef/OG_Product_Overview_(1).png
 tags:
 - Company
+- Software-as-a-Service
+- E-Commerce
+- Composable Commerce
+- Headless Commerce
+- Frontend as a Service
+- Storefront
+- SDK
+- Middleware
+- Cloud Hosting
+tags_raw:
+- Company
 - Saas
 - Ecommerce
 - Composable Commerce
@@ -51,6 +62,8 @@ apis:
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
   tags:
+  - CDN
+  tags_raw:
   - cdn
   properties:
   - type: OpenAPI
@@ -67,7 +80,8 @@ apis:
     The deploy_check API from Alokai (formerly Vue Storefront) — 1 operation(s) for deploy_check.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - deploy_check
   properties:
   - type: OpenAPI
@@ -85,6 +99,8 @@ apis:
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
   tags:
+  - FlushCache
+  tags_raw:
   - flush_cache
   properties:
   - type: OpenAPI
@@ -133,7 +149,8 @@ apis:
     The instance/{namespace} API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - instance/{namespace}
   properties:
   - type: OpenAPI
@@ -151,7 +168,8 @@ apis:
     The instance/{namespace}/exists API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/exists.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - instance/{namespace}/exists
   properties:
   - type: OpenAPI
@@ -170,7 +188,8 @@ apis:
     instance/{namespace}/ingresses.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - instance/{namespace}/ingresses
   properties:
   - type: OpenAPI
@@ -189,7 +208,8 @@ apis:
     instance/{namespace}/kube_config.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - instance/{namespace}/kube_config
   properties:
   - type: OpenAPI
@@ -206,7 +226,8 @@ apis:
     The instance/{namespace}/pod API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/pod.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - instance/{namespace}/pod
   properties:
   - type: OpenAPI
@@ -225,7 +246,8 @@ apis:
     instance/{namespace}/pod/{pod}.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - instance/{namespace}/pod/{pod}
   properties:
   - type: OpenAPI
@@ -244,7 +266,8 @@ apis:
     for instance/{namespace}/pod/{pod}/log.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - instance/{namespace}/pod/{pod}/log
   properties:
   - type: OpenAPI
@@ -317,7 +340,8 @@ apis:
     for v2.2/instance/{namespace}/env_vars.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - v2.2/instance/{namespace}/env_vars
   properties:
   - type: OpenAPI
@@ -336,7 +360,8 @@ apis:
     for v2.2/instance/{namespace}/pod/{pod}.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - v2.2/instance/{namespace}/pod/{pod}
   properties:
   - type: OpenAPI
@@ -355,7 +380,8 @@ apis:
     v2.2/instance/{namespace}/pods.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
+  tags: []
+  tags_raw:
   - v2.2/instance/{namespace}/pods
   properties:
   - type: OpenAPI
