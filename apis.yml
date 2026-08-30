@@ -47,7 +47,7 @@ modified: '2026-07-17'
 image: https://images.contentstack.io/v3/assets/bltb1a38d5d52a9d1a1/bltd2e8b4aaef77df33/65f899d60c744de1117c17ef/OG_Product_Overview_(1).png
 tags:
 - Company
-- Software-as-a-Service
+- Saas
 - E-Commerce
 - Composable Commerce
 - Headless Commerce
@@ -110,8 +110,7 @@ apis:
     The flush_cache API from Alokai (formerly Vue Storefront) — 1 operation(s) for flush_cache.
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
-  tags:
-  - FlushCache
+  tags: []
   tags_raw:
   - flush_cache
   properties:
