@@ -112,7 +112,7 @@ apis:
   humanURL: https://docs.alokai.com/cloud/api/swagger
   baseURL: https://farmer.vuestorefront.cloud
   tags:
-  - FlushCache
+  - Flush Cache
   tags_raw:
   - flush_cache
   properties:
