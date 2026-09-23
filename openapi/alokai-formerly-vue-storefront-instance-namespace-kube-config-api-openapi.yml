@@ -1,13 +1,12 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn instance/{namespace}/kube_config API
+  title: farmer Instance/{namespace}/kube Config API
   version: v1
 tags:
 - name: instance/{namespace}/kube_config
 paths:
   /instance/{namespace}/kube_config:
     get:
-      description: Get kube config file
       parameters:
       - description: Namespace name
         example: project-europe-west1-gcp-storefrontcloud-io
@@ -28,9 +27,10 @@ paths:
       summary: Get kube config file
       tags:
       - instance/{namespace}/kube_config
+      operationId: getInstanceByNamespaceKubeConfig
+      x-operation-id-source: derived
   /v2.2/instance/{namespace}/kube_config:
     get:
-      description: Get kube config file
       parameters:
       - description: Namespace name
         example: project-europe-west1-gcp-storefrontcloud-io
@@ -51,6 +51,5 @@ paths:
       summary: Get kube config file
       tags:
       - instance/{namespace}/kube_config
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml
+      operationId: getV22InstanceByNamespaceKubeConfig
+      x-operation-id-source: derived

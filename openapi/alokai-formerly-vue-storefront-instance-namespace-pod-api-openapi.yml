@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn instance/{namespace}/pod API
+  title: farmer Instance/{namespace}/pod API
   version: v1
 tags:
 - name: instance/{namespace}/pod
@@ -34,6 +34,8 @@ paths:
       summary: Get list of pods of your instance
       tags:
       - instance/{namespace}/pod
+      operationId: getInstanceByNamespacePod
+      x-operation-id-source: derived
 components:
   schemas:
     PodEnvelope:
@@ -56,6 +58,3 @@ components:
         status:
           type: string
       type: object
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn instance/{namespace}/pod/{pod} API
+  title: farmer Instance/{namespace}/pod/{pod} API
   version: v1
 tags:
 - name: instance/{namespace}/pod/{pod}
@@ -42,32 +42,10 @@ paths:
       summary: Get status of pods of your instance
       tags:
       - instance/{namespace}/pod/{pod}
+      operationId: getInstanceByNamespacePodByPod
+      x-operation-id-source: derived
 components:
   schemas:
-    ContainerStatus:
-      properties:
-        name:
-          type: string
-        ready:
-          type: boolean
-        restarts:
-          type: integer
-        status:
-          enum:
-          - Waiting
-          - Running
-          - Terminated
-          type: string
-      type: object
-    PodStatusEnvelope:
-      properties:
-        error:
-          type: boolean
-        message:
-          type: string
-        pod:
-          $ref: '#/components/schemas/PodStatus'
-      type: object
     PodStatus:
       properties:
         containers:
@@ -89,6 +67,27 @@ components:
           - Succeeded
           type: string
       type: object
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml
+    PodStatusEnvelope:
+      properties:
+        error:
+          type: boolean
+        message:
+          type: string
+        pod:
+          $ref: '#/components/schemas/PodStatus'
+      type: object
+    ContainerStatus:
+      properties:
+        name:
+          type: string
+        ready:
+          type: boolean
+        restarts:
+          type: integer
+        status:
+          enum:
+          - Waiting
+          - Running
+          - Terminated
+          type: string
+      type: object

@@ -1,13 +1,12 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn v2.2/instance/{namespace}/pod/{pod} API
+  title: farmer V2.2/instance/{namespace}/pod/{pod} API
   version: v1
 tags:
 - name: v2.2/instance/{namespace}/pod/{pod}
 paths:
   /v2.2/instance/{namespace}/pod/{pod}:
     get:
-      description: Fetch pod details
       parameters:
       - description: Pod name
         example: nginx-77dd45c46d-k82ll
@@ -46,8 +45,82 @@ paths:
       summary: Fetch pod details
       tags:
       - v2.2/instance/{namespace}/pod/{pod}
+      operationId: getV22InstanceByNamespacePodByPod
+      x-operation-id-source: derived
 components:
   schemas:
+    PodDetails:
+      properties:
+        error:
+          type: boolean
+        message:
+          type: string
+        pod:
+          $ref: '#/components/schemas/PodStatusV22'
+      type: object
+    Events:
+      properties:
+        count:
+          type: string
+        last_seen:
+          type: string
+        message:
+          type: string
+        reason:
+          type: string
+      type: object
+    ContainerStatusV22:
+      properties:
+        image:
+          type: string
+        name:
+          type: string
+        ready:
+          type: boolean
+        restarts:
+          type: integer
+        status:
+          enum:
+          - Waiting
+          - Running
+          - Terminated
+          type: string
+      type: object
+    PodEnvVars:
+      properties:
+        containers:
+          additionalProperties:
+            additionalProperties:
+              $ref: '#/components/schemas/PodEnvVar'
+            description: Extra variables injected into the deployment
+            type: object
+          description: Extra variables injected into the deployment
+          type: object
+        errors:
+          additionalProperties:
+            type: string
+          description: Errors getting env vars from containers
+          type: object
+      type: object
+    Error:
+      properties:
+        message:
+          type: string
+      type: object
+    PodEnvVar:
+      properties:
+        container_name:
+          type: string
+        is_secret:
+          description: Flag to mark environment variable as a secret
+          type: boolean
+        name:
+          description: Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.
+          pattern: ^[a-zA-Z_][a-zA-Z0-9_]*$
+          type: string
+        value:
+          type: string
+      type: object
     PodStatusV22:
       properties:
         containers:
@@ -63,8 +136,9 @@ components:
         is_ready:
           type: boolean
         is_rollout_active:
-          nullable: true
-          type: boolean
+          type:
+          - boolean
+          - 'null'
         is_terminating:
           type: boolean
         labels:
@@ -86,78 +160,3 @@ components:
           - Succeeded
           type: string
       type: object
-    PodDetails:
-      properties:
-        error:
-          type: boolean
-        message:
-          type: string
-        pod:
-          $ref: '#/components/schemas/PodStatusV22'
-      type: object
-    ContainerStatusV22:
-      properties:
-        image:
-          type: string
-        name:
-          type: string
-        ready:
-          type: boolean
-        restarts:
-          type: integer
-        status:
-          enum:
-          - Waiting
-          - Running
-          - Terminated
-          type: string
-      type: object
-    Error:
-      properties:
-        message:
-          type: string
-      type: object
-    PodEnvVar:
-      properties:
-        container_name:
-          type: string
-        is_secret:
-          description: Flag to mark environment variable as a secret
-          type: boolean
-        name:
-          description: Environment variable name, the name has to match to the patern '^[a-zA-Z_][a-zA-Z0-9_]*$'.
-          pattern: ^[a-zA-Z_][a-zA-Z0-9_]*$
-          type: string
-        value:
-          type: string
-      type: object
-    PodEnvVars:
-      properties:
-        containers:
-          additionalProperties:
-            additionalProperties:
-              $ref: '#/components/schemas/PodEnvVar'
-            description: Extra variables injected into the deployment
-            type: object
-          description: Extra variables injected into the deployment
-          type: object
-        errors:
-          additionalProperties:
-            type: string
-          description: Errors getting env vars from containers
-          type: object
-      type: object
-    Events:
-      properties:
-        count:
-          type: string
-        last_seen:
-          type: string
-        message:
-          type: string
-        reason:
-          type: string
-      type: object
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml

@@ -1,13 +1,12 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn v2.2/instance/{namespace}/env_vars API
+  title: farmer V2.2/instance/{namespace}/env Vars API
   version: v1
 tags:
 - name: v2.2/instance/{namespace}/env_vars
 paths:
   /v2.2/instance/{instance}/env_vars/additional_apps/{app_id}/{env_var}/:
     delete:
-      description: Manage Additional App instance's environmental variables
       parameters:
       - in: path
         name: instance
@@ -32,9 +31,10 @@ paths:
       summary: Manage Additional App instance's environmental variables
       tags:
       - v2.2/instance/{namespace}/env_vars
+      operationId: deleteV22InstanceByInstanceEnvVarsAdditionalAppsByAppIdByEnvVar
+      x-operation-id-source: derived
   /v2.2/instance/{instance}/env_vars/datadog/{env_var}:
     delete:
-      description: Manage Datadog instance's environmental variables
       parameters:
       - in: path
         name: instance
@@ -55,9 +55,10 @@ paths:
       summary: Manage Datadog instance's environmental variables
       tags:
       - v2.2/instance/{namespace}/env_vars
+      operationId: deleteV22InstanceByInstanceEnvVarsDatadogByEnvVar
+      x-operation-id-source: derived
   /v2.2/instance/{instance}/env_vars/vsf/{env_var}:
     delete:
-      description: Manage vsf instance's environmental variables
       parameters:
       - in: path
         name: instance
@@ -78,9 +79,10 @@ paths:
       summary: Manage vsf instance's environmental variables
       tags:
       - v2.2/instance/{namespace}/env_vars
+      operationId: deleteV22InstanceByInstanceEnvVarsVsfByEnvVar
+      x-operation-id-source: derived
   /v2.2/instance/{instance}/env_vars/vsf_api/{env_var}:
     delete:
-      description: Manage vsf api instance's environmental variables
       parameters:
       - in: path
         name: instance
@@ -101,6 +103,5 @@ paths:
       summary: Manage vsf api instance's environmental variables
       tags:
       - v2.2/instance/{namespace}/env_vars
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml
+      operationId: deleteV22InstanceByInstanceEnvVarsVsfApiByEnvVar
+      x-operation-id-source: derived

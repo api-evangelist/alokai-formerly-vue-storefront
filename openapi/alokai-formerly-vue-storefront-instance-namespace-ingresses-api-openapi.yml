@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn instance/{namespace}/ingresses API
+  title: farmer Instance/{namespace}/ingresses API
   version: v1
 tags:
 - name: instance/{namespace}/ingresses
@@ -34,6 +34,8 @@ paths:
       summary: Provides a list of ingresses and their types, domains and ips
       tags:
       - instance/{namespace}/ingresses
+      operationId: getInstanceByNamespaceIngresses
+      x-operation-id-source: derived
   /v2.2/instance/{namespace}/ingresses:
     get:
       description: Get a list of ingresses and information about them
@@ -63,18 +65,10 @@ paths:
       summary: Provides a list of ingresses and their types, domains and ips
       tags:
       - instance/{namespace}/ingresses
+      operationId: getV22InstanceByNamespaceIngresses
+      x-operation-id-source: derived
 components:
   schemas:
-    IngressEnvelope:
-      properties:
-        code:
-          description: response code
-          type: integer
-        ingresses:
-          items:
-            $ref: '#/components/schemas/K8sIngress'
-          type: array
-      type: object
     K8sIngress:
       properties:
         domains:
@@ -87,6 +81,13 @@ components:
           description: url map name (for GCE ingresses)
           readOnly: true
       type: object
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml
+    IngressEnvelope:
+      properties:
+        code:
+          description: response code
+          type: integer
+        ingresses:
+          items:
+            $ref: '#/components/schemas/K8sIngress'
+          type: array
+      type: object

@@ -1,14 +1,14 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn API
+  title: farmer Cdn API
   version: v1
 tags:
-- name: cdn
+- name: CDN
 paths:
   /cdn_cache/{instance}/host/{host}/path/{path}:
     delete:
       tags:
-      - cdn
+      - CDN
       security: []
       parameters:
       - name: host
@@ -46,13 +46,14 @@ paths:
                 properties: {}
           status: 200
           description: Invalidation in progress
-      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend
-        Cache use `/flush_cache` endpoint.
+      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.
       summary: Endpoint to invalidate uri on specific instance for specific domain
+      operationId: deleteCdnCacheByInstanceHostByHostPathByPath
+      x-operation-id-source: derived
   /cdn_cache/{instance}/path/{path}:
     delete:
       tags:
-      - cdn
+      - CDN
       security: []
       parameters:
       - name: path
@@ -84,9 +85,7 @@ paths:
                 properties: {}
           status: 200
           description: Invalidation in progress
-      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend
-        Cache use `/flush_cache` endpoint.
+      description: Endpoint to flush CDN cache on specific instance for specific URI. To flush Backend Cache use `/flush_cache` endpoint.
       summary: Endpoint to invalidate uri on specific instance
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml
+      operationId: deleteCdnCacheByInstancePathByPath
+      x-operation-id-source: derived

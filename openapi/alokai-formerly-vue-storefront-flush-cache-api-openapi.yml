@@ -1,14 +1,13 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: farmer cdn flush_cache API
+  title: farmer Flush Cache API
   version: v1
 tags:
-- name: flush_cache
+- name: Flush Cache
 paths:
   /flush_cache/{project}:
     delete:
-      description: Using this endpoint you can flush backend cache for your instance. To flush CDN cache
-        please use `/cdn_cache` endpoint.
+      description: Using this endpoint you can flush backend cache for your instance. To flush CDN cache please use `/cdn_cache` endpoint.
       parameters:
       - description: Project name
         in: path
@@ -26,7 +25,9 @@ paths:
           description: Success
       summary: Flush cache for instance
       tags:
-      - flush_cache
+      - Flush Cache
+      operationId: deleteFlushCacheByProject
+      x-operation-id-source: derived
 components:
   schemas:
     FlushCache:
@@ -36,6 +37,3 @@ components:
         result:
           type: string
       type: object
-servers:
-- url: https://farmer.vuestorefront.cloud
-  description: Base URL reconciled from apis.yml
