@@ -68,15 +68,15 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Error:
+      properties:
+        message:
+          type: string
+      type: object
     PodLogs:
       properties:
         code:
           type: integer
         logs:
-          type: string
-      type: object
-    Error:
-      properties:
-        message:
           type: string
       type: object

@@ -42,11 +42,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      properties:
-        message:
-          type: string
-      type: object
     PodItem:
       properties:
         containers:
@@ -72,6 +67,11 @@ components:
         status:
           type: string
         type:
+          type: string
+      type: object
+    Error:
+      properties:
+        message:
           type: string
       type: object
     PodsList:

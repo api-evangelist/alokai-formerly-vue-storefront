@@ -106,7 +106,7 @@ apis:
   - type: DataModel
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-flush-cache-api
-  name: Alokai (formerly Vue Storefront) flush_cache API
+  name: Alokai (formerly Vue Storefront) Flush Cache API
   description: >-
     The flush_cache API from Alokai (formerly Vue Storefront) — 1 operation(s) for flush_cache.
   humanURL: https://docs.alokai.com/cloud/api/swagger
@@ -157,7 +157,7 @@ apis:
   - type: DataModel
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-api
-  name: Alokai (formerly Vue Storefront) instance/{namespace} API
+  name: Alokai (formerly Vue Storefront) Instance/{namespace} API
   description: >-
     The instance/{namespace} API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}.
   humanURL: https://docs.alokai.com/cloud/api/swagger
@@ -176,7 +176,7 @@ apis:
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: >-
     alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-exists-api
-  name: Alokai (formerly Vue Storefront) instance/{namespace}/exists API
+  name: Alokai (formerly Vue Storefront) Instance/{namespace}/exists API
   description: >-
     The instance/{namespace}/exists API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/exists.
   humanURL: https://docs.alokai.com/cloud/api/swagger
@@ -195,7 +195,7 @@ apis:
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: >-
     alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-ingresses-api
-  name: Alokai (formerly Vue Storefront) instance/{namespace}/ingresses API
+  name: Alokai (formerly Vue Storefront) Instance/{namespace}/ingresses API
   description: >-
     The instance/{namespace}/ingresses API from Alokai (formerly Vue Storefront) — 2 operation(s) for
     instance/{namespace}/ingresses.
@@ -215,7 +215,7 @@ apis:
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: >-
     alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-kube-config-api
-  name: Alokai (formerly Vue Storefront) instance/{namespace}/kube_config API
+  name: Alokai (formerly Vue Storefront) Instance/{namespace}/kube Config API
   description: >-
     The instance/{namespace}/kube_config API from Alokai (formerly Vue Storefront) — 2 operation(s) for
     instance/{namespace}/kube_config.
@@ -234,7 +234,7 @@ apis:
   - type: DataModel
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-pod-api
-  name: Alokai (formerly Vue Storefront) instance/{namespace}/pod API
+  name: Alokai (formerly Vue Storefront) Instance/{namespace}/pod API
   description: >-
     The instance/{namespace}/pod API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/pod.
   humanURL: https://docs.alokai.com/cloud/api/swagger
@@ -253,7 +253,7 @@ apis:
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: >-
     alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-pod-pod-api
-  name: Alokai (formerly Vue Storefront) instance/{namespace}/pod/{pod} API
+  name: Alokai (formerly Vue Storefront) Instance/{namespace}/pod/{pod} API
   description: >-
     The instance/{namespace}/pod/{pod} API from Alokai (formerly Vue Storefront) — 1 operation(s) for
     instance/{namespace}/pod/{pod}.
@@ -273,7 +273,7 @@ apis:
     url: data-model/alokai-formerly-vue-storefront-data-model.yml
 - aid: >-
     alokai-formerly-vue-storefront:alokai-formerly-vue-storefront-instance-namespace-pod-pod-log-api
-  name: Alokai (formerly Vue Storefront) instance/{namespace}/pod/{pod}/log API
+  name: Alokai (formerly Vue Storefront) Instance/{namespace}/pod/{pod}/log API
   description: >-
     The instance/{namespace}/pod/{pod}/log API from Alokai (formerly Vue Storefront) — 1 operation(s)
     for instance/{namespace}/pod/{pod}/log.

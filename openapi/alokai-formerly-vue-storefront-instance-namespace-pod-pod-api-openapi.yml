@@ -46,6 +46,15 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    PodStatusEnvelope:
+      properties:
+        error:
+          type: boolean
+        message:
+          type: string
+        pod:
+          $ref: '#/components/schemas/PodStatus'
+      type: object
     PodStatus:
       properties:
         containers:
@@ -66,15 +75,6 @@ components:
           - Unknown
           - Succeeded
           type: string
-      type: object
-    PodStatusEnvelope:
-      properties:
-        error:
-          type: boolean
-        message:
-          type: string
-        pod:
-          $ref: '#/components/schemas/PodStatus'
       type: object
     ContainerStatus:
       properties:

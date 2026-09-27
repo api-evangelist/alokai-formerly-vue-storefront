@@ -38,15 +38,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PodEnvelope:
-      properties:
-        code:
-          type: integer
-        pods:
-          items:
-            $ref: '#/components/schemas/Pod'
-          type: array
-      type: object
     Pod:
       properties:
         name:
@@ -57,4 +48,13 @@ components:
           type: string
         status:
           type: string
+      type: object
+    PodEnvelope:
+      properties:
+        code:
+          type: integer
+        pods:
+          items:
+            $ref: '#/components/schemas/Pod'
+          type: array
       type: object
