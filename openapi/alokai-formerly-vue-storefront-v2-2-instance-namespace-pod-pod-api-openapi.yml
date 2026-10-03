@@ -49,6 +49,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    PodEnvVars:
+      properties:
+        containers:
+          additionalProperties:
+            additionalProperties:
+              $ref: '#/components/schemas/PodEnvVar'
+            description: Extra variables injected into the deployment
+            type: object
+          description: Extra variables injected into the deployment
+          type: object
+        errors:
+          additionalProperties:
+            type: string
+          description: Errors getting env vars from containers
+          type: object
+      type: object
     PodEnvVar:
       properties:
         container_name:
@@ -61,6 +77,11 @@ components:
           pattern: ^[a-zA-Z_][a-zA-Z0-9_]*$
           type: string
         value:
+          type: string
+      type: object
+    Error:
+      properties:
+        message:
           type: string
       type: object
     ContainerStatusV22:
@@ -78,31 +99,6 @@ components:
           - Waiting
           - Running
           - Terminated
-          type: string
-      type: object
-    PodDetails:
-      properties:
-        error:
-          type: boolean
-        message:
-          type: string
-        pod:
-          $ref: '#/components/schemas/PodStatusV22'
-      type: object
-    Events:
-      properties:
-        count:
-          type: string
-        last_seen:
-          type: string
-        message:
-          type: string
-        reason:
-          type: string
-      type: object
-    Error:
-      properties:
-        message:
           type: string
       type: object
     PodStatusV22:
@@ -144,19 +140,23 @@ components:
           - Succeeded
           type: string
       type: object
-    PodEnvVars:
+    Events:
       properties:
-        containers:
-          additionalProperties:
-            additionalProperties:
-              $ref: '#/components/schemas/PodEnvVar'
-            description: Extra variables injected into the deployment
-            type: object
-          description: Extra variables injected into the deployment
-          type: object
-        errors:
-          additionalProperties:
-            type: string
-          description: Errors getting env vars from containers
-          type: object
+        count:
+          type: string
+        last_seen:
+          type: string
+        message:
+          type: string
+        reason:
+          type: string
+      type: object
+    PodDetails:
+      properties:
+        error:
+          type: boolean
+        message:
+          type: string
+        pod:
+          $ref: '#/components/schemas/PodStatusV22'
       type: object

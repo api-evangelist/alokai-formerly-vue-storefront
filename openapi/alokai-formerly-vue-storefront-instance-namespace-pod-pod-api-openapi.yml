@@ -46,6 +46,21 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ContainerStatus:
+      properties:
+        name:
+          type: string
+        ready:
+          type: boolean
+        restarts:
+          type: integer
+        status:
+          enum:
+          - Waiting
+          - Running
+          - Terminated
+          type: string
+      type: object
     PodStatusEnvelope:
       properties:
         error:
@@ -74,20 +89,5 @@ components:
           - Failed
           - Unknown
           - Succeeded
-          type: string
-      type: object
-    ContainerStatus:
-      properties:
-        name:
-          type: string
-        ready:
-          type: boolean
-        restarts:
-          type: integer
-        status:
-          enum:
-          - Waiting
-          - Running
-          - Terminated
           type: string
       type: object
