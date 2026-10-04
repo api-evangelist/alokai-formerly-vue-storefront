@@ -179,6 +179,30 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    AppV22:
+      properties:
+        env_var:
+          additionalProperties:
+            $ref: '#/components/schemas/EnvVar'
+          description: Extra variables injected into the deployment
+          type: object
+        has_base_path:
+          type: boolean
+        health_check:
+          $ref: '#/components/schemas/HealthCheckAdditionalAppsWrap'
+        image:
+          description: Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io
+          example: registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+        port:
+          type: string
+        tag:
+          type: string
+      type: object
     EnvVar:
       properties:
         is_secret:
@@ -206,28 +230,4 @@ components:
           type:
           - integer
           - 'null'
-      type: object
-    AppV22:
-      properties:
-        env_var:
-          additionalProperties:
-            $ref: '#/components/schemas/EnvVar'
-          description: Extra variables injected into the deployment
-          type: object
-        has_base_path:
-          type: boolean
-        health_check:
-          $ref: '#/components/schemas/HealthCheckAdditionalAppsWrap'
-        image:
-          description: Additional applicatiom image name. Image should be stored in VSF docker registry in project namespace. For example foo-europe-west1-gcp-storefrontcloud-io should store its images in namespace foo-storefrontcloud-io
-          example: registry.storefrontcloud.io/foo-storefrontcloud-io/ct-adyen-integration-extension
-          type: string
-        name:
-          type: string
-        path:
-          type: string
-        port:
-          type: string
-        tag:
-          type: string
       type: object

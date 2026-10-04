@@ -42,6 +42,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Error:
+      properties:
+        message:
+          type: string
+      type: object
+    PodsList:
+      properties:
+        error:
+          type: boolean
+        message:
+          type: string
+        pods:
+          items:
+            $ref: '#/components/schemas/PodItem'
+          type: array
+      type: object
     PodItem:
       properties:
         containers:
@@ -68,20 +84,4 @@ components:
           type: string
         type:
           type: string
-      type: object
-    Error:
-      properties:
-        message:
-          type: string
-      type: object
-    PodsList:
-      properties:
-        error:
-          type: boolean
-        message:
-          type: string
-        pods:
-          items:
-            $ref: '#/components/schemas/PodItem'
-          type: array
       type: object
