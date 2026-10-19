@@ -1,16 +1,71 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/alokai-formerly-vue-storefront/integrations
 - https://n8n.io/integrations/alokai-formerly-vue-storefront/
 - https://composio.dev/toolkits/alokai-formerly-vue-storefront
 - https://monid.ai/tools/alokai-formerly-vue-storefront
 checked:
+- https://api.nuget.org/v3
 - https://composio.dev/toolkits/alokai-formerly-vue-storefront
+- https://crates.io/api/v1
 - https://monid.ai/tools/alokai-formerly-vue-storefront
 - https://n8n.io/integrations/alokai-formerly-vue-storefront/
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
 - https://zapier.com/apps/alokai-formerly-vue-storefront/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript)
+  evidence: https://www.npmjs.com/package/@vue-storefront/cli
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@vue-storefront/cli'
+      version: 6.0.2
+      released: '2026-04-29'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@vue-storefront/cli
+      repo_leg: github-org:vuestorefront
+      publisher_leg: org:vue-storefront
+      matched_by: github-org
+    - name: '@vue-storefront/next'
+      version: 10.1.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@vue-storefront/next
+      repo_leg: github-org:vuestorefront
+      publisher_leg: org:vue-storefront
+      matched_by: github-org
+    - name: '@vue-storefront/nuxt'
+      version: 13.0.1
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@vue-storefront/nuxt
+      repo_leg: github-org:vuestorefront
+      publisher_leg: org:vue-storefront
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
 templates: []
