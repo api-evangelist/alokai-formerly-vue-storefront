@@ -7,8 +7,13 @@ source:
 - https://monid.ai/tools/alokai-formerly-vue-storefront
 checked:
 - https://api.nuget.org/v3
+- https://cdn.winget.microsoft.com/cache
 - https://composio.dev/toolkits/alokai-formerly-vue-storefront
 - https://crates.io/api/v1
+- https://formulae.brew.sh/api/cask.json
+- https://formulae.brew.sh/api/formula.json
+- https://github.com/ScoopInstaller/Extras
+- https://github.com/ScoopInstaller/Main
 - https://monid.ai/tools/alokai-formerly-vue-storefront
 - https://n8n.io/integrations/alokai-formerly-vue-storefront/
 - https://proxy.golang.org
@@ -68,4 +73,34 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official CLI (npm registry)
+  evidence: https://www.npmjs.com/package/@vue-storefront/cli
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public package index)
+    spec_file: null
+    packages:
+    - name: '@vue-storefront/cli'
+      version: 6.0.2
+      released: '2026-04-29'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@vue-storefront/cli
+      cli: bin cli
+      repo_leg: github-org:vuestorefront
+      publisher_leg: org:vue-storefront
+      matched_by: github-org
+    current: true
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  detected_by: sweep-official-clis.py
+  first_seen: '2026-10-20'
 templates: []
