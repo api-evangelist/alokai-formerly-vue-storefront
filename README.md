@@ -64,6 +64,150 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Alokai (formerly Vue Storefront) is a company surfaced as a portfolio company of creandum and added to the API Evangelist network as a stub for enrichment. Sector: saas. This profile is a lead awaiting the enrichment pipeline.
+Alokai (formerly Vue Storefront) is a Frontend-as-a-Service platform for composable, headless commerce. It connects enterprise ecommerce backends (SAP Commerce Cloud, Salesforce, Adobe Commerce/Magento, commercetools, BigCommerce, Shopware and others) to fast, customizable storefronts through the Alokai SDK, a server-side Middleware layer, a Unified Data Layer, the StorefrontUI component library, and Alokai Cloud hosting managed via the Alokai Console. The Alokai Cloud API ("farmer", OpenAPI 3.0) programmatically manages cloud instances, deployments, pods, ingresses, CDN cache and environment variables, authenticated with X-Api-Key and X-User-Id headers.
 
-Backed by: creandum — https://alokai.com/
+**Areas:** Company · Software-as-a-Service · E-Commerce · Composable Commerce · Headless Commerce · Frontend as a Service · Storefront · SDK · Middleware · Cloud Hosting
+
+## Alokai (formerly Vue Storefront) on APIs.io
+
+Everything profiled for Alokai (formerly Vue Storefront) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/alokai-formerly-vue-storefront/](https://apis.io/providers/alokai-formerly-vue-storefront/)** — or go straight to one of the APIs or properties below.
+
+### APIs (18)
+
+- [Alokai (formerly Vue Storefront) cdn API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-cdn-api/) — The cdn API from Alokai (formerly Vue Storefront) — 2 operation(s) for cdn.
+- [Alokai (formerly Vue Storefront) deploy_check API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-deploy-check-api/) — The deploy_check API from Alokai (formerly Vue Storefront) — 1 operation(s) for deploy_check.
+- [Alokai (formerly Vue Storefront) Flush Cache API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-flush-cache-api/) — The flush_cache API from Alokai (formerly Vue Storefront) — 1 operation(s) for flush_cache.
+- [Alokai (formerly Vue Storefront) Healthz API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-healthz-api/) — The Healthz API from Alokai (formerly Vue Storefront) — 1 operation(s) for healthz.
+- [Alokai (formerly Vue Storefront) Instance API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-api/) — The Instance API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance.
+- [Alokai (formerly Vue Storefront) Instance/{namespace} API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-namespace-api/) — The instance/{namespace} API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}.
+- [Alokai (formerly Vue Storefront) Instance/{namespace}/exists API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-namespace-exists-api/) — The instance/{namespace}/exists API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/exists.
+- [Alokai (formerly Vue Storefront) Instance/{namespace}/ingresses API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-namespace-ingresses-api/) — The instance/{namespace}/ingresses API from Alokai (formerly Vue Storefront) — 2 operation(s) for instance/{namespace}/ingresses.
+- [Alokai (formerly Vue Storefront) Instance/{namespace}/kube Config API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-namespace-kube-config-api/) — The instance/{namespace}/kube_config API from Alokai (formerly Vue Storefront) — 2 operation(s) for instance/{namespace}/kube_config.
+- [Alokai (formerly Vue Storefront) Instance/{namespace}/pod API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-namespace-pod-api/) — The instance/{namespace}/pod API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/pod.
+- [Alokai (formerly Vue Storefront) Instance/{namespace}/pod/{pod} API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-namespace-pod-pod-api/) — The instance/{namespace}/pod/{pod} API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/pod/{pod}.
+- [Alokai (formerly Vue Storefront) Instance/{namespace}/pod/{pod}/log API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-instance-namespace-pod-pod-log-api/) — The instance/{namespace}/pod/{pod}/log API from Alokai (formerly Vue Storefront) — 1 operation(s) for instance/{namespace}/pod/{pod}/log.
+- [Alokai (formerly Vue Storefront) v2.2/admin/instance API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-v2-2-admin-instance-api/) — The v2.2/admin/instance API from Alokai (formerly Vue Storefront) — 2 operation(s) for v2.2/admin/instance.
+- [Alokai (formerly Vue Storefront) v2.2/instance/additional_application API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-v2-2-instance-additional-application-api/) — The v2.2/instance/additional_application API from Alokai (formerly Vue Storefront) — 2 operation(s) for v2.2/instance/additional_application.
+- [Alokai (formerly Vue Storefront) v2.2/instance API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-v2-2-instance-api/) — The v2.2/instance API from Alokai (formerly Vue Storefront) — 1 operation(s) for v2.2/instance.
+- [Alokai (formerly Vue Storefront) v2.2/instance/{namespace}/env_vars API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-v2-2-instance-namespace-env-vars-api/) — The v2.2/instance/{namespace}/env_vars API from Alokai (formerly Vue Storefront) — 4 operation(s) for v2.2/instance/{namespace}/env_vars.
+- [Alokai (formerly Vue Storefront) v2.2/instance/{namespace}/pod/{pod} API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-v2-2-instance-namespace-pod-pod-api/) — The v2.2/instance/{namespace}/pod/{pod} API from Alokai (formerly Vue Storefront) — 1 operation(s) for v2.2/instance/{namespace}/pod/{pod}.
+- [Alokai (formerly Vue Storefront) v2.2/instance/{namespace}/pods API](https://apis.io/apis/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-v2-2-instance-namespace-pods-api/) — The v2.2/instance/{namespace}/pods API from Alokai (formerly Vue Storefront) — 1 operation(s) for v2.2/instance/{namespace}/pods.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [alokai-cloud](https://apis.io/servers/alokai-formerly-vue-storefront/alokai-cloud/)
+
+#### Collections (18)
+
+Postman and Open Collection request collections.
+
+- [farmer cdn API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-cdn-api/)
+- [farmer cdn deploy_check API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-deploy-check-api/)
+- [farmer cdn flush_cache API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-flush-cache-api/)
+- [farmer cdn Healthz API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-healthz-api/)
+- [farmer cdn Instance API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-api/)
+- [farmer cdn instance/{namespace} API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-namespace-api/)
+- [farmer cdn instance/{namespace}/exists API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-namespace-exists-api/)
+- [farmer cdn instance/{namespace}/ingresses API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-namespace-ingresses-api/)
+- [farmer cdn instance/{namespace}/kube_config API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-namespace-kube-config-api/)
+- [farmer cdn instance/{namespace}/pod API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-namespace-pod-api/)
+- [farmer cdn instance/{namespace}/pod/{pod} API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-namespace-pod-pod-api/)
+- [farmer cdn instance/{namespace}/pod/{pod}/log API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-instance-namespace-pod-pod-log-api/)
+- [farmer cdn v2.2/admin/instance API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-v2-2-admin-instance-api/)
+- [farmer cdn v2.2/instance/additional_application API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-v2-2-instance-additional-application-api/)
+- [farmer cdn v2.2/instance API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-v2-2-instance-api/)
+- [farmer cdn v2.2/instance/{namespace}/env_vars API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-v2-2-instance-namespace-env-vars-api/)
+- [farmer cdn v2.2/instance/{namespace}/pod/{pod} API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-v2-2-instance-namespace-pod-pod-api/)
+- [farmer cdn v2.2/instance/{namespace}/pods API](https://apis.io/collections/alokai-formerly-vue-storefront/open-alokai-formerly-vue-storefront-v2-2-instance-namespace-pods-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Alokai Formerly Vue Storefront Cloud Overlay](https://apis.io/overlays/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-cloud-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Alokai Formerly Vue Storefront Authentication](https://apis.io/security/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-authentication/)
+- [Alokai Formerly Vue Storefront Domain Security](https://apis.io/security/alokai-formerly-vue-storefront/alokai-formerly-vue-storefront-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://alokai.com/)
+- [Documentation](https://docs.alokai.com/)
+- [Getting started](https://docs.alokai.com/general/starting-new-project)
+- [API reference](https://docs.alokai.com/cloud/api/swagger)
+- [Pricing](https://alokai.com/pricing)
+- [Sign up](https://alokai.com/request-demo)
+- [Support](https://alokai.com/contact/sales)
+- [Changelog](https://docs.alokai.com/alokai-changelog)
+- [Blog](https://alokai.com/blog)
+- [Terms of service](https://alokai.com/legal-directory)
+- [Privacy policy](https://alokai.com/privacy-policy)
+- [GitHub](https://github.com/vuestorefront)
+- [Status](https://status.alokai.com)
+
+## API Evangelist rating
+
+**Kin Score 46.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.9 |
+| Contract governance | 4.5 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 73.2 |
+| Access clarity | 44.7 |
+
+**Agent readiness 19.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/alokai-formerly-vue-storefront/](https://apis.io/providers/alokai-formerly-vue-storefront/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Alokai (formerly Vue Storefront): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/alokai-formerly-vue-storefront/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
